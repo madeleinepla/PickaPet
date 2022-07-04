@@ -28,7 +28,8 @@ class SignupForm extends React.Component {
 
           this.setState({
             email: '',
-            password: ''
+            password: '',
+            password2: ''
           })
         }
       }
