@@ -11,7 +11,7 @@ const NavBar = (props) => {
     return props.loggedIn ? (
       <div>
         <ul>
-          <li onClick={() => logoutUser}>Log Out</li>
+          <li onClick={logoutUser}>Log Out</li>
         </ul>
       </div>
     ) : (
