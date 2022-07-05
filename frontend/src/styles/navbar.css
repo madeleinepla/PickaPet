@@ -14,6 +14,18 @@
   font-size: 36px;
 }
 
+.navbar div:first-child:hover {
+  transition: .5s;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.navbar div:first-child > a,
+ul li > a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar-links ul {
   display: flex;
   flex-direction: row;
