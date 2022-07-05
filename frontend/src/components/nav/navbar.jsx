@@ -8,6 +8,7 @@ const NavBar = (props) => {
   }
 
   const navbarLinks = () => {
+    // debugger
     return props.loggedIn ? (
       <div className='navbar-links'>
         <ul>
