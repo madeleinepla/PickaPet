@@ -7,6 +7,7 @@ class Profile extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div>This is your profile page</div>
     )
