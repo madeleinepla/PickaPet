@@ -7,16 +7,27 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
-router.get("/test", (req, res)=>{
-    res.json({msg: "This is the user route"})
-})
 router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
     res.json({
         username: req.user.username,
         id:req.user.id,
-        email:req.user.email
+        email:req.user.email,
+        dateJoined:req.user.dateJoined,
+        friends:req.user.friends,
+        pets:req.user.friends,
+        points:req.user.points
     })
 })
+router.get("/test", (req, res)=>{
+    res.json({msg: "This is the user route"})
+})
+// router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
+//     res.json({
+//         username: req.user.username,
+//         id:req.user.id,
+//         email:req.user.email
+//     })
+// })
 router.post('/register',(req,res)=>{
     const {errors, isValid} = validateRegisterInput(req.body)
     if (!isValid){
@@ -31,7 +42,10 @@ router.post('/register',(req,res)=>{
             const newUser = new User({
                 username: req.body.username,
                 email:req.body.email,
-                password:req.body.password
+                password:req.body.password, 
+                points: 0,
+                dateJoined: new Date(),
+
             })
             bcrypt.genSalt(10,(err,salt)=>{
                 bcrypt.hash(newUser.password, salt,(err, hash)=>{
@@ -63,7 +77,9 @@ router.post('/login', (req, res)=> {
                 const payload = {
                     id:user.id,
                     username:user.username,
-                    email:user.email
+                    email:user.email, 
+                    points:user.points,
+                    dateJoined:user.dateJoined,  
                 }
                 jwt.sign(
                     payload,
