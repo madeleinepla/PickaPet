@@ -28,6 +28,7 @@ const NavBar = (props) => {
   return (
     <div className='navbar'>
       <div><Link to='/'>Picka Pet</Link></div>
+      <div className='nav-petstore'><Link to='/pets' style={{ textDecoration: 'none', color: 'inherit' }}>Pet Store</Link></div>
       {navbarLinks()}
     </div>
   )

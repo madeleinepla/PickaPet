@@ -24,6 +24,7 @@
 @import './navbar.css';
 @import './modal.css';
 @import './home_dog.css';
+@import './pet.css';
 
 body {
   background-color: var(--light-purple);
