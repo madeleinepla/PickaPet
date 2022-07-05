@@ -5,11 +5,14 @@ import { Route } from 'react-router-dom';
 import HomePage from './home_page/home_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import pet_index_container from './pets/pet_index_container';
 import '../styles/index.css'
 import ProfileContainer from './User/profile_container';
 
 const App = () => (
   <Switch>
+    
+    <Route exact path='/api/pets' component={pet_index_container} />
     <Route exact path='/' component={HomePage} />
     <AuthRoute exact path='/login' compoent={LoginFormContainer} />
     <AuthRoute exact path='/signup' compoent={SignupFormContainer} />
