@@ -1,0 +1,38 @@
+import React from 'react';
+import './style.css';
+
+const HomeDog = () => {
+  return (
+    <div className="dog-container">
+      <div className="dog-head">
+      </div>
+      <div className="left-eye">
+        <div className="left-pupil"></div>
+      </div>
+      <div className="right-eye">
+        <div className="right-pupil"></div>
+      </div>
+
+      <svg className="svg-ear-2" width="170" height="170" viewBox="-50 -50 300 300">
+        <polygon className="triangle-2" strokeLinejoin="round" points="170, 0, 60, 200, 200, 200" />
+      </svg>
+
+      <svg className="svg-ear-1" width="200" height="170" viewBox="-50 -50 300 300">
+        <polygon className="triangle-1" strokeLinejoin="round" points="170, 0, 60, 200, 200, 200" />
+      </svg>
+
+      <div className="snout">
+        <svg className="nose" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><path d="M23.677 18.52c.914 1.523-.183 3.472-1.967 3.472h-19.414c-1.784 0-2.881-1.949-1.967-3.472l9.709-16.18c.891-1.483 3.041-1.48 3.93 0l9.709 16.18z" /></svg>
+      </div>
+      <div className="dog-body"></div>
+      <div className="leg-1"></div>
+      <div className="leg-2"></div>
+      <div className="leg-3"></div>
+      <div className="leg-4"></div>
+      <div className="tail"></div>
+      <div className="dog-shadow"></div>
+    </div>
+  )
+}
+
+export default HomeDog;

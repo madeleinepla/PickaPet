@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
   const logoutUser = (e) => {
@@ -11,6 +11,7 @@ const NavBar = (props) => {
     return props.loggedIn ? (
       <div className='navbar-links'>
         <ul>
+          <li><Link to={`/users/${props.currentUser.id}`}>Profile Page</Link></li>
           <li onClick={logoutUser}>Log Out</li>
         </ul>
       </div>
@@ -26,7 +27,7 @@ const NavBar = (props) => {
 
   return (
     <div className='navbar'>
-      <div>Picka Pet</div>
+      <div><Link to='/'>Picka Pet</Link></div>
       {navbarLinks()}
     </div>
   )

@@ -1,0 +1,268 @@
+* {
+  background: rgb(186, 186, 186);
+}
+
+.dog-head {
+  height: 230px;
+  width: 250px;
+  background: darkcyan;
+  border-radius: 45%;
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  z-index: 3;
+}
+
+.svg-ear-1 {
+  position: relative;
+  top: 226px;
+  left: 124px;
+  z-index: 1;
+}
+
+.triangle-1 {
+  fill: darkcyan;
+  stroke: darkcyan;
+  stroke-width: 50;
+  transform: rotate(5deg);
+}
+
+.svg-ear-2 {
+  position: relative;
+  top: 240px;
+  left: 190px;
+  z-index: 2;
+}
+
+.triangle-2 {
+  fill: darkcyan;
+  stroke: darkcyan;
+  stroke-width: 50;
+  transform: rotate(-4deg);
+}
+
+.snout {
+  width: 150px;
+  height: 270px;
+  background: darkcyan;
+  border-radius: 100px / 160px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(108deg);
+  top: 314px;
+  left: 205px;
+}
+
+.nose {
+  background: darkcyan;
+  transform: rotate(80deg);
+  position: absolute;
+  top: 215px;
+  left: 45px;
+}
+
+.left-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 233px;
+  top: 350px;
+}
+
+.right-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 282px;
+  top: 373px;
+}
+
+.left-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.right-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.dog-body {
+  width: 220px;
+  height: 380px;
+  background: darkcyan;
+  border-radius: 300px / 90px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(90deg);
+  left: 397px;
+  top: 290px;
+  animation: bodymove 0.6s linear infinite;
+  animation-delay: -1s;
+}
+
+.leg-1 {
+  width: 80px;
+  height: 180px;
+  background: rgba(0, 139, 139, 0.820);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 411px;
+  top: 516px;
+  transform: rotate(-6deg);
+}
+
+.leg-2 {
+  width: 80px;
+  height: 180px;
+  background: darkcyan;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 336px;
+  top: 540px;
+  transform: rotate(5deg);
+}
+
+.leg-3 {
+  width: 80px;
+  height: 180px;
+  background: rgba(0, 139, 139, 0.820);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 550px;
+  top: 496px;
+  transform: rotate(6deg);
+}
+
+.leg-4 {
+  width: 80px;
+  height: 180px;
+  background: darkcyan;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 610px;
+  top: 510px;
+  transform: rotate(-1deg);
+}
+
+.tail {
+  width: 60px;
+  height: 180px;
+  background: darkcyan;
+  border-radius: 100% 30% 30% 30%;
+  position: absolute;
+  z-index: 5;
+  left: 702px;
+  top: 323px;
+  transform: rotate(103deg);
+  animation: tailmove 0.6s linear infinite;
+  animation-delay: -1s;
+}
+
+.dog-shadow {
+  height: 100px;
+  width: 500px;
+  background-color: rgb(175, 175, 175);
+  position: absolute;
+  top: 648px;
+  left: 250px;
+  border-radius: 100%;
+}
+
+@keyframes tailmove {
+  0% {
+  left: 638px;
+  top: 220px;
+  transform: rotate(11deg);
+  }
+  16% {
+  left: 670px;
+  top: 231px;
+  transform: rotate(33deg);
+  }
+  33% {
+  left: 710px;
+  top: 260px;
+  transform: rotate(60deg);
+  }
+  50% {
+  left: 670px;
+  top: 231px;
+  transform: rotate(33deg);
+  }
+  67% {
+  left: 710px;
+  top: 260px;
+  transform: rotate(60deg);
+  }
+  82% {
+  left: 670px;
+  top: 231px;
+  transform: rotate(33deg);
+  }
+  100% {
+  left: 638px;
+  top: 220px;
+  transform: rotate(11deg);
+  }
+}
+
+@keyframes bodymove {
+  0% {
+  transform: rotate(85deg);
+  left: 397px;
+  top: 290px;
+  }
+  16% {
+  transform: rotate(86deg);
+  left: 397px;
+  top: 290px;
+  }
+  33% {
+  transform: rotate(88deg);
+  left: 397px;
+  top: 290px;
+  }
+  50% {
+  transform: rotate(90deg);
+  left: 397px;
+  top: 290px;
+  }
+  67% {
+  transform: rotate(88deg);
+  left: 397px;
+  top: 290px;
+  }
+  82% {
+  transform: rotate(86deg);
+  left: 397px;
+  top: 290px;
+  }
+  100% {
+  transform: rotate(85deg);
+  left: 397px;
+  top: 290px;
+  }
+}

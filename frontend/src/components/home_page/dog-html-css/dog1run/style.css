@@ -1,0 +1,668 @@
+* {
+  background-color: rgb(186, 186, 186);
+}
+
+.dog-head {
+  height: 230px;
+  width: 250px;
+  background-color: snow;
+  border-radius: 45%;
+  position: absolute;
+  left: 222px;
+  top: 252px;
+  z-index: 3;
+  animation: head 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.svg-ear-1 {
+  position: relative;
+  top: 157px;
+  left: 154px;
+  z-index: 1;
+  animation: earone 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.triangle-1 {
+  fill: snow;
+  stroke: snow;
+  stroke-width: 50;
+  transform: rotate(15deg);
+  animation: triangle1 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.svg-ear-2 {
+  position: relative;
+  top: 175px;
+  left: 220px;
+  z-index: 2;
+  animation: eartwo 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.triangle-2 {
+  fill: snow;
+  stroke: snow;
+  stroke-width: 50;
+  transform: rotate(2deg);
+  animation: triangle2 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.snout {
+  width: 150px;
+  height: 270px;
+  background-color: snow;
+  border-radius: 100px / 160px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(112deg);
+  top: 298px;
+  left: 212px;
+  animation: snout 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.nose {
+  background-color: snow;
+  transform: rotate(80deg);
+  position: absolute;
+  top: 215px;
+  left: 45px;
+}
+
+.left-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 244px;
+  top: 318px;
+  animation: lefteye 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.right-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 293px;
+  top: 332px;
+  animation: righteye 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.left-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.right-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.dog-body {
+  width: 220px;
+  height: 380px;
+  background-color: snow;
+  border-radius: 300px / 90px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(92deg);
+  left: 407px;
+  top: 237px;
+  animation: dogbody 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.leg-1 {
+  width: 80px;
+  height: 180px;
+  background-color: rgba(255, 250, 250, 0.720);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 288px;
+  top: 462px;
+  transform: rotate(66deg);
+  animation: legone 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.leg-2 {
+  width: 80px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 298px;
+  top: 452px;
+  transform: rotate(64deg);
+  animation: legtwo 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.leg-3 {
+  width: 80px;
+  height: 180px;
+  background-color: rgba(255, 250, 250, 0.720);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 633px;
+  top: 437px;
+  transform: rotate(-60deg);
+  animation: legthree 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.leg-4 {
+  width: 80px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 627px;
+  top: 444px;
+  transform: rotate(-60deg);
+  animation: legfour 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.tail {
+  width: 60px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 100% 30% 30% 30%;
+  position: absolute;
+  z-index: 5;
+  left: 726px;
+  top: 238px;
+  transform: rotate(75deg);
+  animation: tail 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.dog-shadow {
+  height: 100px;
+  width: 500px;
+  left: 250px;
+  background-color: rgb(175, 175, 175);
+  position: absolute;
+  top: 648px;
+  border-radius: 100%;
+  animation: shadow 1s linear infinite;
+  transition-timing-function: cubic-bezier(1, 0, 0.22, 1.31);
+  animation-delay: -1s;
+}
+
+@keyframes head {
+  0% {
+    left: 200px;
+    top: 330px;
+  }
+  20% {
+    left: 216px;
+    top: 308px;
+  }
+  40% {
+    left: 222px;
+    top: 272px;
+    z-index: 3;
+  }
+  60% {
+    left: 222px;
+    top: 272px;
+    z-index: 3;
+  }
+  80% {
+    left: 216px;
+    top: 308px;
+  }
+  100% {
+    left: 200px;
+    top: 330px;
+  }
+}
+
+@keyframes lefteye {
+  0% {
+    left: 233px;
+    top: 380px;
+  }
+  20% {
+    left: 240px;
+    top: 354px;
+  }
+  40% {
+    left: 244px;
+    top: 318px;
+  }
+  60% {
+    left: 244px;
+    top: 318px;
+  }
+  80% {
+    left: 240px;
+    top: 354px;
+  }
+  100% {
+    left: 233px;
+    top: 380px;
+  }
+}
+
+@keyframes righteye {
+  0% {
+    left: 282px;
+    top: 403px;
+  }
+  20% {
+    left: 288px;
+    top: 375px;
+  }
+  40% {
+    left: 293px;
+    top: 332px;
+  }
+  60% {
+    left: 293px;
+    top: 332px;
+  }
+  80% {
+    left: 288px;
+    top: 375px;
+  }
+  100% {
+    left: 282px;
+    top: 403px;
+  }
+}
+
+@keyframes eartwo {
+  0% {
+    top: 270px;
+    left: 190px;
+  }
+  20% {
+    top: 230px;
+    left: 218px;
+  }
+  40% {
+    top: 205px;
+    left: 220px;
+  }
+  60% {
+    top: 205px;
+    left: 220px;
+  }
+  80% {
+    top: 230px;
+    left: 218px;
+  }
+  100% {
+    top: 270px;
+    left: 190px;
+  }
+}
+
+@keyframes triangle2 {
+  0% {
+    transform: rotate(-4deg);
+  }
+  20% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(14deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes earone {
+  0% {
+    top: 256px;
+    left: 124px;
+  }
+  20% {
+    top: 213px;
+    left: 159px;
+  }
+  40% {
+    top: 177px;
+    left: 155px;
+  }
+  60% {
+    top: 177px;
+    left: 155px;
+  }
+  80% {
+    top: 213px;
+    left: 159px;
+  }
+  100% {
+    top: 256px;
+    left: 124px;
+  }
+}
+
+@keyframes triangle1 {
+  0% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(25deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes snout {
+  0% {
+    transform: rotate(108deg);
+    top: 344px;
+    left: 205px;
+  }
+  20% {
+    transform: rotate(115deg);
+    top: 324px;
+    left: 200px;
+  }
+  40% {
+    transform: rotate(112deg);
+    top: 298px;
+    left: 212px;
+  }
+  60% {
+    transform: rotate(112deg);
+    top: 298px;
+    left: 212px;
+  }
+  80% {
+    transform: rotate(115deg);
+    top: 324px;
+    left: 200px;
+  }
+  100% {
+    transform: rotate(108deg);
+    top: 344px;
+    left: 205px;
+  }
+}
+
+@keyframes dogbody {
+  0% {
+    transform: rotate(90deg);
+    left: 397px;
+    top: 320px;
+  }
+  20% {
+    transform: rotate(95deg);
+    left: 397px;
+    top: 287px;
+  }
+  40% {
+    transform: rotate(92deg);
+    left: 407px;
+    top: 237px;
+  }
+  60% {
+    transform: rotate(92deg);
+    left: 407px;
+    top: 237px;
+  }
+  80% {
+    transform: rotate(95deg);
+    left: 397px;
+    top: 287px;
+  }
+  100% {
+    transform: rotate(90deg);
+    left: 397px;
+    top: 320px;
+  }
+}
+
+@keyframes legone {
+  0% {
+    left: 351px;
+    top: 510px;
+    transform: rotate(-5deg);
+  }
+  20% {
+    left: 354px;
+    top: 485px;
+    transform: rotate(30deg);
+  }
+  40% {
+    left: 288px;
+    top: 462px;
+    transform: rotate(66deg);
+  }
+  60% {
+    left: 288px;
+    top: 462px;
+    transform: rotate(66deg);
+  }
+  80% {
+    left: 354px;
+    top: 485px;
+    transform: rotate(30deg);
+  }
+  100% {
+    left: 351px;
+    top: 510px;
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes legtwo {
+  0% {
+    left: 315px;
+    top: 506px;
+    transform: rotate(60deg);
+  }
+  20% {
+    left: 348px;
+    top: 482px;
+    transform: rotate(82deg);
+  }
+  40% {
+    left: 298px;
+    top: 452px;
+    transform: rotate(64deg);
+  }
+  60% {
+    left: 298px;
+    top: 452px;
+    transform: rotate(64deg);
+  }
+  80% {
+    left: 348px;
+    top: 482px;
+    transform: rotate(82deg);
+  }
+  100% {
+    left: 315px;
+    top: 506px;
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes legthree {
+  0% {
+    left: 578px;
+    top: 516px;
+    transform: rotate(-16deg);
+  }
+  20% {
+    left: 582px;
+    top: 500px;
+    transform: rotate(-40deg);
+  }
+  40% {
+    left: 633px;
+    top: 437px;
+    transform: rotate(-60deg);
+  }
+  60% {
+    left: 633px;
+    top: 437px;
+    transform: rotate(-60deg);
+  }
+  80% {
+    left: 582px;
+    top: 500px;
+    transform: rotate(-40deg);
+  }
+  100% {
+    left: 578px;
+    top: 516px;
+    transform: rotate(-16deg);
+  }
+}
+
+@keyframes legfour {
+  0% {
+    left: 568px;
+    top: 540px;
+    transform: rotate(42deg);
+  }
+  20% {
+    left: 597px;
+    top: 504px;
+    transform: rotate(16deg);
+  }
+  40% {
+    left: 627px;
+    top: 444px;
+    transform: rotate(-60deg);
+  }
+  60% {
+    left: 627px;
+    top: 444px;
+    transform: rotate(-60deg);
+  }
+  80% {
+    left: 597px;
+    top: 504px;
+    transform: rotate(16deg);
+  }
+  100% {
+    left: 568px;
+    top: 540px;
+    transform: rotate(42deg);
+  }
+}
+
+@keyframes tail {
+  0% {
+    left: 670px;
+    top: 261px;
+    transform: rotate(33deg);
+  }
+  20% {
+    left: 700px;
+    top: 258px;
+    transform: rotate(55deg);
+  }
+  40% {
+    left: 726px;
+    top: 238px;
+    transform: rotate(75deg);
+  }
+  60% {
+    left: 726px;
+    top: 238px;
+    transform: rotate(75deg);
+  }
+  80% {
+    left: 700px;
+    top: 258px;
+    transform: rotate(55deg);
+  }
+  100% {
+    left: 670px;
+    top: 261px;
+    transform: rotate(33deg);
+  }
+}
+
+@keyframes shadow {
+  0% {
+  height: 100px;
+  width: 500px;
+  left: 250px;
+  background-color: rgb(175, 175, 175);
+  }
+  20% {
+  height: 80px;
+  width: 400px;
+  left: 275px;
+  background-color: rgba(175, 175, 175, 0.8);
+  }
+  40% {
+  height: 60px;
+  width: 320px;
+  left: 325px;
+  background-color: rgb(175, 175, 175, 0.6);
+  }
+  60% {
+  height: 60px;
+  width: 320px;
+  left: 325px;
+  background-color: rgb(175, 175, 175, 0.6);
+  }
+  80% {
+  height: 80px;
+  width: 400px;
+  left: 275px;
+  background-color: rgba(175, 175, 175, 0.8);
+  }
+  100% {
+  height: 100px;
+  width: 500px;
+  left: 250px;
+  background-color: rgb(175, 175, 175);
+  }
+}
