@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatDate } from '../../util/date_util';
+import FriendIndex from '../friend/friend_index';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.ownProps.match.params.id);
+    this.props.fetchUsers();
   }
 
   profile() {
@@ -20,6 +22,9 @@ class Profile extends React.Component {
           <div><span>Date Joined:</span> {formatDate(dateJoined)}</div>
           <div><span>Points:</span> {points}</div>
           <div><span>Pets:</span> {pets}</div>
+          <div>
+            <FriendIndex users={this.props.users} currentUser={this.props.currentUser}/>
+          </div>
         </div>
       ) : (
         <div>
