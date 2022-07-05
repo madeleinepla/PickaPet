@@ -1,6 +1,6 @@
 import { RECEIVE_PETS, RECEIVE_PET } from "../../actions/pet_actions";
 
-const PetsReducer = (state = {}, action) => {
+const PetsReducer = (state = {all: {}}, action) => {
 
     Object.freeze(state);
 
