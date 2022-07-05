@@ -45,3 +45,13 @@ ul li > a {
   border-color: var(--light-yellow);
   cursor: pointer;
 }
+
+.nav-petstore {
+  font-size: 36px;
+}
+
+.nav-petstore:hover {
+  transition: .5s;
+  transform: scale(1.05);
+  cursor: pointer;
+}

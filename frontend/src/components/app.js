@@ -15,7 +15,7 @@ const App = () => (
   <div>
     <NavBarContainer/>
     <Switch>
-      <Route exact path='/api/pets' component={pet_index_container} />
+      <Route exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
       <AuthRoute exact path='/login' compoent={LoginFormContainer} />
       <AuthRoute exact path='/signup' compoent={SignupFormContainer} />

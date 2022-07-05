@@ -11,7 +11,8 @@ class PetIndexItem extends React.Component {
         // debugger
         const { pet } = this.props;
         // console.log(this.props)
-        // let day = pet.birthday.getDate();
+        let dates = pet.birthday.split("T");
+        let date = dates[0]
         // let year = pet.birthday.getYear();
         // let month = pet.birthday.getMonth();
         // let bday =  `${month}/${day}/${year}`
@@ -19,8 +20,9 @@ class PetIndexItem extends React.Component {
         return (
             <div className="pet-index-container">
                 <div className="pet-box">
+                <img className='pet-profileUrl' src={pet.profileUrl} />
                     <div className="pet-name">{pet.name}</div>
-                    <div className="pet-age">Age: {pet.age} </div>
+                    <div className="pet-age">Birthday: {date} </div>
                     <div className="pet-gender">Gender: {pet.gender}</div>
                     <div className="pet-breed"> Breed: {pet.breed}</div>
                 </div>

@@ -14,7 +14,7 @@ const seedPets = [
     breed: "huskie",
     birthday: Date('2016-01-01'),
     gender: "M",
-    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
+    profileUrl:"https://media.discordapp.net/attachments/993952200189550652/993952517283139684/Siberian_Huskie_Headshot.png?width=274&height=319",
   },
   {
     name: "Penny",
@@ -22,7 +22,7 @@ const seedPets = [
     breed: "shiba",
     birthday: Date('2013-01-01'),
     gender: "F",
-    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
+    profileUrl:"https://media.discordapp.net/attachments/993952200189550652/993952998818598932/Shiba_Inu_Headshot.png?width=272&height=322",
   },
   {
     name: "Essie",
@@ -30,7 +30,7 @@ const seedPets = [
     breed: "Calico",
     birthday: Date('2019-01-01'),
     gender: "F",
-    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
   }
 ];
 
@@ -65,16 +65,16 @@ const seedUsers = [
 
 const seedDB = async () => {
   await Pet.deleteMany({});
-  // await Pet.insertMany(seedPets);
+  await Pet.insertMany(seedPets);
 };
 
 seedDB()
   .then(() => mongoose.connection.close());
 
-const userDB = async () => {
+// const userDB = async () => {
   // await User.deleteMany({});
-  await User.insertMany(seedUsers);
-};
+  // await User.insertMany(seedUsers);
+// };
   
-userDB()
-  .then(() => mongoose.connection.close());
+// userDB()
+  // .then(() => mongoose.connection.close());
