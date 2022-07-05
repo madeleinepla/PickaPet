@@ -3,6 +3,8 @@
     /* font-family: "ShakyRegular"; */
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    
 }
 
 

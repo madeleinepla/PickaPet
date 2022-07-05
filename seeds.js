@@ -11,16 +11,18 @@ const seedPets = [
   {
     name: "Monzy",
     species: "Dog",
-    breed: "Am Staff",
+    breed: "huskie",
     birthday: Date('2016-01-01'),
     gender: "M",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
   },
   {
     name: "Penny",
     species: "Dog",
-    breed: "Yorkie",
+    breed: "shiba",
     birthday: Date('2013-01-01'),
     gender: "F",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
   },
   {
     name: "Essie",
@@ -28,6 +30,7 @@ const seedPets = [
     breed: "Calico",
     birthday: Date('2019-01-01'),
     gender: "F",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
   }
 ];
 
@@ -38,6 +41,7 @@ const seedUsers = [
     password:"example5",
     dateJoined: new Date(),
     points:0,
+    
   },
   {
     username: "example6",
@@ -59,13 +63,13 @@ const seedUsers = [
 ]  
 
 
-// const seedDB = async () => {
-//   await Pet.deleteMany({});
-//   await Pet.insertMany(seedPets);
-// };
+const seedDB = async () => {
+  await Pet.deleteMany({});
+  // await Pet.insertMany(seedPets);
+};
 
-// seedDB()
-//   .then(() => mongoose.connection.close());
+seedDB()
+  .then(() => mongoose.connection.close());
 
 const userDB = async () => {
   // await User.deleteMany({});

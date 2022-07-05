@@ -1,7 +1,7 @@
 import React from "react";
 import PetIndexItem from "./pet_index_item";
 import { withRouter } from 'react-router-dom';
-import "./pet.css"
+import '../../styles/pet.css'
 
 class PetIndex extends React.Component {
     constructor(props) {
