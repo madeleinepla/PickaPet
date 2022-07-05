@@ -7,16 +7,45 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
-router.get("/test", (req, res)=>{
-    res.json({msg: "This is the user route"})
-})
+
 router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
     res.json({
         username: req.user.username,
         id:req.user.id,
-        email:req.user.email
+        email:req.user.email,
+        dateJoined:req.user.dateJoined,
+        friends:req.user.friends,
+        pets:req.user.friends,
+        points:req.user.points
     })
 })
+router.get('/:id', (req,res)=>{
+    debugger
+    User.findById( req.params.id )
+    .then(user => res.json({
+        username: user.username,
+        id:user.id,
+        email:user.email,
+        dateJoined:user.dateJoined,
+        friends:user.friends,
+        pets:user.pets,
+        points:user.points
+    }))
+    .catch(err =>
+      res.status(404).json({ nouserfound: 'No user found' }
+      )
+    );
+})
+router.get("/test", (req, res)=>{
+    res.json({msg: "This is the user route"})
+})
+// router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
+//     res.json({
+//         username: req.user.username,
+//         id:req.user.id,
+//         email:req.user.email
+//     })
+// })
 router.post('/register',(req,res)=>{
     const {errors, isValid} = validateRegisterInput(req.body)
     if (!isValid){
@@ -31,14 +60,29 @@ router.post('/register',(req,res)=>{
             const newUser = new User({
                 username: req.body.username,
                 email:req.body.email,
-                password:req.body.password
+                password:req.body.password, 
+                points: 0,
+                dateJoined: new Date(),
+
             })
             bcrypt.genSalt(10,(err,salt)=>{
                 bcrypt.hash(newUser.password, salt,(err, hash)=>{
                     if(err) throw err;
                     newUser.password = hash
                     newUser.save()
-                    .then((user)=>res.json(user))
+                    .then((user)=>{
+                        const payload = {
+                            id: user.id,
+                            handle: user.handle,
+                            email: user.email
+                        };
+                        jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
+                            res.json({
+                                success: true,
+                                token: "Bearer " + token
+                            })
+                        })
+                    })
                     .catch(err=>console.log(err))
                 })
             })
@@ -63,7 +107,9 @@ router.post('/login', (req, res)=> {
                 const payload = {
                     id:user.id,
                     username:user.username,
-                    email:user.email
+                    email:user.email, 
+                    points:user.points,
+                    dateJoined:user.dateJoined,  
                 }
                 jwt.sign(
                     payload,
