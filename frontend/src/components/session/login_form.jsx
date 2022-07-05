@@ -13,6 +13,13 @@ class LoginForm extends React.Component {
     this.handleLogin = this.handleLogin.bind(this);
   }
 
+  componentWillUnmount() {
+    debugger
+    if (this.props.errors) {
+      this.props.clearErrors();
+    }
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value})
@@ -38,7 +45,7 @@ class LoginForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.props.errors).map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
