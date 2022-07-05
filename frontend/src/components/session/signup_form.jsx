@@ -57,48 +57,56 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div onClick={this.props.closeModal}>X</div>
-        <h1>Sign up Here</h1>
-        <label>Email:
-          <input
-            type="text"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.update('email')}
-          />
-        </label>
-        <label>Username:
-          <input
-            type="text"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.update('username')}
-          />
-        </label>
-        <label>Password
-          <input
-            type="text"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-          />
-        </label>
-        <label>Confirm Password
-          <input
-            type="text"
-            placeholder="password"
-            value={this.state.password2}
-            onChange={this.update('password2')}
-          />
-        </label>
-        <div>{this.renderErrors()}</div>
-        <div>
-          <input
-            type="submit"
-            value="Sign Up"
-            onClick={this.handleSignup}
-          />
+      <div className='session-form'>
+        <div className='session-form-exit' onClick={this.props.closeModal}>
+          <p>X</p>
+        </div>
+
+        <div className='session-form-input'>
+          <div>
+            <h1>Sign up Here</h1>
+          </div>
+
+          <label>Email:
+            <input
+              type="text"
+              placeholder="email"
+              value={this.state.email}
+              onChange={this.update('email')}
+            />
+          </label>
+          <label>Username:
+            <input
+              type="text"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.update('username')}
+            />
+          </label>
+          <label>Password:
+            <input
+              type="text"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
+          </label>
+          <label>Confirm Password:
+            <input
+              type="text"
+              placeholder="password"
+              value={this.state.password2}
+              onChange={this.update('password2')}
+            />
+          </label>
+          <div>{this.renderErrors()}</div>
+          <div className='session-form-submit'>
+            <input
+              type="submit"
+              value="Sign Up"
+              onClick={this.handleSignup}
+            />
+          </div>
         </div>
       </div>
     )

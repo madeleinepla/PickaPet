@@ -1,5 +1,5 @@
 .pet-boxes {
-    
+    font-family: "CheriRegular";
     display: flex;
     flex-direction: row;
 }
