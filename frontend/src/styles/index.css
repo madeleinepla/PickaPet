@@ -23,3 +23,7 @@
 @import './reset.css';
 @import './navbar.css';
 @import './modal.css';
+
+body {
+  background-color: var(--light-purple);
+}

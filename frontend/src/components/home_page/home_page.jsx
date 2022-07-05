@@ -1,12 +1,20 @@
 import React from 'react';
 import NavBarContainer from '../nav/navbar_container';
 import ModalContainer from '../modal/modal_container';
+import HomeDog from './home_dog'
+
+// const dog = require('./dog-html-css/dog1/dog.html')
 
 const HomePage = (props) => {
   return (
     <div>
-      <ModalContainer />
-      <NavBarContainer />
+      <div>
+        <ModalContainer />
+        <NavBarContainer />
+      </div>
+      <div>
+        <HomeDog />
+      </div>
     </div>
   )
 }

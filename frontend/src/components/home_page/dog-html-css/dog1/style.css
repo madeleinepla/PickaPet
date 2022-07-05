@@ -1,0 +1,188 @@
+* {
+  background-color: rgb(186, 186, 186);
+}
+
+.dog-head {
+  height: 230px;
+  width: 250px;
+  background-color: snow;
+  border-radius: 45%;
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  z-index: 3;
+}
+
+.svg-ear-1 {
+  position: relative;
+  top: 226px;
+  left: 124px;
+  z-index: 1;
+}
+
+.triangle-1 {
+  fill: snow;
+  stroke: snow;
+  stroke-width: 50;
+  transform: rotate(5deg);
+}
+
+.svg-ear-2 {
+  position: relative;
+  top: 240px;
+  left: 190px;
+  z-index: 2;
+}
+
+.triangle-2 {
+  fill: snow;
+  stroke: snow;
+  stroke-width: 50;
+  transform: rotate(-4deg);
+}
+
+.snout {
+  width: 150px;
+  height: 270px;
+  background-color: snow;
+  border-radius: 100px / 160px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(108deg);
+  top: 314px;
+  left: 205px;
+}
+
+.nose {
+  background-color: snow;
+  transform: rotate(80deg);
+  position: absolute;
+  top: 215px;
+  left: 45px;
+}
+
+.left-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 233px;
+  top: 350px;
+}
+
+.right-eye {
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 282px;
+  top: 373px;
+}
+
+.left-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.right-pupil {
+  height: 8px;
+  width: 8px;
+  z-index: 6;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.dog-body {
+  width: 220px;
+  height: 380px;
+  background-color: snow;
+  border-radius: 300px / 90px;
+  position: absolute;
+  z-index: 4;
+  transform: rotate(90deg);
+  left: 397px;
+  top: 290px;
+}
+
+.leg-1 {
+  width: 80px;
+  height: 180px;
+  background-color: rgba(255, 250, 250, 0.857);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 411px;
+  top: 516px;
+  transform: rotate(-6deg);
+}
+
+.leg-2 {
+  width: 80px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 336px;
+  top: 540px;
+  transform: rotate(5deg);
+}
+
+.leg-3 {
+  width: 80px;
+  height: 180px;
+  background-color: rgba(255, 250, 250, 0.857);
+  border-radius: 40%;
+  position: absolute;
+  z-index: 3;
+  left: 550px;
+  top: 496px;
+  transform: rotate(6deg);
+}
+
+.leg-4 {
+  width: 80px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 5;
+  left: 610px;
+  top: 510px;
+  transform: rotate(-1deg);
+}
+
+.tail {
+  width: 60px;
+  height: 180px;
+  background-color: snow;
+  border-radius: 100% 30% 30% 30%;
+  position: absolute;
+  z-index: 5;
+  left: 670px;
+  top: 231px;
+  transform: rotate(33deg);
+}
+
+.dog-shadow {
+  height: 100px;
+  width: 500px;
+  background-color: rgb(175, 175, 175);
+  position: absolute;
+  top: 648px;
+  left: 250px;
+  border-radius: 100%;
+}
