@@ -1,0 +1,31 @@
+.pet-boxes {
+    font-family: "CheriRegular";
+    /* font-family: "ShakyRegular"; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+
+.pet-index-container {
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pet-box{
+    border-radius: 8px;
+    margin: 10px;
+    padding:10px;
+    background-color: rgb(163, 163, 212);
+    
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+
+.pet-box:hover {
+    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), -2px -2px 10px 0 rgba(0, 0, 0, 0.19);
+}

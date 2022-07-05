@@ -21,6 +21,9 @@ const PetSchema = new Schema({
   gender: {
     type: String,
     required: true
+  },
+  profileUrl: {
+    type: String,
   }
 })
 const Pet = mongoose.model("pets", PetSchema)

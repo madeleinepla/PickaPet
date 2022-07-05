@@ -23,3 +23,8 @@
 @import './reset.css';
 @import './navbar.css';
 @import './modal.css';
+@import './home_dog.css';
+
+body {
+  background-color: var(--light-purple);
+}
