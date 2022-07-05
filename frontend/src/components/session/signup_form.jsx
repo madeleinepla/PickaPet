@@ -15,6 +15,12 @@ class SignupForm extends React.Component {
     this.handleSignup = this.handleSignup.bind(this)
   }
 
+  componentWillUnmount() {
+    if (this.props.errors) {
+      this.props.clearErrors();
+    }
+  }
+
   update(field) {
     return e => {
       this.setState({[field]: e.target.value})
@@ -42,7 +48,7 @@ class SignupForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.props.errors).map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
