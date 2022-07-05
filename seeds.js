@@ -12,21 +12,21 @@ const seedPets = [
     name: "Monzy",
     species: "Dog",
     breed: "Am Staff",
-    age: 6,
+    birthday: Date('2016-01-01'),
     gender: "M",
   },
   {
     name: "Penny",
     species: "Dog",
     breed: "Yorkie",
-    age: 9,
+    birthday: Date('2013-01-01'),
     gender: "F",
   },
   {
     name: "Essie",
     species: "Cat",
     breed: "Calico",
-    age: 3,
+    birthday: Date('2019-01-01'),
     gender: "F",
   }
 ];
