@@ -1,0 +1,85 @@
+.modal {
+  position: fixed;
+  background-color: rgba(0,0,0,.4);
+  height: 100%;
+  width: 100%;
+}
+
+.modal-form {
+  background-color: var(--light-blue);
+  width: 450px;
+  height: 500px;
+  border: 5px solid var(--dark-purple);
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--dark-purple);
+  font-family: ShakyRegular;
+}
+
+.session-form-exit {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.session-form-exit *:hover {
+  transition: .5s;
+    color: var(--light-yellow);
+}
+
+.session-form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 0 55px 0 45px;
+}
+
+.session-form-input > * {
+  margin: 15px 0 15px 0;
+  font-size: 24px;
+}
+
+.session-form-input label {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.session-form-input > div:first-child {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.session-form-input input {
+  border: 1px solid var(--dark-purple);
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.session-form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.session-form-submit input {
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-purple);
+  border-radius: 5px;
+  padding: 10px 40px 10px 40px;
+  font-size: 24px;
+  color: var(--dark-purple);
+  font-family: ShakyRegular;
+}
+
+.session-form-submit input:hover {
+  transition: .5s;
+    transform: scale(1.05);
+}
