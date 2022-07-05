@@ -7,9 +7,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
-router.get("/test", (req, res)=>{
-    res.json({msg: "This is the user route"})
-})
+
 router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
     res.json({
         username: req.user.username,
@@ -38,7 +36,19 @@ router.post('/register',(req,res)=>{
                     if(err) throw err;
                     newUser.password = hash
                     newUser.save()
-                    .then((user)=>res.json(user))
+                    .then((user)=>{
+                        const payload = {
+                            id: user.id,
+                            handle: user.handle,
+                            email: user.email
+                        };
+                        jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
+                            res.json({
+                                success: true,
+                                token: "Bearer " + token
+                            })
+                        })
+                    })
                     .catch(err=>console.log(err))
                 })
             })
