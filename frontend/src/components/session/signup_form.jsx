@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
     }
 
     this.update = this.update.bind(this);
+    this.handleSignup = this.handleSignup.bind(this)
   }
 
   update(field) {
@@ -20,6 +21,7 @@ class SignupForm extends React.Component {
   }
 
   handleSignup(e) {
+    debugger
     e.preventDefault();
     this.props.signup(this.state)
       .then(() => {
