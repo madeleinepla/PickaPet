@@ -1,0 +1,35 @@
+.navbar {
+  background-color: var(--dark-purple);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  height: 40px;
+  padding: 15px 20px 15px 20px;
+  font-family: CheriRegular;
+}
+
+.navbar div:first-child {
+  font-size: 36px;
+}
+
+.navbar-links ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
+
+.navbar-links ul * {
+  margin: 0 10px 0 10px;
+  padding: 10px 20px 10px 20px;
+  border: 2px solid var(--light-purple);
+  border-radius: 5px;
+}
+
+.navbar-links ul *:hover {
+  transition: .5s;
+  transform: scale(1.05);
+  border-color: var(--light-yellow);
+  cursor: pointer;
+}

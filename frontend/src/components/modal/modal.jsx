@@ -19,8 +19,8 @@ const Modal = ({modal, closeModal}) => {
   };
 
   return (
-    <div onClick={closeModal}>
-      <div onClick={(e) => e.stopPropagation()}>
+    <div className='modal' onClick={closeModal}>
+      <div className='modal-form' onClick={(e) => e.stopPropagation()}>
         {component}
       </div>
     </div>

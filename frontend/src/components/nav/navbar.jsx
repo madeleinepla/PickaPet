@@ -9,13 +9,13 @@ const NavBar = (props) => {
 
   const navbarLinks = () => {
     return props.loggedIn ? (
-      <div>
+      <div className='navbar-links'>
         <ul>
           <li onClick={logoutUser}>Log Out</li>
         </ul>
       </div>
     ) : (
-      <div>
+        <div className='navbar-links'>
         <ul>
           <li onClick={() => props.openModal('signup')}>Sign Up</li>
           <li onClick={() => props.openModal('login')}>Log In</li>
@@ -25,7 +25,7 @@ const NavBar = (props) => {
   }
 
   return (
-    <div>
+    <div className='navbar'>
       <div>Picka Pet</div>
       {navbarLinks()}
     </div>
