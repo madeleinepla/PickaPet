@@ -6,7 +6,6 @@ const HomePage = (props) => {
   return (
     <div>
       <ModalContainer />
-      <NavBarContainer />
     </div>
   )
 }
