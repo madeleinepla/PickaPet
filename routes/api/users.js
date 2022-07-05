@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login');
-
 router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
     res.json({
         username: req.user.username,
@@ -36,49 +35,49 @@ router.get('/:id', (req,res)=>{
       )
     );
 })
-router.patch('/:id/addfriend/', (req, res)=>{
+router.patch('/:id/addfriend/', passport.authenticate('jwt', {session:false}), (req, res)=>{
     const friendId = req.body.friendId
     const options = {new:true};
     User.findByIdAndUpdate(
         req.params.id, {$push:{friendsRequested:friendId}}, options)
-        .then(user=>{
-            res.send(user)})
-        .catch(err=>res.status(400).json({error:err.message}))
-    User.findByIdAndUpdate(friendId, {$push:{friendsRequests:req.params.id}}, options)
+        .then(user=>{})
+        .catch(err=>{})
+    User.findByIdAndUpdate(friendId, {$push:{friendRequests:req.params.id}}, options)
     .then(user=>{
         res.send(user)})
     .catch(err=>res.status(400).json({error:err.message}))
 })
-router.patch('/:id/acceptfriendrequest/', (req, res)=>{
+router.patch('/:id/acceptfriendrequest/',passport.authenticate('jwt', {session:false}), (req, res)=>{
     const friendId = req.body.friendId
     const options = {new:true};
     User.findByIdAndUpdate(
         req.params.id, {$pull:{friendRequests:friendId}}, options)
-        .then(user=>{
-            res.send(user)})
-        .catch(err=>res.status(400).json({error:err.message}))
-    User.findByIdAndUpdate(req.params.id, {$push:{friends:req.params.id}}, options)
-    .then(user=>{
-        res.send(user)})
-    .catch(err=>res.status(400).json({error:err.message}))
+        .then(user=>{})
+        .catch(err=>{})
+    User.findByIdAndUpdate(req.params.id, {$push:{friends:friendId}}, options)
+    .then(user=>{})
+    .catch(err=>{})
     User.findByIdAndUpdate(friendId, {$pull:{friendsRequested:req.params.id}}, options)
-    .then(user=>{
-        res.send(user)})
-    .catch(err=>res.status(400).json({error:err.message}))
+    .then(user=>{})
+    .catch(err=>{})
     User.findByIdAndUpdate(friendId, {$push:{friends:req.params.id}}, options)
     .then(user=>{
         res.send(user)})
     .catch(err=>res.status(400).json({error:err.message}))
 })
-router.patch('/:id/unfriend/', (req, res)=>{
+router.patch('/:id/unfriend/',passport.authenticate('jwt', {session:false}), (req, res)=>{
     const friendId = req.body.friendId
     const options = {new:true};
     User.findByIdAndUpdate(
         req.params.id, {$pull:{friends:friendId}}, options)
+        .then(user=>{})
+        .catch(err=>{})
+    User.findByIdAndUpdate(
+        friendId, {$pull:{friends:req.params.id}}, options)
         .then(user=>res.send(user))
         .catch(err=>res.status(400).json({error:err.message}))
 })
-router.patch('/:id/addpet/', (req, res)=>{
+router.patch('/:id/addpet/',passport.authenticate('jwt', {session:false}), (req, res)=>{
     const petId = req.body.petId
     const options = {new:true};
     User.findByIdAndUpdate(
@@ -94,6 +93,21 @@ router.patch('/:id', (req, res)=>{
       .then(user=>res.send(user))
       .catch(err=>res.status(400).json({error:err.message}))
   })
+router.delete('/:id', (req, res)=>{
+    const options = {new:true};
+    User.findById(req.params.id)
+    .then(user=>user["friends"].forEach(friendId=>{
+        User.findByIdAndUpdate(friendId, {$pull:{friends:req.params.id}}, options)
+        .then(user2=>{})
+        .catch(err2=>err=>{})
+    }))
+    .catch(err=>{})
+    User.deleteOne({_id:req.params.id})
+    .then(user=>res.send("deleted"))
+    .catch(err=>res.status(400).json({error:err.message}))
+
+})
+
 router.get("/test", (req, res)=>{
     res.json({msg: "This is the user route"})
 })
