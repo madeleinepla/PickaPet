@@ -12,6 +12,7 @@ router.get("/test", (req, res)=>{
 })
 router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
     res.json({
+        username: req.user.username,
         id:req.user.id,
         email:req.user.email
     })
@@ -28,6 +29,7 @@ router.post('/register',(req,res)=>{
         }
         else {
             const newUser = new User({
+                username: req.body.username,
                 email:req.body.email,
                 password:req.body.password
             })
@@ -60,6 +62,7 @@ router.post('/login', (req, res)=> {
             if(isMatch) {
                 const payload = {
                     id:user.id,
+                    username:user.username,
                     email:user.email
                 }
                 jwt.sign(
