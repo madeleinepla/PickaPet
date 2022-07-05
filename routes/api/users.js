@@ -29,7 +29,7 @@ router.post('/register',(req,res)=>{
         }
         else {
             const newUser = new User({
-                user: req.body.username,
+                username: req.body.username,
                 email:req.body.email,
                 password:req.body.password
             })
@@ -62,7 +62,7 @@ router.post('/login', (req, res)=> {
             if(isMatch) {
                 const payload = {
                     id:user.id,
-                    user:user.username,
+                    username:user.username,
                     email:user.email
                 }
                 jwt.sign(
