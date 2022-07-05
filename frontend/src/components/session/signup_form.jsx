@@ -6,6 +6,7 @@ class SignupForm extends React.Component {
 
     this.state = {
       email: '',
+      username: '',
       password: '',
       password2: '',
     }
@@ -21,7 +22,6 @@ class SignupForm extends React.Component {
   }
 
   handleSignup(e) {
-    debugger
     e.preventDefault();
     this.props.signup(this.state)
       .then(() => {
@@ -30,6 +30,7 @@ class SignupForm extends React.Component {
 
           this.setState({
             email: '',
+            username: '',
             password: '',
             password2: ''
           })
@@ -53,12 +54,20 @@ class SignupForm extends React.Component {
       <div>
         <div onClick={this.props.closeModal}>X</div>
         <h1>Sign up Here</h1>
-        <label>Username:
+        <label>Email:
           <input
             type="text"
             placeholder="email"
             value={this.state.email}
             onChange={this.update('email')}
+          />
+        </label>
+        <label>Username:
+          <input
+            type="text"
+            placeholder="username"
+            value={this.state.username}
+            onChange={this.update('username')}
           />
         </label>
         <label>Password
