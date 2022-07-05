@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
       <div>
         <div onClick={this.props.closeModal}>X</div>
         <h1>Log in Here</h1>
-        <label>Username:
+        <label>Email:
           <input
             type="text"
             placeholder="email"
