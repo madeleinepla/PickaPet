@@ -3,10 +3,11 @@ import { fetchUser, fetchUsers } from '../../actions/user_actions';
 import Profile from './profile';
 
 const mSTP = (state, ownProps) => {
-  // debugger
+  const users = Object.values(state.entities.users.all);
+  debugger
   return {
-    users: state.entities.users,
-    currentUser: state.session.user,
+    users: users,
+    currentUser: state.entities.users.user,
     ownProps
   }
 };

@@ -1,32 +1,31 @@
 import React from 'react';
 
-class FriendIndex extends React.Component {
-  constructor(props) {
-    super(props);
+const FriendIndex = ({ users, currentUser }) => {
+  if (!users) {
+    return null;
   }
 
-  componentDidMount() {
-    this.props.fetchUsers();
-  }
+  const friends = users.filter((user) => {
+    return currentUser.friends.includes(user._id)
+  })
 
-  render() {
-    // debugger
-    const { friends } = this.props
-
-    return (
-      <div>
-        <ul>
-          {
-          friends.map((friend) => {
-            return <li>
-              {friend.username}
-            </li>
-          }
-          )}
-        </ul>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h1>Friend List:</h1>
+      {
+        friends.length === 0 ?
+          <h2>you have no friends ┏༼ ◉╭╮◉༽┓</h2>
+        :
+          <ul>
+            {
+              friends.map(friend => {
+                return <li>friend.username</li>
+              })
+            }
+          </ul>
+      }
+    </div>
+  );
+};
 
 export default FriendIndex;
