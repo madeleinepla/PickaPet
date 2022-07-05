@@ -14,13 +14,16 @@ const PetSchema = new Schema({
     type: String,
     required: true
   },
-  birthday: {
-    type: Date,
+  age: {
+    type: Number,
     required: true
   },
   gender: {
     type: String,
     required: true
+  },
+  profileUrl: {
+    type: String,
   }
 })
 const Pet = mongoose.model("pets", PetSchema)
