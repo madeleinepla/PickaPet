@@ -15,7 +15,6 @@ class SignupForm extends React.Component {
   }
 
   componentWillUnmount() {
-    debugger
     if (this.props.errors) {
       this.props.clearErrors();
     }
@@ -28,7 +27,6 @@ class SignupForm extends React.Component {
   }
 
   handleSignup(e) {
-    debugger
     e.preventDefault();
     this.props.signup(this.state)
       .then(() => {
