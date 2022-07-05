@@ -8,13 +8,14 @@ import HomeDog from './home_dog'
 const HomePage = (props) => {
   return (
     <div>
+
       <div>
         <ModalContainer />
-        <NavBarContainer />
       </div>
       <div>
         <HomeDog />
       </div>
+
     </div>
   )
 }
