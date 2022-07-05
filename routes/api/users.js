@@ -18,6 +18,23 @@ router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=
         points:req.user.points
     })
 })
+router.get('/:id', (req,res)=>{
+    debugger
+    User.findById( req.params.id )
+    .then(user => res.json({
+        username: user.username,
+        id:user.id,
+        email:user.email,
+        dateJoined:user.dateJoined,
+        friends:user.friends,
+        pets:user.pets,
+        points:user.points
+    }))
+    .catch(err =>
+      res.status(404).json({ nouserfound: 'No user found' }
+      )
+    );
+})
 router.get("/test", (req, res)=>{
     res.json({msg: "This is the user route"})
 })
