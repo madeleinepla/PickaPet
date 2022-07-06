@@ -33,6 +33,23 @@ const UserSchema = new Schema({
     points: {
         type: Number,
         required:true
+    }, 
+    bio: {
+        type: String
+    },
+    coins: {
+        type: Number,
+        required:true
+    },
+    inventory: {
+        soap: {
+            type: Number, 
+            required: true
+        },
+        treats: {
+            type: Number,
+            required:true
+        }
     }
 }, {
     timestamps: true

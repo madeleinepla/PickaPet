@@ -12,7 +12,7 @@ const HomePage = (props) => {
       <div>
         <ModalContainer />
       </div>
-      <div>
+      <div className='home-main'>
         <HomeDog />
       </div>
 

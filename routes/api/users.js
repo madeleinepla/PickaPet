@@ -23,7 +23,10 @@ router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=
         dateJoined:req.user.dateJoined,
         friends:req.user.friends,
         pets:req.user.friends,
-        points:req.user.points
+        points:req.user.points,
+        bio:req.user.bio,
+        coins:req.user.coins,
+        inventory:req.user.inventory
     })
 })
 router.get('/:id', (req,res)=>{
@@ -36,7 +39,10 @@ router.get('/:id', (req,res)=>{
         dateJoined:user.dateJoined,
         friends:user.friends,
         pets:user.pets,
-        points:user.points
+        points:user.points,
+        bio:user.bio,
+        coins:user.coins,
+        inventory:user.inventory
     }))
     .catch(err =>
       res.status(404).json({ nouserfound: 'No user found' }
@@ -94,10 +100,40 @@ router.patch('/:id/addpet/',passport.authenticate('jwt', {session:false}), (req,
         .catch(err=>res.status(400).json({error:err.message}))
 })
 router.patch('/:id', (req, res)=>{
-    const updatedname = req.body.username
+    let updates = {}
+    const updatedusername = req.body.username
+    if (updatedusername) {
+        updates["username"] = updatedusername
+    }
+    const updatedbio = req.body.bio
+    if (updatedbio) {
+        updates["bio"] = updatedbio
+    }
+    const updatedcoins = req.body.coins
+    if (updatedcoins) {
+        updates["coins"] = updatedcoins
+    }
+    const updatedpoints = req.body.points
+    if (updatedpoints) {
+        updates["points"] = updatedpoints
+    }
+    const updatedsoap = req.body.soap
+    if (updatedsoap) {
+        if (!updates["inventory"]) {
+            updates["inventory"] = {}
+            }
+        updates["inventory"]["soap"] = updatedsoap
+    }
+    const updatedtreats = req.body.treats
+    if (updatedtreats) {
+        if (!updates["inventory"]) {
+            updates["inventory"] = {}
+            }
+        updates["inventory"]["treats"] = updatedtreats
+    }
     const options = {new:true};
     User.findByIdAndUpdate(
-      req.params.id, {username:updatedname}, options)
+      req.params.id, updates, options)
       .then(user=>res.send(user))
       .catch(err=>res.status(400).json({error:err.message}))
   })
@@ -143,6 +179,9 @@ router.post('/register',(req,res)=>{
                 password:req.body.password, 
                 points: 0,
                 dateJoined: new Date(),
+                coins:0,
+                bio: "",
+                inventory: {soap:0, treats:0}
 
             })
             bcrypt.genSalt(10,(err,salt)=>{
@@ -190,6 +229,9 @@ router.post('/login', (req, res)=> {
                     email:user.email, 
                     points:user.points,
                     dateJoined:user.dateJoined,  
+                    coins:user.coins,
+                    bio:user.bio,
+                    inventory:user.inventory
                 }
                 jwt.sign(
                     payload,
