@@ -24,9 +24,16 @@
 @import './navbar.css';
 @import './modal.css';
 @import './home_dog.css';
+@import './home_page.css';
 @import './pet.css';
 @import './petshow.css';
+@import './user.css';
+
 
 body {
   background-color: var(--light-purple);
+}
+
+.full-page {
+  height: 100vh;
 }

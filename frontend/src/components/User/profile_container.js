@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
+import { requestPets } from '../../actions/pet_actions';
 import Profile from './profile';
 
 const mSTP = (state, ownProps) => {
   const users = Object.values(state.entities.users.all);
-  debugger
+  const pets = Object.values(state.entities.pets.all);
   return {
     users: users,
+    user: state.entities.users.user,
+    pets: pets,
     currentUser: state.entities.users.user,
     ownProps
   }
@@ -15,7 +18,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    requestPets: () => dispatch(requestPets())
   }
 };
 
