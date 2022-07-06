@@ -2,6 +2,7 @@ import React from "react";
 import PetIndexItem from "./pet_index_item";
 import { withRouter } from 'react-router-dom';
 import '../../styles/pet.css'
+import {sample} from '../../util/random_util'
 
 class PetIndex extends React.Component {
     constructor(props) {
@@ -22,15 +23,20 @@ class PetIndex extends React.Component {
         // console.log(this.state)
         const { pets, currentUser } = this.props
         // debugger
-
+        const i = Math.floor(Math.random() * (pets.length/2)) // 0-3
+        const j = Math.floor(Math.random() * (pets.length/2)+4) //4-7
+        // console.log(i)
+        // console.log(j)
+        const randPets = pets.slice(i, i+4) //if want just random pets without fixed number replace i+4 to j.
         
-
-        if (pets.length === 0 ) {
+        // const randPets = sample(pets, 4)
+        // debugger
+        if (randPets.length === 0 ) {
             return null
         }  else {
         return (
             <div className="pet-boxes">
-                {pets.map((pet)=> (
+                {randPets.map((pet)=> (
                     <PetIndexItem
                         pet = { pet }
                         key = { pet._id }
