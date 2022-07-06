@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillUnmount() {
@@ -23,6 +24,64 @@ class LoginForm extends React.Component {
     return e => {
       this.setState({ [field]: e.target.value})
     }
+  }
+
+  handleDemo() {
+    let demoUser = {
+      email: "demoUser@demo.com",
+      // username: demoUser,
+      password: "123456"
+    }
+
+    let i = 0;
+
+    const displayEmail = () => {
+      const displayEmailInterval = setInterval(() => {
+        this.setState({ email: demoUser["email"].slice(0, i + 1) })
+
+        if (i >= demoUser["email"].length - 1) {
+          clearInterval(displayEmailInterval);
+          displayPassword();
+        }
+
+        i++;
+      }, 75);
+    }
+
+    let j = 0;
+
+    const displayPassword = () => {
+      const displayPasswordInterval = setInterval(() => {
+        this.setState({ password: demoUser["password"].slice(0, j + 1) })
+
+        if (j >= demoUser["password"].length - 1) {
+          clearInterval(displayPasswordInterval);
+          this.props.login(demoUser).then(
+            () => {
+              this.props.closeModal();
+              this.setState({
+                email: "",
+                password: ""
+              })
+            }
+          )
+        }
+
+        j ++;
+      }, 75);
+    }
+
+    // this.props.login(demoUser).then(
+    //   () => {
+    //     this.props.closeModal();
+    //     this.setState({
+    //       email: "",
+    //       password: ""
+    //     })
+    //   }
+    // )
+
+    displayEmail();
   }
 
   handleLogin(e) {
@@ -85,6 +144,12 @@ class LoginForm extends React.Component {
               type="submit"
               value="Log In"
               onClick={this.handleLogin}
+            />
+
+            <input
+              type="submit"
+              value="Try a Demo"
+              onClick={this.handleDemo}
             />
           </div>
         </div>
