@@ -20,12 +20,7 @@ class PetIndexItem extends React.Component {
         // let month = pet.birthday.getMonth();
         // let bday =  `${month}/${day}/${year}`
 
-        // let userPets = currentUser.pets
-        // let pickaPet = (userPets.length !== 0 && userPets.includes(pet._id)) ? (
-        //     <div>Already have</div>
-        // ) : ( 
-        //     <div>Pick</div>
-        // )
+     
 
 
         return (
