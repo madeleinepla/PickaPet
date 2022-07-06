@@ -24,7 +24,8 @@ const FriendIndex = ({ users, user, fetchUser, ownProps }) => {
           <ul>
             {
               friends.map((friend, i) => {
-                return <li className='friend-item' key={i}><Link to={`/users/${friend._id}`}>{friend.username}</Link></li>
+                return <Link key={i} className='friend-item' to={`/users/${friend._id}`}><li >{friend.username}</li></Link>
+                // return <li className='friend-item' key={i}><Link to={`/users/${friend._id}`}>{friend.username}</Link></li>
               })
             }
           </ul>

@@ -82,21 +82,22 @@
   height: 50%;
 }
 
-.friend-item {
+.friend-item > li{
   border: 2px solid var(--dark-purple);
   margin: 10px 0;
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--light-purple);
+  color: white;
 }
 
-.friend-item:hover {
+.friend-item > li:hover {
   transition: .5s;
     transform: scale(1.02);
 }
 
-.friend-item * {
-  color: white
+.friend-item {
+  text-decoration: none;
 }
 
 .user-pets {
