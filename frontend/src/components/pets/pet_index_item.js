@@ -10,6 +10,7 @@ class PetIndexItem extends React.Component {
     }
     
     render() { 
+        // debugger
         const { pet, currentUser } = this.props;
         // debugger
         // console.log(this.props)
@@ -29,10 +30,10 @@ class PetIndexItem extends React.Component {
 
         return (
             <div className="pet-index-container">
-                <Link to={`/pets/${pet.id}`} style={{textDecoration:'none', color: 'inherit' }}>
+                <Link to={`/pets/${pet._id}`} style={{textDecoration:'none', color: 'inherit' }}>
                     <div className="pet-box">
                         {/* <iframe className='pet-profileUrl' src={pet.profileUrl} alt='loading...'></iframe>  */}
-                    <img className='pet-profileUrl' src={pet.profileUrl} alt='loading...'/>
+                        <img className='pet-profileUrl' src={pet.profileUrl} alt='loading...'/>
                         <div className="pet-name">{pet.name}</div>
                         <div className="pet-age">Birthday: {date} </div>
                         <div className="pet-gender">Gender: {pet.gender}</div>

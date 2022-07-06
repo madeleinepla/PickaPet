@@ -9,13 +9,14 @@ import pet_index_container from './pets/pet_index_container';
 import '../styles/index.css'
 import ProfileContainer from './User/profile_container';
 import NavBarContainer from './nav/navbar_container';
-import per_show_container from './pets/per_show_container';
+import pet_show_container from './pets/pet_show_container';
 
 const App = () => (
 
   <div className='full-page'>
     <NavBarContainer/>
     <Switch>
+
 
       <ProtectedRoute exact path='/pets/:petId' component={per_show_container} />
       <ProtectedRoute exact path='/pets' component={pet_index_container} />
