@@ -18,10 +18,13 @@ class PetIndex extends React.Component {
     }
 
     render() { 
-        // debugger
         // console.log(this.props)
         // console.log(this.state)
-        const { pets } = this.props
+        const { pets, currentUser } = this.props
+        // debugger
+
+        
+
         if (pets.length === 0 ) {
             return null
         }  else {
@@ -30,7 +33,8 @@ class PetIndex extends React.Component {
                 {pets.map((pet)=> (
                     <PetIndexItem
                         pet = { pet }
-                        key = { pet.id }
+                        key = { pet._id }
+                        currentUser = { currentUser }
                         />
                 ))}
             </div>

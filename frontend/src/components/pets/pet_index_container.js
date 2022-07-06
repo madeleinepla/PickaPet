@@ -5,7 +5,8 @@ import {requestPets} from '../../actions/pet_actions'
 const mSTP = (state) => {
     // debugger
     return {
-        pets: Object.values(state.entities.pets.all)
+        pets: Object.values(state.entities.pets.all),
+        currentUser: state.session.user
     }
 }
 
