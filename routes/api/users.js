@@ -215,8 +215,9 @@ router.post('/register', (req, res) => {
                             .catch(err => console.log(err));
                     });
                 });
-            }
-        });
+            })
+        })
+    }});
 });
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
