@@ -194,25 +194,23 @@ router.post('/register', (req, res) => {
                     coins: 0,
                     bio: "",
                     inventory: { soap: 0, treats: 0 }
+            })
+            bcrypt.genSalt(10,(err,salt)=>{
+                bcrypt.hash(newUser.password, salt,(err, hash)=>{
+                    if(err) throw err;
+                    newUser.password = hash
+                    newUser.save()
+                    .then((user)=>{
+                        const payload = {
+                            id: user.id,
+                            username: user.username,
+                            email: user.email
+                        };
+                        jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
+                            res.json({
+                                success: true,
+                                token: "Bearer " + token
 
-                });
-                bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        if (err) throw err;
-                        newUser.password = hash;
-                        newUser.save()
-                            .then((user) => {
-                                const payload = {
-                                    id: user.id,
-                                    handle: user.handle,
-                                    email: user.email
-                                };
-                                jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-                                    res.json({
-                                        success: true,
-                                        token: "Bearer " + token
-                                    });
-                                });
                             })
                             .catch(err => console.log(err));
                     });
