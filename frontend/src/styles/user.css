@@ -27,13 +27,50 @@
   justify-content: space-around;
 }
 
+.user-info-title {
+  display: flex;
+  justify-content: center;
+  font-family: CheriRegular;
+  font-size: 30px;
+  border: 1px solid var(--light-purple);
+  background-color: var(--light-purple);
+  border-radius: 50px;
+  margin: 20px 20% 0 20%;
+  padding: 10px 0 10px 0;
+}
+
 .user-details {
   margin: 25px 25px 10px 25px;
   border: 3px solid var(--dark-purple);
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px 25px;
   background-color: var(--light-yellow);
   height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.user-edit-btn {
+  display: flex;
+  justify-content: center;
+  margin: 0 20%;
+  margin-top: 10px;
+  border: 3px solid var(--dark-purple);
+  background-color: var(--light-purple);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.user-edit-btn > * {
+  margin-top: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.user-edit-btn:hover {
+  transition: .5s;
+    transform: scale(1.05);
 }
 
 .friends-index {
@@ -43,6 +80,23 @@
   padding: 15px;
   background-color: var(--light-yellow);
   height: 50%;
+}
+
+.friend-item {
+  border: 2px solid var(--dark-purple);
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--light-purple);
+}
+
+.friend-item:hover {
+  transition: .5s;
+    transform: scale(1.02);
+}
+
+.friend-item * {
+  color: white
 }
 
 .user-pets {
@@ -71,7 +125,7 @@
 .pet-item {
   margin: 10px;
   border: 3px solid var(--dark-purple);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 15px;
   background-color: var(--light-yellow);
   display: flex;
@@ -85,14 +139,19 @@
   border: 3px solid var(--light-purple);
 }
 
-.pet-thumbnail img{
+.pet-thumbnail {
   height: 85px;
   width: 85px;
   margin-right: 25px;
+}
+
+.pet-thumbnail img{
+  height: 85px;
+  width: 85px;
   border-radius: 10px;
 }
 
-.pet-info {
+.pet-item-info {
   display: flex;
   flex-direction: column;
   background-color: var(--light-purple);
@@ -101,7 +160,7 @@
   width: 100%;
 }
 
-.pet-info *{
+.pet-item-info *{
   color: white;
   font-size: 20px;
 }

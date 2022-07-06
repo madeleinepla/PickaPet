@@ -35,7 +35,7 @@ class Profile extends React.Component {
                   <img src={pet.profileUrl} alt='loading...' />
                 </div>
             
-                <div className='pet-info'>
+                <div className='pet-item-info'>
                   <p>Name: {pet.name}</p>
                   <p>Breed: {pet.breed}</p>
                   <p>Age: {age}</p>
@@ -55,15 +55,23 @@ class Profile extends React.Component {
     return (
       <div className='user-page'>
         <div className='user-info'>
+
+          <div className='user-info-title'>
+            all about { this.props.user.id === this.props.currentUser.id ? 'you' : this.props.user.username}
+          </div>
+
           <div className='user-details'>
             <div>Username: {username}</div>
-            <div>Date Joined:{formatDate(dateJoined)}</div>
+            <div>Date Joined: {formatDate(dateJoined)}</div>
             <div>Points: {points}</div>
             <div>Bio: {bio}</div>
             {
-              
+              this.props.user.id === this.props.currentUser.id ?
+              <div className='user-edit-btn'>
+                <Link to={`/users/${id}/edit`}>Edit ur info</Link>
+              </div> :
+              null
             }
-            <Link to={`/users/${id}/edit`}>Edit ur info</Link>
           </div>
 
             <div className='friends-index'>
@@ -78,7 +86,7 @@ class Profile extends React.Component {
 
         <div className='user-pets'>
           <div className='pets-list'>
-            <div className='pets-list-title'>{`${username} 's Pets`}</div>
+            <div className='pets-list-title'>{this.props.user.id === this.props.currentUser.id ? 'your' : `${this.props.user.username}'s`} pets</div>
 
             {this.pets()}
           </div>
