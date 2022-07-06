@@ -105,3 +105,60 @@
   color: white;
   font-size: 20px;
 }
+
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-blue);
+  border: 5px solid var(--dark-purple);
+  border-radius: 10px;
+  margin: 50px 30% 0 30%;
+  font-family: ShakyRegular;
+  color: var(--dark-purple);
+}
+
+.edit-user-form h1{
+  margin: 25px;
+  background-color: var(--dark-purple);
+  padding: 15px;
+  border-radius: 50px;
+  font-family: CheriRegular;
+  font-size: 30px;
+  color: var(--light-yellow);
+}
+
+.edit-user-form-input {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.edit-user-form-input > * {
+  margin: 15px 0 15px 0;
+  font-size: 24px;
+}
+
+.edit-user-form-input label {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.edit-user-submit-btn {
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-purple);
+  border-radius: 5px;
+  padding: 10px 40px 10px 40px;
+  font-size: 24px;
+  color: var(--dark-purple);
+  font-family: ShakyRegular;
+  cursor: pointer;
+}
+
+.edit-user-submit-btn:hover {
+  transition: .5s;
+  transform: scale(1.05);
+  border-color: var(--light-purple);
+}
