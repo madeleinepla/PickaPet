@@ -1,4 +1,6 @@
 import React from "react";
+import '../../styles/petshow.css';
+import { formatDate } from '../../util/date_util';
 
 
 class PetShow extends React.Component {
@@ -7,74 +9,33 @@ class PetShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.requestPet(this.props.petId);
     }
 
-    showPet() {
-        const { pet } = this.props;
-
-        return (
-            <div>
-                <div>{pet.name}</div>
-                <div>{pet.species}</div>
-                <div>{pet.breed}</div>
-                <div>{pet.birthday}</div>
-                <div>{pet.gender}</div>
-                {/* <div>{this.description()}</div> */}
-            </div>
-        )
-    }
-
-    // description() {
-    //     const { pet } = this.props;
-    //     switch (pet.breed) {
-    //         case 'Kinkalow':
-    //             return (
-    //                 <div>This is a Kinkalow</div>
-    //             )
-    //         case 'Shiba Inu':
-    //             return (
-    //                 <div>This is a Shiba Inu</div>
-    //             )
-    //         case 'Corgi':
-    //             return (
-    //                 <div>This is a Corgi</div>
-    //             )
-    //         case 'Golden Retriver':
-    //             return (
-    //                 <div>This is a Golden Retriver</div>
-    //             )
-    //         case 'British Shorthair':
-    //             return (
-    //                 <div>This is a British Shorthair</div>
-    //             )
-    //         case 'Orange Tabby':
-    //             return (
-    //                 <div>This is a Orange Tabby</div>
-    //             )
-    //         case 'Exotic Shorthair':
-    //             return (
-    //                 <div>This is a Exotic Shorthair</div>
-    //             )
-    //         default:
-    //             return (
-    //                 <div>Error</div>
-    //             )
-    //     }
-    // }
-
     render() { 
-        // debugger
-        // const pet = this.props.pets.filter(pet => pet._id === this.props.ownProps.match.params.petId)
         const { pet } = this.props
-        // debugger
-
+        
         if (!pet) return null;
+
         return (
-            <div>
-                {/* <div>Test</div> */}
-                <div>{this.showPet()}</div>
+            <div className="pet-show-container">
+                <div className="pet-show-info-container-1">
+                    <div className="pet-show-information">
+                        <div className="pet-info"><span>Name:</span> {pet.name}</div>
+                        <div className="pet-info"><span>Species:</span> {pet.species}</div>
+                        <div className="pet-info"><span>Breed:</span> {pet.breed}</div>
+                        <div className="pet-info"><span>Birthday:</span> {formatDate(pet.birthday)}</div>
+                        <div className="pet-info"><span>Gender:</span> {pet.gender}</div>
+                    </div>
+                    <div className="image-container">
+                        <img className="pet-show-image" src={pet.showGif}/>
+                    </div>
+                </div>
+                <div className="pet-show-info-container-2">
+                    <div className="pet-show-description">
+                        <div className="pet-info-description"><span>Description:</span> {pet.description}</div>
+                    </div>
+                </div>
             </div>
         );
     }

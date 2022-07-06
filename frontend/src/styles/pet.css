@@ -13,7 +13,7 @@
 
 
 .pet-index-container {
-    flex-basis: 21%;
+    flex-basis: 34%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -36,8 +36,8 @@
     box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(0, 0, 0, 0.19);
     opacity: 1;
     transition: .3s;
-  transform: scale(1.08);
-  cursor: zoom-in;
+    transform: scale(1.08);
+    cursor: zoom-in;
 }
 
 .pet-profileUrl {

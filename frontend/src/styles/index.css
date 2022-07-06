@@ -26,7 +26,9 @@
 @import './home_dog.css';
 @import './home_page.css';
 @import './pet.css';
+@import './petshow.css';
 @import './user.css';
+
 
 body {
   background-color: var(--light-purple);
