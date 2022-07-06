@@ -6,7 +6,7 @@
   justify-content: space-between;
   color: white;
   height: 40px;
-  padding: 15px 20px 15px 20px;
+  padding: 15px 30px 15px 30px;
   font-family: CheriRegular;
   min-width: 800px;
 }
@@ -47,12 +47,61 @@ ul li > a {
   cursor: pointer;
 }
 
-.nav-petstore {
-  font-size: 36px;
+.dropdown {
+  float: left;
+  overflow: hidden;
+  width: 180px;
 }
 
-.nav-petstore:hover {
-  transition: .5s;
-  transform: scale(1.05);
+.nav-btn {
+  padding: 10px 20px 10px 20px;
+  border: 2px solid var(--light-purple);
+  border-radius: 5px;
+  background-color: var(--dark-purple);
+  color: white;
+  font-family: ShakyRegular;
+  font-size: 22px;
+  width: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: inherit;
+  background-color: var(--light-blue);
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 22px;
+}
+
+.dropdown-content ul {
+  margin: 15px 10px 15px 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  box-shadow: 5px 5px 5px var(--dark-purple);
+}
+
+.dropdown:hover .nav-btn {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.dropdown-content li {
+  margin: 10px 0 10px 0;
+  padding: 3px 0 3px 0;
+  text-shadow: 1px 1px var(--dark-purple);
+}
+
+.dropdown-content li:hover {
+  transition: .2s;
+  border-bottom: 2px solid var(--light-yellow);
+}
+
+.dropdown-content * {
   cursor: pointer;
 }

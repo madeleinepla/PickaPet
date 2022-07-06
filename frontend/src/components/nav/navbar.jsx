@@ -10,11 +10,17 @@ const NavBar = (props) => {
   const navbarLinks = () => {
     // debugger
     return props.loggedIn ? (
-      <div className='navbar-links'>
-        <ul>
-          <li><Link to={`/users/${props.currentUser.id}`}>Profile Page</Link></li>
-          <li onClick={logoutUser}>Log Out</li>
-        </ul>
+      <div className='dropdown'>
+        <button className="nav-btn">
+          Welcome, {props.currentUser.username}
+        </button>
+        <div className="dropdown-content">
+          <ul >
+            <li><Link to={`/users/${props.currentUser.id}`}>Profile Page</Link></li>
+            <li><Link to='/pets'>Pet Store</Link></li>
+            <li onClick={logoutUser}>Log Out</li>
+          </ul>
+        </div>
       </div>
     ) : (
         <div className='navbar-links'>
@@ -29,7 +35,7 @@ const NavBar = (props) => {
   return (
     <div className='navbar'>
       <div><Link to='/'>Picka Pet</Link></div>
-      <div className='nav-petstore'><Link to='/pets' style={{ textDecoration: 'none', color: 'inherit' }}>Pet Store</Link></div>
+      
       {navbarLinks()}
     </div>
   )
