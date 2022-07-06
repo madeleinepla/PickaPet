@@ -8,8 +8,11 @@ import SignupFormContainer from './session/signup_form_container';
 import pet_index_container from './pets/pet_index_container';
 import '../styles/index.css'
 import ProfileContainer from './User/profile_container';
+import EditProfileContainer from './User/edit_profile_container';
 import NavBarContainer from './nav/navbar_container';
 import pet_show_container from './pets/pet_show_container';
+import search_container from './search/search_container';
+
 
 const App = () => (
 
@@ -21,10 +24,12 @@ const App = () => (
       <ProtectedRoute exact path='/pets/:petId' component={pet_show_container} />
       <ProtectedRoute exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
+      <Route exact path='/search' component={search_container} />
+
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <ProtectedRoute exact path='/users/:id' component={ProfileContainer} />
-      {/* <ProtectedRoute exact path='/users/:id/edit' component={EditProfileContainer} /> */}
+      <ProtectedRoute exact path='/users/:id/edit' component={EditProfileContainer} />
     </Switch>
   </div>
 )

@@ -4,13 +4,14 @@ import { requestPets } from '../../actions/pet_actions';
 import Profile from './profile';
 
 const mSTP = (state, ownProps) => {
+  // debugger
   const users = Object.values(state.entities.users.all);
   const pets = Object.values(state.entities.pets.all);
   return {
     users: users,
     user: state.entities.users.user,
     pets: pets,
-    currentUser: state.entities.users.user,
+    currentUser: state.session.user,
     ownProps
   }
 };
