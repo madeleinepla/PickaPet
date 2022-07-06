@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const FriendIndex = ({ users, currentUser }) => {
-  if (!users) {
+const FriendIndex = ({ users, user, fetchUser, ownProps }) => {
+  useEffect(() => {
+    fetchUser(ownProps.match.params.id)
+  },[ownProps.match.params.id])
+
+  if (!(users && user && user.friends)) {
     return null;
   }
 
-  const friends = users.filter((user) => {
-    return currentUser.friends.includes(user._id)
+  const friends = users.filter((friend) => {
+    return user.friends.includes(friend._id)
   })
 
   return (
@@ -18,8 +23,8 @@ const FriendIndex = ({ users, currentUser }) => {
         :
           <ul>
             {
-              friends.map(friend => {
-                return <li>friend.username</li>
+              friends.map((friend, i) => {
+                return <li key={i}><Link to={`/users/${friend._id}`}>{friend.username}</Link></li>
               })
             }
           </ul>

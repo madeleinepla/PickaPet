@@ -192,7 +192,7 @@ router.post('/register',(req,res)=>{
                     .then((user)=>{
                         const payload = {
                             id: user.id,
-                            handle: user.handle,
+                            username: user.username,
                             email: user.email
                         };
                         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
