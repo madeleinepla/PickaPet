@@ -22,7 +22,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         email: req.user.email,
         dateJoined: req.user.dateJoined,
         friends: req.user.friends,
-        pets: req.user.friends,
+        pets: req.user.pets,
         points: req.user.points,
         bio: req.user.bio,
         coins: req.user.coins,
@@ -204,7 +204,8 @@ router.post('/register', (req, res) => {
                         const payload = {
                             id: user.id,
                             username: user.username,
-                            email: user.email
+                            email: user.email,
+                            pets: user.pets
                         };
                         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
                             res.json({
@@ -215,8 +216,9 @@ router.post('/register', (req, res) => {
                             .catch(err => console.log(err));
                     });
                 });
-            }
+            })
         });
+    }})
 });
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);

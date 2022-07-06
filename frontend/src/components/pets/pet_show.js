@@ -6,16 +6,40 @@ import { formatDate } from '../../util/date_util';
 class PetShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = "show"
     }
 
     componentDidMount() {
+        this.props.fetchUser(this.props.ownProps.match.params.id)
+        // this.props.fetchUser(this.props.user.id)
         this.props.requestPet(this.props.petId);
     }
 
-    render() { 
-        const { pet } = this.props
+    handleFeed(){
         
-        if (!pet) return null;
+    }
+
+    render() { 
+        const { pet, user } = this.props
+        console.log(this.props)
+        console.log(this.state)
+        // if (!pet) return null;
+        if (Object.values(user).length === 0) return null;
+        if (Object.values(pet).length === 0) return null;
+        if (Object.values(user.pets) ===0 ) return null;
+        // debugger
+        let pickaPet = (user.pets.length !== 0 && user.pets.includes(pet._id)) ? (
+            <div>
+                 
+           
+                 <div><button>Feed</button></div>
+                 <div><button>Play</button></div>
+                 <div><button>Pat</button></div>
+                 <div><button>Shower</button></div>
+            </div>
+        ) : ( 
+            <div><button>Pick this Pet</button></div>
+        )
 
         return (
             <div className="pet-show-container">
@@ -29,6 +53,9 @@ class PetShow extends React.Component {
                     </div>
                     <div className="image-container">
                         <img className="pet-show-image" src={pet.showGif}/>
+                    </div>
+                    <div className="pet-show-button">
+                        {pickaPet}
                     </div>
                 </div>
                 <div className="pet-show-info-container-2">
