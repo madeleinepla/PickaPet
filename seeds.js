@@ -14,8 +14,8 @@ const seedPets = [
     breed: "Shiba Inu",
     birthday: Date('2009-06-08'),
     gender: "M",
-    // profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba.png",
-    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba-bark.mov",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba.png",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba-bark.mov",
   },
   {
     name: "Biscuit",

@@ -85,7 +85,7 @@ class SignupForm extends React.Component {
           </label>
           <label>Password:
             <input
-              type="text"
+              type="password"
               placeholder="password"
               value={this.state.password}
               onChange={this.update('password')}
@@ -93,7 +93,7 @@ class SignupForm extends React.Component {
           </label>
           <label>Confirm Password:
             <input
-              type="text"
+              type="password"
               placeholder="password"
               value={this.state.password2}
               onChange={this.update('password2')}
