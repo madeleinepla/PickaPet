@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../../styles/pet.css'
 
 
+
 class PetIndexItem extends React.Component {
     constructor (props) {
         super(props)
@@ -30,7 +31,8 @@ class PetIndexItem extends React.Component {
             <div className="pet-index-container">
                 <Link to={`/pets/${pet.id}`} style={{textDecoration:'none', color: 'inherit' }}>
                     <div className="pet-box">
-                    <img className='pet-profileUrl' src={pet.profileUrl} />
+                        {/* <iframe className='pet-profileUrl' src={pet.profileUrl} alt='loading...'></iframe>  */}
+                    <img className='pet-profileUrl' src={pet.profileUrl} alt='loading...'/>
                         <div className="pet-name">{pet.name}</div>
                         <div className="pet-age">Birthday: {date} </div>
                         <div className="pet-gender">Gender: {pet.gender}</div>

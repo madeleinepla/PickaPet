@@ -14,7 +14,8 @@ const seedPets = [
     breed: "Shiba Inu",
     birthday: Date('2009-06-08'),
     gender: "M",
-    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba.png",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba.png",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba-bark.mov",
   },
   {
     name: "Biscuit",
@@ -118,13 +119,13 @@ const seedUsers = [
 ]  
 
 
-// const seedDB = async () => {
-  // await Pet.deleteMany({});
-  // await Pet.insertMany(seedPets);
-// };
+const seedDB = async () => {
+  await Pet.deleteMany({});
+  await Pet.insertMany(seedPets);
+};
 
-// seedDB()
-//   .then(() => mongoose.connection.close());
+seedDB()
+  .then(() => mongoose.connection.close());
 
 const userDB = async () => {
   // await User.deleteMany({});
