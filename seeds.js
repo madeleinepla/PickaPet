@@ -9,57 +9,113 @@ mongoose.connect(db, { useNewUrlParser: true })
 
 const seedPets = [
   {
-    name: "Monzy",
+    name: "Apple",
     species: "Dog",
-    breed: "huskie",
-    birthday: Date('2016-01-01'),
+    breed: "Shiba Inu",
+    birthday: Date('2009-06-08'),
     gender: "M",
-    profileUrl:"https://media.discordapp.net/attachments/993952200189550652/993952517283139684/Siberian_Huskie_Headshot.png?width=274&height=319",
+    // profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba.png",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shiba-bark.mov",
   },
   {
-    name: "Penny",
+    name: "Biscuit",
     species: "Dog",
-    breed: "shiba",
-    birthday: Date('2013-01-01'),
+    breed: "Corgi",
+    birthday: Date('2010-12-29'),
     gender: "F",
-    profileUrl:"https://media.discordapp.net/attachments/993952200189550652/993952998818598932/Shiba_Inu_Headshot.png?width=272&height=322",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/corgi.png",
   },
   {
-    name: "Essie",
+    name: "Eddy",
+    species: "Dog",
+    breed: "Golden Retriver",
+    birthday: Date('2019-01-01'),
+    gender: "M",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/golden.png",
+  },
+  {
+    name: "Hachi",
+    species: "Dog",
+    breed: "German Shepard",
+    birthday: Date('2000-01-01'),
+    gender: "F",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/german.png",
+  },
+  {
+    name: "Nala",
     species: "Cat",
-    breed: "Calico",
+    breed: "British Shorthair",
     birthday: Date('2019-01-01'),
     gender: "F",
-    profileUrl:"https://yep-seeds.s3.amazonaws.com/images/restaurants/cote1.jpeg",
-  }
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/british.png",
+  },
+  {
+    name: "Simba",
+    species: "Cat",
+    breed: "Orange Tabby",
+    birthday: Date('2016-11-30'),
+    gender: "M",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/orange.png",
+  },
+  {
+    name: "Taco",
+    species: "Cat",
+    breed: "Kinkalow",
+    birthday: Date('2013-12-31'),
+    gender: "F",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/kinkalow.png",
+  },
+  {
+    name: "Woody",
+    species: "Cat",
+    breed: "Exotic Shorthair",
+    birthday: Date('2022-03-28'),
+    gender: "M",
+    profileUrl:"https://yep-seeds.s3.amazonaws.com/pickapet/shorthair.png",
+  },
 ];
 
+
+
+
 const seedUsers = [
-  {
-    username: "example5",
-    email: "example5@email.com",
-    password:"example5",
-    dateJoined: new Date(),
-    points:0,
+  // {
+  //   username: "example5",
+  //   email: "example5@email.com",
+  //   password:"example5",
+  //   dateJoined: new Date(),
+  //   points:0,
     
-  },
+  // },
+  // {
+  //   username: "example6",
+  //   email: "example6@email.com",
+  //   password:"example6",
+  //   pets: ["62c455783868e8e380db2c53", "62c44a19a044df29db96c38b"],
+  //   dateJoined: new Date(),
+  //   points:0,
+  // },
+  // {
+  //   username: "example7",
+  //   email: "example7@email.com",
+  //   password:"example7",
+  //   dateJoined: new Date(),
+  //   pets: ["62c44a19a044df29db96c38c"],
+  //   friends: ["62c45a51fb0e50b80c1b28ec"],
+  //   points:0,
+  // },
+
   {
-    username: "example6",
-    email: "example6@email.com",
-    password:"example6",
-    pets: ["62c455783868e8e380db2c53", "62c44a19a044df29db96c38b"],
+    username: "nilshen",
+    email: "nilshen@email.com",
+    password:"nilshen",
     dateJoined: new Date(),
+    pets: ["62c4ec3afd3744f543419678", "62c4ec3afd3744f543419679"],
+    friends: [],
     points:0,
   },
-  {
-    username: "example7",
-    email: "example7@email.com",
-    password:"example7",
-    dateJoined: new Date(),
-    pets: ["62c44a19a044df29db96c38c"],
-    friends: ["62c45a51fb0e50b80c1b28ec"],
-    points:0,
-  },
+
+  
 ]  
 
 
@@ -71,10 +127,10 @@ const seedDB = async () => {
 seedDB()
   .then(() => mongoose.connection.close());
 
-// const userDB = async () => {
+const userDB = async () => {
   // await User.deleteMany({});
-  // await User.insertMany(seedUsers);
-// };
+  await User.insertMany(seedUsers);
+};
   
-// userDB()
-  // .then(() => mongoose.connection.close());
+userDB()
+  .then(() => mongoose.connection.close());
