@@ -38,9 +38,30 @@ const PetSchema = new Schema({
     type: String,
     required: true
   },
+  description: {
+    type: String,
+  },
   profileUrl: {
     type: String,
-  }
+  },
+  showGif: {
+    type: String,
+  },
+  idleGif: {
+    type: String,
+  },
+  feedGif: {
+    type: String,
+  },
+  showerGif: {
+    type: String,
+  },
+  patGif: {
+    type: String,
+  },
+  playGif: {
+    type: String,
+  },
 })
 const Pet = mongoose.model("pets", PetSchema)
 module.exports = Pet;
