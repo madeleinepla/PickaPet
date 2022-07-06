@@ -8,8 +8,6 @@ const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login');
 
-=======
-
 router.get('/', (req, res) => {
     User.find()
         .then(users => res.json(users))
