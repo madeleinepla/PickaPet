@@ -49,57 +49,9 @@ class Profile extends React.Component {
     )
   }
 
-  // profile() {
-  //   // debugger;
-  //   const { username, dateJoined, points } = this.props.currentUser;
-  //   return (
-  //     this.props.currentUser.id === this.props.ownProps.match.params.id ? (
-  //       <div className='user-page'>
-  //         <div className='user-info'>
-  //           <div className='user-details'>
-  //             <div><span>Username:</span> {username}</div>
-  //             <div><span>Date Joined:</span> {formatDate(dateJoined)}</div>
-  //             <div><span>Points:</span> {points}</div>
-  //           </div>
-
-  //           <div className='friends-index'>
-  //             <FriendIndex users={this.props.users} currentUser={this.props.currentUser}/>
-  //           </div>
-  //         </div>
-          
-  //         <div className='user-pets'>
-  //           <div className='pets-list'>
-  //             <div className='pets-list-title'>{`${username} 's Pets`}</div>
-
-  //             {this.pets()}
-  //           </div>
-  //         </div>
-  //       </div>
-  //     ) : (
-  //       <div className='user-page'>
-  //         <div className='user-info'>
-  //           <div className='user-details'>
-  //             <div><span>Username:</span> {this.props.user.username}</div>
-  //             <div><span>Date Joined:</span> {formatDate(this.props.user.dateJoined)}</div>
-  //             <div><span>Points:</span> {this.props.user.points}</div>
-  //           </div>
-  //         </div>
-
-  //         <div className='user-pets'>
-  //           <div className='pets-list'>
-  //               <div className='pets-list-title'>{`${this.props.user.username} 's Pets`}</div>
-
-  //               {this.pets()}
-  //           </div>
-  //         </div>
-  //       </div>
-  //     )
-  //   )
-  // }
-
   profile() {
     // debugger;
-    const { username, dateJoined, points, bio } = this.props.user;
+    const { username, dateJoined, points, bio, id } = this.props.user;
     return (
       <div className='user-page'>
         <div className='user-info'>
@@ -108,7 +60,10 @@ class Profile extends React.Component {
             <div>Date Joined:{formatDate(dateJoined)}</div>
             <div>Points: {points}</div>
             <div>Bio: {bio}</div>
-
+            {
+              
+            }
+            <Link to={`/users/${id}/edit`}>Edit ur info</Link>
           </div>
 
             <div className='friends-index'>

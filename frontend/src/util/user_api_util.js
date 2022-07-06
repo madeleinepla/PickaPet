@@ -7,3 +7,7 @@ export const getUsers = () => {
 export const getUser = (userId) => {
   return axios.get(`/api/users/${userId}`);
 };
+
+export const patchUser = (user) => {
+  return axios.patch(`/api/users/${user.id}`, user)
+}
