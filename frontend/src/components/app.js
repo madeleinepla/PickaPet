@@ -13,16 +13,17 @@ import per_show_container from './pets/per_show_container';
 
 const App = () => (
 
-  <div>
+  <div className='full-page'>
     <NavBarContainer/>
     <Switch>
 
-      <Route exact path='/pets/:petId' component={per_show_container} />
-      <Route exact path='/pets' component={pet_index_container} />
+      <ProtectedRoute exact path='/pets/:petId' component={per_show_container} />
+      <ProtectedRoute exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <ProtectedRoute exact path='/users/:id' component={ProfileContainer} />
+      <ProtectedRoute exact path='/users/:id/edit' component={EditProfileContainer} />
     </Switch>
   </div>
 )
