@@ -21,11 +21,11 @@ class PetShow extends React.Component {
             <div className="pet-show-container">
                 <div className="pet-show-info-container-1">
                     <div className="pet-show-information">
-                        <div className="pet-info"><span>Name:</span> {pet.name}</div>
-                        <div className="pet-info"><span>Species:</span> {pet.species}</div>
-                        <div className="pet-info"><span>Breed:</span> {pet.breed}</div>
-                        <div className="pet-info"><span>Birthday:</span> {formatDate(pet.birthday)}</div>
-                        <div className="pet-info"><span>Gender:</span> {pet.gender}</div>
+                        <div className="pet-info">Name: {pet.name}</div>
+                        <div className="pet-info">Species: {pet.species}</div>
+                        <div className="pet-info">Breed: {pet.breed}</div>
+                        <div className="pet-info">Birthday: {formatDate(pet.birthday)}</div>
+                        <div className="pet-info">Gender: {pet.gender}</div>
                     </div>
                     <div className="image-container">
                         <img className="pet-show-image" src={pet.showGif}/>
