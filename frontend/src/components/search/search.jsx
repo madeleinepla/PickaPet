@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+// import { FiSearch } from "react-icons/fi"
+
 class search extends React.Component {
     constructor(props) {
         super(props) 
@@ -8,6 +11,7 @@ class search extends React.Component {
     update(e) {
         e.preventDefault()
         this.setState({["search"]:e.currentTarget.value})
+        
     }
     componentDidMount() {        
         this.props.requestPets()
@@ -15,24 +19,32 @@ class search extends React.Component {
 
     }
     render () {
+        console.log(this.state)
         if (this.props.pets.length===0 || this.props.users.length===0) {
             return null
         }
-        debugger
+        // debugger
         let users = this.props.users
         .filter(user=>user.username.toLowerCase().includes(this.state.search.toLowerCase()))
+        if (this.state.search === "") {
+            users = []
+        }  
         return (
             <div className="search">
                     <form className="search-bar-container">
+                        {/* <FiSearch/>  */}
                         <input className="search-bar-input"type="text" value={this.state.search} placeholder="search" onChange={this.update}></input>
                     </form>
                     <div className="search-users-container">
                         <div className="search-users">
-                        {users.map(user=><div className="search-users-user" key={user.id}>
+                        {users.map(user=>
+                            <Link onClick={this.state.search = ""} to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id}>
+                            <div className="search-users-user" key={user.id}>
                             <div className="search-pets">
                                 <p className="search-users-username">{user.username}</p>
                                 <br />
                                 {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
+        
                                     <div className="search-pet">
                                         <img className="search-pet-photo" src={pet.profileUrl} alt="pet photo" />
                                         <div>
@@ -42,9 +54,12 @@ class search extends React.Component {
 
                                         </div>
                                     </div>
+                                     
                                     )}
                             </div>
-                            </div>)}
+                            </div>
+                            </Link>
+                            )}
                         </div>
                     </div>
             </div>
