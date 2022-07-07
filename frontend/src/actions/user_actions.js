@@ -21,10 +21,10 @@ export const fetchUsers = () => dispatch => (
   getUsers()
     .then(users => dispatch(receiveUsers(users)))
 );
-export const fetchSearchUsers = (query) => dispatch => (
-  getSearchUsers(query)
+export const fetchSearchUsers = (query) => dispatch => {
+  return getSearchUsers(query)
     .then (users => dispatch(receiveUsers(users)))
-);
+};
 
 export const fetchUser = (userId) => dispatch => (
   getUser(userId)

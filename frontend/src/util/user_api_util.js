@@ -4,8 +4,8 @@ export const getUsers = () => {
   return axios.get('/api/users');
 };
 export const getSearchUsers = (query) => {
-  debugger
-  return axios.get('/api/users/search-users', query);
+  // debugger
+  return axios.get('/api/users/search-users', {query:query});
 };
 
 export const getUser = (userId) => {
