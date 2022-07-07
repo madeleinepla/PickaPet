@@ -28,31 +28,58 @@ class PetShow extends React.Component {
 
 
     feed() {
+        document.getElementById("feedPet").style.display = "block";
+        document.getElementById("showPet").style.display = "none";
+        setInterval(() => {
+            document.getElementById("feedPet").style.display = "none";
+            document.getElementById("showPet").style.display = "block";
+        }, 5000);
+
         // var petAction = document.getElementById("pet-actions")
         // document.getElementsByClassName("pet-show-image").src = this.props.pet.feedGif;
-        const feedAction = document.createElement('img')
-        feedAction.src = this.props.pet.feedGif;
-        document.querySelector(".image-container").appendChild(feedAction)
+
+        // const feedAction = document.createElement('img')
+        // feedAction.src = this.props.pet.feedGif;
+        // document.querySelector(".image-container").appendChild(feedAction)
+
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.feedGif;
         // debugger;
     }
     play() {
+        document.getElementById("playPet").style.display = "block";
+        document.getElementById("showPet").style.display = "none";
+        setInterval(() => {
+            document.getElementById("playPet").style.display = "none";
+            document.getElementById("showPet").style.display = "block";
+        }, 7000);
         // var petAction = document.getElementById("pet-actions")
-        document.getElementsByClassName("pet-show-image").src = this.props.pet.playGif;
+        // document.getElementsByClassName("pet-show-image").src = this.props.pet.playGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.playGif;
         // debugger;
     }
 
     pat() {
+        document.getElementById("patPet").style.display = "block"
+        document.getElementById("showPet").style.display = "none";
+        setInterval(() => {
+            document.getElementById("patPet").style.display = "none"
+            document.getElementById("showPet").style.display = "block";
+        }, 5000);
         // var petAction = document.getElementById("pet-actions")
-        document.getElementsByClassName("pet-show-image").src = this.props.pet.patGif;
+        // document.getElementsByClassName("pet-show-image").src = this.props.pet.patGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.patGif;
         // debugger;
 
     }
     shower() {
+        document.getElementById("showerPet").style.display = "block"
+        document.getElementById("showPet").style.display = "none";
+        setInterval(() => {
+            document.getElementById("showerPet").style.display = "none"
+            document.getElementById("showPet").style.display = "block";
+        }, 5000);
         // var petAction = document.getElementById("pet-actions")
-        document.getElementsByClassName("pet-show-image").src = this.props.pet.showerGif;
+        // document.getElementsByClassName("pet-show-image").src = this.props.pet.showerGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.showerGif;
         // debugger
     }
@@ -93,7 +120,11 @@ class PetShow extends React.Component {
                         <div className="pet-info">Gender: {pet.gender}</div>
                     </div>
                     <div className="image-container">
-                        <img className="pet-show-image" src={pet.showGif} key={Math.random().toString(36)}/>
+                        <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="feedPet" src={pet.feedGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="playPet" src={pet.playGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="showerPet" src={pet.showerGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="patPet" src={pet.patGif} key={Math.random().toString(36)} />
                     </div>
                     <div className="pet-show-button">
                         {pickaPet}

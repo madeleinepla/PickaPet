@@ -9,6 +9,9 @@
 }
 
 .pet-show-image {
+  left:45%;
+  top: 15%;
+  position:absolute;
   width: 500px;
   height: 500px;
   border-radius: 8px;
@@ -23,6 +26,22 @@
   transition: .3s;
   transform: scale(1.08);
 }
+
+
+#feedPet {
+  display: none;
+}
+
+#playPet {
+  display: none;
+}
+#patPet {
+  display: none;
+}
+#showerPet {
+  display: none;
+}
+
 
 .pet-show-info-container-1 {
   display: flex;
