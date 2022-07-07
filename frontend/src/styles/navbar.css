@@ -83,7 +83,7 @@
   position: absolute;
   width: inherit;
   background-color: var(--light-blue);
-  z-index: 1;
+  z-index: 11;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 22px;
