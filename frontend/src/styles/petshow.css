@@ -9,9 +9,14 @@
 }
 
 .pet-show-image {
-  width: auto;
+  width: 500px;
   height: 500px;
   border-radius: 8px;
+  object-fit: cover;
+  /* margin-top: 3px; */
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .pet-show-image:hover {

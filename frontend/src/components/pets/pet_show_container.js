@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => {
         user: state.entities.users.user,
         // currentUser: state.session.user,
         currentUser: state.entities.users.user,
+        // currentUser: state.entities.users[state.session.id],
         ownProps,
         
     }
