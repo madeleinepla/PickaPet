@@ -91,7 +91,7 @@ class PetShow extends React.Component {
     }
 
     adopt(user, petId) {
-        debugger
+        // debugger
 
         if (this.user.points > 50) {
            this.user.points -= 50
@@ -127,11 +127,12 @@ class PetShow extends React.Component {
         const { pet, user, prevPath } = this.props;
 
         if(!(pet && user.pets)) return null;
-        debugger;
+        // debugger;
 
         return (
             <div className="pet-show-container">
                 <div className="pet-show-information">
+                    <h2>about this pet</h2>
                     <li>Name: {pet.name}</li>
                     <li>Species: {pet.species}</li>
                     <li>Breed: {pet.breed}</li>
@@ -154,7 +155,10 @@ class PetShow extends React.Component {
                 </div>
 
                 <div className="pet-show-description">
-                    <div className="pet-info-description">Description: {pet.description}</div>
+                    <div className="pet-info-description">
+                        <h2>description</h2>
+                        {pet.description}
+                    </div>
                 </div>
 
             </div>
