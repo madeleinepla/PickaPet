@@ -204,7 +204,7 @@
 }
 
 .homepage-image-container {
-  margin-top: 70px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -213,14 +213,16 @@
 .cats {
   display: flex;
   justify-content: center;
+  position: relative;
+  left: 200px;
 }
 
 .homepage-image {
-  height: 200px;
+  height: 140px;
   margin: 30px 15px;
 }
 
-.huskie, .shiba, .corgi, .dalmatian,
+.husky, .shiba, .corgi, .dalmatian,
 .cockerspaniel, .doberman, .germanshepherd, .goldenretriver,
 .britishshorthair, .kinkalow, .orangetabby, .cheetoh,
 .tonkinese, .chantillytiffany, .exoticshorthair, .exoticcat {
@@ -232,7 +234,8 @@
   border-radius: 10px;
   border: 3px double var(--dark-purple);
   background-color: rgba(254, 254, 254, 0.95);
-  margin-right: 20px;
+  margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 .dogs-1 {
@@ -362,7 +365,7 @@
   top: -120px;
   z-index: 1;
   opacity: 0;
-  animation: 6s linear paw1 infinite;
+  animation: 8s linear paw1 infinite;
 }
 
 .paw2 {
@@ -372,7 +375,7 @@
   z-index: 1;
   transform: rotate(-80deg);
   opacity: 0;
-  animation: 6s linear paw2 infinite;
+  animation: 8s linear paw2 infinite;
 }
 
 .paw3 {
@@ -382,20 +385,20 @@
   z-index: 1;
   transform: rotate(-80deg);
   opacity: 0;
-  animation: 6s linear paw3 infinite;
+  animation: 8s linear paw3 infinite;
 }
 
 @keyframes paw1 {
   0% {
     opacity: 0;
   }
-  5% {
+  15% {
     opacity: 1;
   }
-  89% {
+  69% {
     opacity: 1;
   }
-  90% {
+  75% {
     opacity: 0;
   }
   100% {
@@ -407,13 +410,13 @@
   0% {
     opacity: 0;
   }
-  20% {
+  35% {
     opacity: 1;
   }
-  89% {
+  69% {
     opacity: 1;
   }
-  95% {
+  80% {
     opacity: 0;
   }
   100% {
@@ -425,13 +428,13 @@
   0% {
     opacity: 0;
   }
-  35% {
+  50% {
     opacity: 1;
   }
-  89% {
+  69% {
     opacity: 1;
   }
-  99% {
+  84% {
     opacity: 0;
   }
   100% {
