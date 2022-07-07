@@ -26,7 +26,10 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         points: req.user.points,
         bio: req.user.bio,
         coins: req.user.coins,
-        inventory: req.user.inventory
+        inventory: req.user.inventory,
+        friendRequests: req.user.friendRequests,
+        friendsRequested: req.user.friendsRequested,
+
     });
 });
 
@@ -52,57 +55,91 @@ router.get('/:id', (req, res) => {
             points: user.points,
             bio: user.bio,
             coins: user.coins,
-            inventory: user.inventory
+            inventory: user.inventory,
+            friendRequests: user.friendRequests,
+            friendsRequested: user.friendsRequested,
         }))
         .catch(err =>
             res.status(404).json({ nouserfound: 'No user found' }
             )
         );
 });
-router.patch('/:id/addfriend/', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const friendId = req.body.friendId;
+
+    router.patch('/:id/outgoingaddfriend/', (req, res) => {
+        debugger
+    const currentUser = req.body.currentUser;
     const options = { new: true };
     User.findByIdAndUpdate(
-        req.params.id, { $push: { friendsRequested: friendId } }, options)
-        .then(user => { })
-        .catch(err => { });
-    User.findByIdAndUpdate(friendId, { $push: { friendRequests: req.params.id } }, options)
+        currentUser, { $push: { friendsRequested: req.params.id } }, options)
         .then(user => {
             res.send(user);
         })
         .catch(err => res.status(400).json({ error: err.message }));
 });
-router.patch('/:id/acceptfriendrequest/', passport.authenticate('jwt', { session: false }), (req, res) => {
+    router.patch('/:id/incomingaddfriend/', (req, res) => {
+        debugger
+    const currentUser = req.body.currentUser;
+    const options = { new: true };
+    User.findByIdAndUpdate(req.params.id, { $push: { friendRequests: currentUser } }, options)
+        .then(user => {
+            res.send(user);
+        })
+        .catch(err => res.status(400).json({ error: err.message }));
+})
+
+
+router.patch('/:id/acceptfriendrequest1/',(req, res) => {
     const friendId = req.body.friendId;
     const options = { new: true };
     User.findByIdAndUpdate(
         req.params.id, { $pull: { friendRequests: friendId } }, options)
-        .then(user => { })
-        .catch(err => { });
+        .then(user => { res.send(user)})
+        .catch(err => {res.status(400).json({ error: err.message })});
+})
+router.patch('/:id/acceptfriendrequest2/',(req, res) => {
+    const friendId = req.body.friendId;
+    const options = { new: true };
     User.findByIdAndUpdate(req.params.id, { $push: { friends: friendId } }, options)
-        .then(user => { })
-        .catch(err => { });
+        .then(user => {res.send(user)})
+        .catch(err => {res.status(400).json({ error: err.message })});
+})
+router.patch('/:id/acceptfriendrequest3/',(req, res) => {
+    const friendId = req.body.friendId;
+    const options = { new: true };
     User.findByIdAndUpdate(friendId, { $pull: { friendsRequested: req.params.id } }, options)
-        .then(user => { })
-        .catch(err => { });
+        .then(user => {res.send(user)})
+        .catch(err => {res.status(400).json({ error: err.message })});
+})
+router.patch('/:id/acceptfriendrequest4/',(req, res) => {
+    const friendId = req.body.friendId;
+    const options = { new: true };
     User.findByIdAndUpdate(friendId, { $push: { friends: req.params.id } }, options)
         .then(user => {
             res.send(user);
         })
         .catch(err => res.status(400).json({ error: err.message }));
-});
-router.patch('/:id/unfriend/', passport.authenticate('jwt', { session: false }), (req, res) => {
-    const friendId = req.body.friendId;
+})
+
+
+
+router.patch('/:id/unfriend1/', (req, res) => {
+    const currentUser = req.body.currentUser;
     const options = { new: true };
     User.findByIdAndUpdate(
-        req.params.id, { $pull: { friends: friendId } }, options)
-        .then(user => { })
-        .catch(err => { });
-    User.findByIdAndUpdate(
-        friendId, { $pull: { friends: req.params.id } }, options)
+        req.params.id, { $pull: { friends: currentUser.id } }, options)
         .then(user => res.send(user))
         .catch(err => res.status(400).json({ error: err.message }));
 });
+router.patch('/:id/unfriend2/', (req, res) => {
+    const currentUser = req.body.currentUser;
+    const options = { new: true };
+    User.findByIdAndUpdate(
+        currentUser.id, { $pull: { friends: req.params.id } }, options)
+        .then(user => res.send(user))
+        .catch(err => res.status(400).json({ error: err.message }));
+});
+
+
 router.patch('/:id/addpet/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const petId = req.body.petId;
     const options = { new: true };
@@ -205,7 +242,9 @@ router.post('/register', (req, res) => {
                             id: user.id,
                             username: user.username,
                             email: user.email,
-                            pets: user.pets
+                            pets: user.pets,
+                            friendRequests: req.user.friendRequests,
+                            friendsRequested: req.user.friendsRequested,
                         };
                         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
                             res.json({
@@ -243,7 +282,9 @@ router.post('/login', (req, res) => {
                             dateJoined: user.dateJoined,
                             coins: user.coins,
                             bio: user.bio,
-                            inventory: user.inventory
+                            inventory: user.inventory,
+                            friendRequests: user.friendRequests,
+                            friendsRequested: user.friendsRequested,
                         };
                         jwt.sign(
                             payload,
