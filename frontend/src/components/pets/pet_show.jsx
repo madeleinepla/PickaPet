@@ -5,6 +5,7 @@ import { formatDate } from '../../util/date_util';
 class PetShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = this.props.ownProps.location.state;
         this.feed = this.feed.bind(this);
         this.play = this.play.bind(this);
         this.pat = this.pat.bind(this);
@@ -75,18 +76,27 @@ class PetShow extends React.Component {
         }, 5000);
     }
 
+    adopt(user, petId) {
+        debugger
+        this.props.adoptPet(user, petId);
+    }
+
     pickaPet() {      
-        // debugger;    
-        if (this.props.ownProps.location.state && this.props.ownProps.location.state.prevPath === '/pets') {
-            return <div>
-                <button>Pick this Pet</button>
+        // debugger;
+        if (this.state && this.state.prevPath === '/pets') {
+            return <div className="pet-show-button-adopt">
+                {
+                    (this.props.user.pets.length < 4) ?
+                    <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
+                    <button className="max-pets" disabled>max pets</button>
+                }
             </div>
         } else {
-           return <div>
-                <div><button onClick={this.feed} className="pet-show-button">Feed</button></div>
-                <div><button onClick={this.play} className="pet-show-button">Play</button></div>
-                <div><button onClick={this.pat} className="pet-show-button">Pat</button></div>
-                <div><button onClick={this.shower} className="pet-show-button">Shower</button></div>
+            return <div className="pet-show-button">
+                <button onClick={this.feed} className="pet-show-button">Feed</button>
+                <button onClick={this.play} className="pet-show-button">Play</button>
+                <button onClick={this.pat} className="pet-show-button">Pat</button>
+                <button onClick={this.shower} className="pet-show-button">Shower</button>
             </div> 
         }
     }
@@ -112,9 +122,7 @@ class PetShow extends React.Component {
                         <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
                     </div>
 
-                    <div className="pet-show-button">
-                        {this.pickaPet()}
-                    </div>
+                    {this.pickaPet()}
                 </div>
 
                 <div className="pet-show-description">

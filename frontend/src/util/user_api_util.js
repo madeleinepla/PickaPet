@@ -11,3 +11,8 @@ export const getUser = (userId) => {
 export const patchUser = (user) => {
   return axios.patch(`/api/users/${user.id}`, user)
 }
+
+export const addPetToUser = (user, petId) => {
+  debugger;
+  return axios.patch(`/api/users/${ user.id }/addpet`, {petId: petId})
+}
