@@ -281,11 +281,11 @@
   }
   24% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   100% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
 }
 
@@ -305,11 +305,11 @@
   }
   48% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   100% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
 }
 
@@ -328,11 +328,11 @@
   }
   72% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   100% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
 }
 
@@ -351,11 +351,11 @@
   }
   96% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   100% {
     opacity: 0;
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
 }
 
