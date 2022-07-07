@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
-import { fetchUsers, } from "../../actions/user_actions"
+import { fetchUsers, fetchSearchUsers } from "../../actions/user_actions"
 import {requestPets} from "../../actions/pet_actions"
-import search from "./search"
+import searchResults from "./search_page"
 
 const mSTP = (state, ownProps) => {
     const pets = Object.values(state.entities.pets.all)
@@ -13,5 +13,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
     fetchUsers: ()=>dispatch(fetchUsers()),
     requestPets: ()=>dispatch(requestPets()),
+    fetchSearchUsers: (query)=>dispatch(fetchSearchUsers(query))
 })
-export default connect(mSTP, mDTP)(search)
+export default connect(mSTP, mDTP)(searchResults)

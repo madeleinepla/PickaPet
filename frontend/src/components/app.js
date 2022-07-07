@@ -11,6 +11,7 @@ import ProfileContainer from './User/profile_container';
 import NavBarContainer from './nav/navbar_container';
 import pet_show_container from './pets/pet_show_container';
 import search_container from './search/search_container';
+import search_page_container from './search/search_page_container';
 
 
 const App = () => (
@@ -24,6 +25,8 @@ const App = () => (
       <ProtectedRoute exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
       <Route exact path='/search' component={search_container} />
+      <Route exact path='/search-results' component={search_page_container} />
+
 
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />

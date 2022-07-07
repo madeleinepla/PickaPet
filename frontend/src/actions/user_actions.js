@@ -1,4 +1,4 @@
-import { getUsers, getUser } from '../util/user_api_util';
+import { getUsers, getUser, getSearchUsers } from '../util/user_api_util';
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
@@ -20,6 +20,10 @@ export const receiveUser = user => {
 export const fetchUsers = () => dispatch => (
   getUsers()
     .then(users => dispatch(receiveUsers(users)))
+);
+export const fetchSearchUsers = (query) => dispatch => (
+  getSearchUsers(query)
+    .then (users => dispatch(receiveUsers(users)))
 );
 
 export const fetchUser = (userId) => dispatch => (
