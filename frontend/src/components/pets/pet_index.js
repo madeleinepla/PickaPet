@@ -2,6 +2,7 @@ import React from "react";
 import PetIndexItem from "./pet_index_item";
 import { withRouter } from 'react-router-dom';
 import '../../styles/pet.css';
+
 // import {sample} from '../../util/random_util'
 
 class PetIndex extends React.Component {
@@ -58,6 +59,7 @@ class PetIndex extends React.Component {
         } else {
             return (
                 <div className="pet-boxes">
+                    
                     {randPets.map((pet) => (
                         <PetIndexItem
                             pet={pet}

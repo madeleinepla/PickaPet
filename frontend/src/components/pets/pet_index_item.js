@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../../styles/pet.css'
-
-
+import pin from '../../assets/images/pushpin.png';
 
 class PetIndexItem extends React.Component {
     constructor (props) {
@@ -20,19 +19,21 @@ class PetIndexItem extends React.Component {
         // let month = pet.birthday.getMonth();
         // let bday =  `${month}/${day}/${year}`
 
-     
-
-
         return (
             <div className="pet-index-container">
                 <Link to={`/pets/${pet._id}`} style={{textDecoration:'none', color: 'inherit' }}>
                     <div className="pet-box">
+                        <img className="pushpin" src={pin} alt="" />
                         {/* <iframe className='pet-profileUrl' src={pet.profileUrl} alt='loading...'></iframe>  */}
-                        <img className='pet-profileUrl' src={pet.profileUrl} alt='loading...'/>
-                        <div className="pet-name">{pet.name}</div>
-                        <div className="pet-age">Birthday: {date} </div>
-                        <div className="pet-gender">Gender: {pet.gender}</div>
-                        <div className="pet-breed"> Breed: {pet.breed}</div>
+                        <div className="pet-index-img">
+                            <img src={pet.profileUrl} alt='loading...'/>
+                        </div>
+                        <div className="pet-index-info">
+                            <div>{pet.name}</div>
+                            {/* <div>Birthday: {date} </div>
+                            <div>Gender: {pet.gender}</div>
+                            <div> Breed: {pet.breed}</div> */}
+                        </div>
                         {/* <div>{pickapet}</div> */}
                     </div>
                 </Link>
