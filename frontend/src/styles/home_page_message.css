@@ -1,0 +1,340 @@
+.home-welcome-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  top: -150px;
+  left: 400px;
+}
+
+.home-title-message {
+  font-family: ShakyRegular;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.animated text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.picka-pet-about,
+.picka-pet-cat,
+.picka-pet-dog,
+.picka-pet-pet,
+.picka-pet-interact {
+  font-family: ShakyRegular;
+  font-size: 32px;
+}
+
+.picka-pet-about {
+  text-align: center;
+  color: #0074D9;
+  position: absolute;
+  opacity: 0;
+  animation: 30s linear text1 infinite;
+}
+
+.picka-pet-pet {
+  text-align: center;
+  color: #FF6F61;
+  position: absolute;
+  opacity: 0;
+  animation: 30s linear text2 infinite;
+}
+
+.picka-pet-dog {
+  text-align: center;
+  color: #85144b;
+  position: absolute;
+  opacity: 0;
+  animation: 30s linear text3 infinite;
+}
+
+.picka-pet-cat {
+  text-align: center;
+  color: #3D9970;
+  position: absolute;
+  opacity: 0;
+  animation: 30s linear text4 infinite;
+}
+
+.picka-pet-interact {
+  text-align: center;
+  color: #01FF70;
+  position: absolute;
+  opacity: 0;
+  animation: 30s linear text5 infinite;
+}
+
+@keyframes text1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  3% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  9% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  19% {
+    opacity: 0;
+    transform: translateX(40%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(40%);
+  }
+}
+
+@keyframes text2 {
+  19% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  22% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  28% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  38% {
+    opacity: 0;
+    tranform: translateX(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+}
+
+@keyframes text3 {
+  38% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  41% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  47% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  57% {
+    opacity: 0;
+    tranform: translateX(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+}
+
+@keyframes text4 {
+  57% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  76% {
+    opacity: 0;
+    tranform: translateX(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+}
+
+@keyframes text5 {
+  76% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  79% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  95% {
+    opacity: 0;
+    tranform: translateX(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+}
+
+.homepage-image-container {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.dogs,
+.cats {
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-image {
+  height: 200px;
+  margin: 30px 15px;
+}
+
+.huskie, .shiba, .corgi, .dalmatian,
+.cockerspaniel, .doberman, .germanshepherd, .goldenretriver,
+.britishshorthair, .kinkalow, .orangetabby, .cheetoh,
+.tonkinese, .chantillytiffany, .exoticshorthair, .exoticcat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: ShakyRegular;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 3px double var(--dark-purple);
+  background-color: var(--light-blue);
+  margin-right: 20px;
+}
+
+.dogs-1 {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  animation: 32s linear dogs1 infinite;
+}
+
+.dogs-2 {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  animation: 32s linear dogs2 infinite;
+}
+
+.cats-1 {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  animation: 32s linear cats1 infinite;
+}
+
+.cats-2 {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  animation: 32s linear cats2 infinite;
+}
+
+@keyframes dogs1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  8% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  16% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  24% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+
+@keyframes dogs2 {
+  24% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  32% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  48% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+@keyframes cats1 {
+  48% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  56% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  64% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  72% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+@keyframes cats2 {
+  72% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  88% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  96% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
