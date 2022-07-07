@@ -110,7 +110,7 @@ class PetShow extends React.Component {
                 {
                     (this.props.user.pets.length < 4 && this.user.points > 50) ?
                     <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
-                    <button className="max-pets" disabled>max pets or no enough points</button>
+                    <button className="max-pets" disabled>max pets or no  enough points</button>
                 }
             </div>
         } else {
