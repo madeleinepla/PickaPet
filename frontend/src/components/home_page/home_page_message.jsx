@@ -22,13 +22,42 @@ const HomePageMessage = (props) => {
       <div className="home-welcome-container">
         <div className="home-message-container">
           <h2 className="home-title-message">Welcome to Picka Pet!</h2>
-          <div className="animated text">
+          <div className="animated-text">
             <div className="picka-pet-about">~ Picka Pet is a virtual pet simulator ~</div>
             <div className="picka-pet-pet">~ Pick from our many selection of pets ~</div>
             <div className="picka-pet-dog">~ Raise your own virtual dog ~</div>
             <div className="picka-pet-cat">~ Take care of your own virtual cat ~</div>
             <div className="picka-pet-interact">~ Interact with your pet through actions ~</div>
           </div>
+        </div>
+        <div className="paw-animation">
+          <svg class="paw1" width="76" height="76" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(45 38.247 36.923)" fill="#E6DDD0" fill-rule="evenodd">
+              <rect transform="rotate(90 7.943 30.163)" x="-3.404" y="22.195" width="22.695" height="15.935" rx="7.967"/>
+              <rect transform="rotate(90 27.801 14.228)" x="13.617" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 71.49 30.732)" x="60.142" y="22.195" width="22.695" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 51.064 14.228)" x="36.879" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <path d="M33.543 33.008h11.78c12.258 0 22.195 9.937 22.195 22.195 0 8.061-6.535 14.596-14.596 14.596-1.101 0-2.2-.124-3.272-.371a44.175 44.175 0 0 0-9.934-1.135c-3.442 0-6.886.403-10.332 1.21-7.898 1.85-15.8-3.053-17.65-10.95a14.687 14.687 0 0 1-.386-3.35c0-12.258 9.937-22.195 22.195-22.195z"/>
+            </g>
+          </svg>
+          <svg class="paw2" width="76" height="76" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(130 38.247 36.923)" fill="#E6DDD0" fill-rule="evenodd">
+              <rect transform="rotate(90 7.943 30.163)" x="-3.404" y="22.195" width="22.695" height="15.935" rx="7.967"/>
+              <rect transform="rotate(90 27.801 14.228)" x="13.617" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 71.49 30.732)" x="60.142" y="22.195" width="22.695" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 51.064 14.228)" x="36.879" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <path d="M33.543 33.008h11.78c12.258 0 22.195 9.937 22.195 22.195 0 8.061-6.535 14.596-14.596 14.596-1.101 0-2.2-.124-3.272-.371a44.175 44.175 0 0 0-9.934-1.135c-3.442 0-6.886.403-10.332 1.21-7.898 1.85-15.8-3.053-17.65-10.95a14.687 14.687 0 0 1-.386-3.35c0-12.258 9.937-22.195 22.195-22.195z"/>
+            </g>
+          </svg>
+          <svg class="paw3" width="76" height="76" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(130 38.247 36.923)" fill="#E6DDD0" fill-rule="evenodd">
+              <rect transform="rotate(90 7.943 30.163)" x="-3.404" y="22.195" width="22.695" height="15.935" rx="7.967"/>
+              <rect transform="rotate(90 27.801 14.228)" x="13.617" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 71.49 30.732)" x="60.142" y="22.195" width="22.695" height="17.073" rx="8.438"/>
+              <rect transform="rotate(90 51.064 14.228)" x="36.879" y="5.691" width="28.369" height="17.073" rx="8.438"/>
+              <path d="M33.543 33.008h11.78c12.258 0 22.195 9.937 22.195 22.195 0 8.061-6.535 14.596-14.596 14.596-1.101 0-2.2-.124-3.272-.371a44.175 44.175 0 0 0-9.934-1.135c-3.442 0-6.886.403-10.332 1.21-7.898 1.85-15.8-3.053-17.65-10.95a14.687 14.687 0 0 1-.386-3.35c0-12.258 9.937-22.195 22.195-22.195z"/>
+            </g>
+          </svg>
         </div>
         <div className="homepage-image-container">
           <div className="dogs">

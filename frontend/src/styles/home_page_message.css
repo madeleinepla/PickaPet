@@ -23,12 +23,16 @@
   font-family: ShakyRegular;
   font-size: 60px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  color: var(--dark-purple);
 }
 
-.animated text {
+.animated-text {
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .picka-pet-about,
@@ -40,9 +44,13 @@
   font-size: 32px;
 }
 
+.picka-pet-interact {
+  width: 460px;
+}
+
 .picka-pet-about {
   text-align: center;
-  color: #0074D9;
+  color: var(--light-yellow);
   position: absolute;
   opacity: 0;
   animation: 30s linear text1 infinite;
@@ -50,7 +58,7 @@
 
 .picka-pet-pet {
   text-align: center;
-  color: #FF6F61;
+  color: var(--light-yellow);
   position: absolute;
   opacity: 0;
   animation: 30s linear text2 infinite;
@@ -58,7 +66,7 @@
 
 .picka-pet-dog {
   text-align: center;
-  color: #85144b;
+  color: var(--light-yellow);
   position: absolute;
   opacity: 0;
   animation: 30s linear text3 infinite;
@@ -66,7 +74,7 @@
 
 .picka-pet-cat {
   text-align: center;
-  color: #3D9970;
+  color: var(--light-yellow);
   position: absolute;
   opacity: 0;
   animation: 30s linear text4 infinite;
@@ -74,7 +82,7 @@
 
 .picka-pet-interact {
   text-align: center;
-  color: #01FF70;
+  color: var(--light-yellow);
   position: absolute;
   opacity: 0;
   animation: 30s linear text5 infinite;
@@ -196,7 +204,7 @@
 }
 
 .homepage-image-container {
-  margin-top: 150px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
 }
@@ -345,5 +353,88 @@
   100% {
     opacity: 0;
     transform: translateX(20%);
+  }
+}
+
+.paw1 {
+  position: relative;
+  left: 300px;
+  top: -120px;
+  z-index: 1;
+  opacity: 0;
+  animation: 6s linear paw1 infinite;
+}
+
+.paw2 {
+  position: relative;
+  left: 400px;
+  top: -160px;
+  z-index: 1;
+  transform: rotate(-80deg);
+  opacity: 0;
+  animation: 6s linear paw2 infinite;
+}
+
+.paw3 {
+  position: relative;
+  left: 500px;
+  top: -120px;
+  z-index: 1;
+  transform: rotate(-80deg);
+  opacity: 0;
+  animation: 6s linear paw3 infinite;
+}
+
+@keyframes paw1 {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes paw2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes paw3 {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
