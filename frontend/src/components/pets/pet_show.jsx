@@ -12,12 +12,14 @@ class PetShow extends React.Component {
         this.shower = this.shower.bind(this);
         this.pickaPet = this.pickaPet.bind(this);
         this.user = this.props.user
+        this.points = this.points.bind(this)
     }
 
     componentDidMount() {
         // debugger;
         this.props.fetchUser(this.props.currentUser.id);
         this.props.requestPet(this.props.ownProps.match.params.petId);
+        
     }
 
     componentDidUpdate(prevProps) {
@@ -26,72 +28,83 @@ class PetShow extends React.Component {
         }
     }
 
-    feed() {
+    points() {
+            this.user.points += 1
+            this.props.updateUser(this.user)
+    }
+
+
+    async feed() {
         const action = document.createElement("img");
         action.src = this.props.pet.feedGif;
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
         
-        setInterval(() => {
+        setTimeout(() => {
+            this.points()
+        }, 4900)
+
+        setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
-
-        this.user.points += 1
-        this.props.updateUser(this.user)
         // debugger
     }
 
-    play() {
+    async play() {
         const action = document.createElement("img");
         action.src = this.props.pet.playGif;
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
 
-        setInterval(() => {
+        setTimeout(() => {
+            this.points()
+        }, 6900)
+
+        setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 7000);
-
-        this.user.points += 1
-        this.props.updateUser(this.user)
     }
 
-    pat() {
+    async pat() {
         const action = document.createElement("img");
         action.src = this.props.pet.patGif;
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
 
-        setInterval(() => {
+        setTimeout(() => {
+            this.points()
+        }, 4990)
+
+        setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
-
-        this.user.points += 1
-        this.props.updateUser(this.user)
     }
-    shower() {
+
+    async shower() {
         const action = document.createElement("img");
         action.src = this.props.pet.showerGif;
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
 
-        setInterval(() => {
+        setTimeout(() => {
+            this.points()
+        }, 4999)
+
+        setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
-
-        this.user.points += 1
-        this.props.updateUser(this.user)
     }
 
     adopt(user, petId) {
-        debugger
+        // debugger
 
         if (this.user.points > 50) {
            this.user.points -= 50
@@ -127,7 +140,7 @@ class PetShow extends React.Component {
         const { pet, user, prevPath } = this.props;
 
         if(!(pet && user.pets)) return null;
-        debugger;
+        // debugger;
 
         return (
             <div className="pet-show-container">
@@ -137,12 +150,12 @@ class PetShow extends React.Component {
                     <li>Breed: {pet.breed}</li>
                     <li>Birthday: {formatDate(pet.birthday)}</li>
                     <li>Gender: {pet.gender}</li>
-                    <li>Last Fed: {pet.last_fed}</li>
+                    {/* <li>Last Fed: {pet.last_fed}</li>
                     <li>Last Play: {pet.last_play}</li>
                     <li>Last Pat: {pet.last_pet}</li>
-                    <li>Last Shower: {pet.last_bathed}</li>
+                    <li>Last Shower: {pet.last_bathed}</li> */}
 
-                    <li>Owner Points: {user.points}</li>
+                    <li className="points">Owner Points: {user.points}</li>
                 </div>
 
                 <div className="pet-show-interact">
