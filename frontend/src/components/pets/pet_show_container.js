@@ -8,12 +8,9 @@ const mSTP = (state, ownProps) => {
     // debugger
     return {
         pets: state.entities.pets.all,
-        petId: ownProps.match.params.petId,
         pet: state.entities.pets.pet,
         user: state.entities.users.user,
-        // currentUser: state.session.user,
-        currentUser: state.entities.users.user,
-        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.session.user,
         ownProps,
         
     }

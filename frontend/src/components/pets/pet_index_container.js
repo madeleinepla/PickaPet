@@ -1,18 +1,22 @@
 import { connect } from 'react-redux'
 import PetIndex from './pet_index'
 import {requestPets} from '../../actions/pet_actions' 
+import { fetchUser } from '../../actions/user_actions';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     // debugger
     return {
         pets: Object.values(state.entities.pets.all),
-        currentUser: state.session.user
+        user: state.entities.users.user,
+        currentUser: state.session.user,
+        ownProps
     }
 }
 
 const mDTP = (dispatch) => {
     return {
-        requestPets: (() => dispatch(requestPets()))
+        requestPets: (() => dispatch(requestPets())),
+        fetchUser: (userId) => dispatch(fetchUser(userId)),
     }
 }
 

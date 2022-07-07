@@ -1,3 +1,5 @@
+
+
 .navbar {
   background-color: var(--dark-purple);
   display: flex;
@@ -11,20 +13,32 @@
   min-width: 800px;
 }
 
-.navbar div:first-child {
-  font-size: 36px;
+.empty-on-purpose {
+  width: 33%;
 }
 
-.navbar div:first-child:hover {
+.navbar-title {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-drop {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-title *{
+  font-size: 42px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-title:hover {
   transition: .5s;
   transform: scale(1.05);
   cursor: pointer;
-}
-
-.navbar div:first-child > a,
-ul li > a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .navbar-links ul {
@@ -73,6 +87,11 @@ ul li > a {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 22px;
+}
+
+.dropdown-content * {
+  text-decoration: none;
+  color: white;
 }
 
 .dropdown-content ul {
