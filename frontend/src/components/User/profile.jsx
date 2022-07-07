@@ -45,8 +45,8 @@ class Profile extends React.Component {
           pets.map((pet, i) => {
             const today = new Date();
             const birthDate = new Date(pet.birthday)
-            const age = today.getFullYear() - birthDate.getFullYear();
-            var m = today.getMonth() - birthDate.getMonth();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let m = today.getMonth() - birthDate.getMonth();
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
               age--;
             }
@@ -104,6 +104,7 @@ class Profile extends React.Component {
             </div>
             {/* {
             this.props.user.id===this.props.currentUser.id?"":
+            !this.props.user.friends?"":
             this.props.user.friends.includes(this.props.currentUser.id)?
             <button className='friend' onClick={this.unfriend}>Unfriend</button>:
             this.props.user.friendRequests.includes(this.props.currentUser.id)?
