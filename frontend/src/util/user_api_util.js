@@ -44,6 +44,6 @@ export const unfriend2 = (currentUser, friendId) => {
 }
 
 export const addPetToUser = (user, petId) => {
-  debugger;
+  // debugger;
   return axios.patch(`/api/users/${ user.id }/addpet`, {petId: petId})
 }

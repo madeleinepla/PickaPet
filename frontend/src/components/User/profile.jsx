@@ -98,7 +98,7 @@ class Profile extends React.Component {
                 fetchUser={this.props.fetchUser}
               />
             </div>
-            {
+            {/* {
             this.props.user.id===this.props.currentUser.id?"":
             this.props.user.friends.includes(this.props.currentUser.id)?
             <button className='friend' onClick={this.unfriend}>Unfriend</button>:
@@ -106,7 +106,7 @@ class Profile extends React.Component {
             <p>Friend Requested</p>
             :<button className='friend' onClick={this.friend}>Friend</button>}
 
-            {this.props.user.id === this.props.currentUser.id? this.friendRequests():""}
+            {this.props.user.id === this.props.currentUser.id? this.friendRequests():""} */}
         </div>
 
         <div className='user-pets'>
@@ -132,7 +132,7 @@ class Profile extends React.Component {
     if(!this.props.currentUser) return null;
     if(!this.props.users) return null;
 
-    debugger
+    // debugger
     if (Object.values(this.props.users).length === 0) return <div>User does not exist</div>;
     return (
       <div div className='user-page-parent'>
