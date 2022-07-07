@@ -36,6 +36,10 @@ class Profile extends React.Component {
     const { pets } = this.props;
     if(!pets) return null;
     return (
+      
+        (pets.length === 0) ? 
+          <div className='no-friend'>you have no pets ┏༼ ◉╭╮◉༽┓</div>  
+        : 
       <div className='pets-list'>
         {
           pets.map((pet, i) => {
