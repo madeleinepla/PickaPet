@@ -37,9 +37,11 @@ class search extends React.Component {
                     </form>
                     <div className="search-users-container">
                         <div className="search-users">
+
                         {users.map(user=>
                             <Link onClick={this.state.search = ""} to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id}>
                             <div className="search-users-user" key={user.id}>
+
                             <div className="search-pets">
                                 <p className="search-users-username">{user.username}</p>
                                 <br />
