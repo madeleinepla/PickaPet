@@ -4,6 +4,7 @@
   height: 100%;
   width: 100%;
   z-index: 12;
+  top: 0px;
 }
 
 .modal-form {
@@ -83,5 +84,5 @@
 
 .session-form-submit input:hover {
   transition: .5s;
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
