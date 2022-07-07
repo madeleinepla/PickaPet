@@ -34,9 +34,12 @@ const NavBar = (props) => {
 
   return (
     <div className='navbar'>
-      <div><Link to='/'>Picka Pet</Link></div>
+      <div className='empty-on-purpose'></div>
+
+      <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
       
-      {navbarLinks()}
+      <div className='navbar-drop'>{navbarLinks()}</div>
+      
     </div>
   )
 }

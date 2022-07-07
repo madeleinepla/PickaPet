@@ -1,0 +1,42 @@
+.pet-show-container {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  margin: 30px;
+  width: 100vw;
+}
+
+.pet-show-information {
+  border: 5px solid var(--dark-purple);
+  background-color: var(--light-blue);
+  color: var(--dark-purple);
+  border-radius: 10px;
+  font-family: ShakyRegular;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 600px;
+  padding: 35px;
+}
+
+.pet-show-information li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.pet-show-button {
+  display: flex;
+}
+
+.pet-show-description {
+  border: 5px solid var(--dark-purple);
+  color: var(--dark-purple);
+  border-radius: 8px;
+  font-family: ShakyRegular;
+  font-size: 30px;
+  padding: 35px;
+  width: 20%;
+  height: 600px;
+}
+

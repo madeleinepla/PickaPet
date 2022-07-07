@@ -8,14 +8,11 @@ import '../../styles/pet.css';
 class PetIndex extends React.Component {
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     pets: []
-        // }
     }
 
     componentDidMount() {
         this.props.requestPets();
+        this.props.fetchUser(this.props.currentUser.id);
     }
 
     // sample(arr, req) {
@@ -30,16 +27,32 @@ class PetIndex extends React.Component {
     // }
 
     render() {
-        // console.log(this.props)
-        // console.log(this.state)
-        const { pets, currentUser } = this.props;
-        // debugger
-        const i = Math.floor(Math.random() * (pets.length/2)) // 0-3
-        const j = Math.floor(Math.random() * (pets.length/2)+4) //4-7
-        // console.log(i)
-        // console.log(j)
-        const randPets = pets.slice(i, i+6) //if want just random pets without fixed number replace i+4 to j.
+        const { pets, user } = this.props;
 
+        if (Object.keys(user).length === 0 || pets.length === 0) return null;
+
+        const availPets = pets.filter((pet) => {
+            return !user.pets.includes(pet._id)
+        })
+
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        const randPets = shuffle(availPets);
+
+        // const i = Math.floor(Math.random() * (pets.length/2)) // 0-3
+        // const j = Math.floor(Math.random() * (pets.length/2)+4) //4-7
+        
+        // const randPets = availPets.slice(i, i+6) //if want just random pets without fixed number replace i+4 to j.
         // sample(pets, 4){
         //     let i = 0,
         //         randPets = [],
@@ -50,7 +63,6 @@ class PetIndex extends React.Component {
         //     }
         //     return randPets;
         // }
-
 
         // const randPets = sample(pets, 4)
         // debugger
@@ -64,7 +76,7 @@ class PetIndex extends React.Component {
                         <PetIndexItem
                             pet={pet}
                             key={pet._id}
-                            currentUser={currentUser}
+                            ownProps={this.props.ownProps}
                         />
                     ))}
                 </div>
