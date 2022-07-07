@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .user-info-title {
@@ -106,7 +106,7 @@
   border: 5px solid var(--dark-purple);
   border-radius: 15px;
   width: 60%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .pets-list-title {
