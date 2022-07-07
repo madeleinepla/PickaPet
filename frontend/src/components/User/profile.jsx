@@ -41,8 +41,8 @@ class Profile extends React.Component {
           pets.map((pet, i) => {
             const today = new Date();
             const birthDate = new Date(pet.birthday)
-            const age = today.getFullYear() - birthDate.getFullYear();
-            var m = today.getMonth() - birthDate.getMonth();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let m = today.getMonth() - birthDate.getMonth();
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
               age--;
             }
