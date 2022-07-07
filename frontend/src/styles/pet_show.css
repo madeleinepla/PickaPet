@@ -67,7 +67,7 @@
 }
 
 .max-pets {
-  width: 300px;
+  width: 250px;
   opacity: .50;
   border-radius: 15px;
   padding: 10px 20px;
@@ -79,8 +79,8 @@
 }
 
 .pet-show-image {
-  top: 35%;
-  left: 30.5%;
+  top: 30%;
+  left: 33%;
   position: absolute;
   width: 480px;
   height: 478px;
