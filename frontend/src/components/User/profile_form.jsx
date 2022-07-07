@@ -30,25 +30,16 @@ class ProfileForm extends React.Component {
         <div className='edit-user-form-input'>
           <label> Username: 
             <input
+              className='user-form-text-box'
               type="text"
-              // placeholder={this.props.user.username}
               value={this.state.username}
               onChange={this.update('username')}
             />
           </label>
 
-          <label> Email:
-            <input
-              type="text"
-              // placeholder={this.props.user.email}
-              value={this.state.email}
-              onChange={this.update('email')}
-            />
-          </label> 
-
           <label> Bio:
             <textarea
-              // placeholder={this.props.user.bio}
+              className='user-form-text-box'
               rows="10"
               cols="30"
               value={this.state.bio}

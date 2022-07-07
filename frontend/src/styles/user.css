@@ -208,6 +208,15 @@
   justify-content: space-between;
 }
 
+.user-form-text-box {
+  border: none;
+  background-color: var(--light-purple);
+  padding: 10px;
+  font-family: ShakyRegular;
+  font-size: 20px;
+  box-shadow: 2px 2px 5px inset var(--dark-purple);
+}
+
 .edit-user-submit-btn {
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-purple);

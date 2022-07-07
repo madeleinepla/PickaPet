@@ -23,6 +23,6 @@ export const requestPets = () => dispatch => {
 
 export const requestPet = (petId) => dispatch => {
     return getPet(petId)
-            .then((pet) => dispatch(receivePet(pet)))
-            .catch(err => console.log(err))
+        .then((pet) => dispatch(receivePet(pet)))
+        .catch(err => console.log(err))
 }

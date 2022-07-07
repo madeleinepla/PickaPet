@@ -1,0 +1,150 @@
+.pet-show-container {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  margin: 30px;
+  /* width: 100vw; */
+}
+
+.pet-show-information {
+  border: 5px solid var(--dark-purple);
+  background-color: var(--light-blue);
+  color: var(--dark-purple);
+  border-radius: 10px;
+  font-family: ShakyRegular;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 600px;
+  padding: 20px 35px;
+}
+
+.pet-show-information h2{
+  background-color: var(--light-purple);
+  color: var(--light-yellow);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.pet-show-information li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.pet-show-interact {
+  width: 40%;
+}
+
+.pet-show-button, .pet-show-button-adopt {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pet-show-button > * {
+  background-color: var(--light-yellow);
+  margin: 0 10px 0 10px;
+  padding: 20px;
+  border: 2px solid var(--dark-purple);
+  border-radius: 50%;
+  font-family: ShakyRegular;
+  font-size: 32px;
+  color: var(--dark-purple);
+  width: 18%;
+}
+
+.pet-show-button-adopt > * {
+  background-color: var(--light-yellow);
+  margin: 0 10px 0 10px;
+  padding: 20px;
+  border: 2px solid var(--dark-purple);
+  border-radius: 50%;
+  font-family: ShakyRegular;
+  font-size: 32px;
+  color: var(--dark-purple);
+  width: 30%;
+}
+
+.pet-show-button>*:hover, .pet-show-button-adopt>*:hover {
+  transition: .3s;
+    transform: scale(1.08);
+    color: var(--light-purple)
+}
+
+.max-pets {
+  width: 250px;
+  opacity: .50;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+
+.max-pets:hover {
+  transform: none;
+  color: var(--dark-purple);
+}
+
+.pet-show-image {
+  top: 30%;
+  left: 33%;
+  position: absolute;
+  width: 480px;
+  height: 478px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 5px solid var(--dark-purple);
+}
+
+#feedPet {
+  display: none;
+}
+
+#playPet {
+  display: none;
+}
+
+#patPet {
+  display: none;
+}
+
+#showerPet {
+  display: none;
+}
+
+.pet-show-description {
+  background-color: var(--light-blue);
+  border: 5px solid var(--dark-purple);
+  color: var(--dark-purple);
+  border-radius: 8px;
+  font-family: ShakyRegular;
+  font-size: 30px;
+  padding: 20px 35px;
+  width: 20%;
+  height: 600px;
+  overflow: auto;
+  margin-left: 110px;
+}
+
+.pet-show-description h2 {
+  background-color: var(--light-purple);
+  color: var(--light-yellow);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.pet-info-description {
+  font-size: 24px;
+}
+

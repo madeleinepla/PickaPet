@@ -41,4 +41,8 @@ export const unfriend1 = (currentUser, friendId) => {
 }
 export const unfriend2 = (currentUser, friendId) => {
   return axios.patch(`/api/users/${friendId}/unfriend2`, {currentUser:currentUser})
+
+export const addPetToUser = (user, petId) => {
+  debugger;
+  return axios.patch(`/api/users/${ user.id }/addpet`, {petId: petId})
 }

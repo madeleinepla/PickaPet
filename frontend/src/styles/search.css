@@ -1,5 +1,6 @@
 
     .search-bar-container {
+        
         display: flex;
         justify-content: center;
     }
@@ -37,6 +38,7 @@
     .search-users-username {
         font-size: 30px;
         font-family: "ShakyRegular";
+        color: var(--dark-purple);
         margin: 10px;
         margin-bottom: 0px;
     }
@@ -50,10 +52,11 @@
         width: 160px;
         display: flex;
         flex-wrap: wrap;
-        margin: 5px;
+        /* margin: 5px; */
         justify-content: center;
         text-align: center;
         font-family: "ShakyRegular";
+        color: var(--dark-purple);
     }
     .search-pet-photo {
         height: 110px;

@@ -1,5 +1,8 @@
+
 import axios from 'axios';
 import { getUsers, getUser, patchUser, IncomingAddfriend, OutgoingAddfriend, acceptfriendrequest1, acceptfriendrequest2, acceptfriendrequest3, acceptfriendrequest4, unfriend1, unfriend2} from '../util/user_api_util';
+
+
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
@@ -32,6 +35,7 @@ export const updateUser = (user) => dispatch => (
   patchUser(user)
     .then(user => dispatch(receiveUser(user)))
 );
+
 
 export const incomingaddfriend = (currentUser, friendId) =>dispatch => (
   IncomingAddfriend(currentUser, friendId)
@@ -67,3 +71,9 @@ export const Unfriend2 = (currentUser, friendId) => dispatch => (
   unfriend2(currentUser, friendId)
   .then(user=>dispatch(receiveUser(user)))
   )
+
+export const adoptPet = (user, petId) => dispatch => (
+  addPetToUser(user, petId)
+    .then(user => dispatch(receiveUser(user)))
+);
+

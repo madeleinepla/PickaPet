@@ -1,4 +1,6 @@
-
+/* .dog-container{
+  transform: translate(520px, -100px);
+} */
 
 .dog-head {
   height: 230px;
@@ -14,7 +16,8 @@
 .svg-ear-1 {
   position: relative;
   /* top: 226px; */
-  top: 126px;
+  /* top: 126px; */
+  top: 72px;
   left: 80px;
   z-index: 1;
 }
@@ -31,7 +34,8 @@
 .svg-ear-2 {
   position: relative;
   /* top: 240px; */
-  top: 140px;
+  /* top: 140px; */
+  top: 77px;
   left: 190px;
   z-index: 2;
 }

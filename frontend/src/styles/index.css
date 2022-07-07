@@ -31,11 +31,12 @@
 @import './navbar.css';
 @import './modal.css';
 @import './home_dog.css';
-@import './home_page.css';
 @import './pet.css';
+@import './pet_show.css';
 @import './search.css';
-@import './petshow.css';
 @import './user.css';
+@import './home_page_message.css';
+@import './footer.css';
 
 
 body {

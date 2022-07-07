@@ -1,23 +1,23 @@
 import React from "react";
-import '../../styles/petshow.css';
 import { formatDate } from '../../util/date_util';
 
 
 class PetShow extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = ""
+        this.state = this.props.ownProps.location.state;
         this.feed = this.feed.bind(this);
         this.play = this.play.bind(this);
         this.pat = this.pat.bind(this);
         this.shower = this.shower.bind(this);
-        // debugger
+        this.pickaPet = this.pickaPet.bind(this);
+        this.user = this.props.user
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.ownProps.match.params.id);
-        // this.props.fetchUser(this.props.user.id)
-        this.props.requestPet(this.props.petId);
+        // debugger;
+        this.props.fetchUser(this.props.currentUser.id);
+        this.props.requestPet(this.props.ownProps.match.params.petId);
     }
 
     componentDidUpdate(prevProps) {
@@ -26,35 +26,21 @@ class PetShow extends React.Component {
         }
     }
 
-
     feed() {
         const action = document.createElement("img");
         action.src = this.props.pet.feedGif;
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
-
+        
         setInterval(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
 
-        // document.getElementById("feedPet").style.display = "block";
-        // document.getElementById("showPet").style.display = "none";
-        // setInterval(() => {
-        //     document.getElementById("feedPet").style.display = "none";
-        //     document.getElementById("showPet").style.display = "block";
-        // }, 5000);
-
-        // var petAction = document.getElementById("pet-actions")
-        // document.getElementsByClassName("pet-show-image").src = this.props.pet.feedGif;
-
-        // const feedAction = document.createElement('img')
-        // feedAction.src = this.props.pet.feedGif;
-        // document.querySelector(".image-container").appendChild(feedAction)
-
-        // document.getElementsByClassName("pet-show-image").key = this.props.pet.feedGif;
-        // debugger;
+        this.user.points += 1
+        this.props.updateUser(this.user)
+        // debugger
     }
 
     play() {
@@ -69,17 +55,8 @@ class PetShow extends React.Component {
             document.getElementById("showPet").style.display = "block";
         }, 7000);
 
-        // document.getElementById("playPet").style.display = "block";
-        // document.getElementById("showPet").style.display = "none";
-        // setInterval(() => {
-        //     document.getElementById("playPet").style.display = "none";
-        //     document.getElementById("showPet").style.display = "block";
-        // }, 7000);
-
-        // var petAction = document.getElementById("pet-actions")
-        // document.getElementsByClassName("pet-show-image").src = this.props.pet.playGif;
-        // document.getElementsByClassName("pet-show-image").key = this.props.pet.playGif;
-        // debugger;
+        this.user.points += 1
+        this.props.updateUser(this.user)
     }
 
     pat() {
@@ -94,18 +71,8 @@ class PetShow extends React.Component {
             document.getElementById("showPet").style.display = "block";
         }, 5000);
 
-        // document.getElementById("patPet").style.display = "block"
-        // document.getElementById("showPet").style.display = "none";
-        // setInterval(() => {
-        //     document.getElementById("patPet").style.display = "none"
-        //     document.getElementById("showPet").style.display = "block";
-        // }, 5000);
-
-        // var petAction = document.getElementById("pet-actions")
-        // document.getElementsByClassName("pet-show-image").src = this.props.pet.patGif;
-        // document.getElementsByClassName("pet-show-image").key = this.props.pet.patGif;
-        // debugger;
-
+        this.user.points += 1
+        this.props.updateUser(this.user)
     }
     shower() {
         const action = document.createElement("img");
@@ -119,72 +86,78 @@ class PetShow extends React.Component {
             document.getElementById("showPet").style.display = "block";
         }, 5000);
 
-        // document.getElementById("showerPet").style.display = "block"
-        // document.getElementById("showPet").style.display = "none";
-        // setInterval(() => {
-        //     document.getElementById("showerPet").style.display = "none"
-        //     document.getElementById("showPet").style.display = "block";
-        // }, 5000);
+        this.user.points += 1
+        this.props.updateUser(this.user)
+    }
 
-        // var petAction = document.getElementById("pet-actions")
-        // document.getElementsByClassName("pet-show-image").src = this.props.pet.showerGif;
-        // document.getElementsByClassName("pet-show-image").key = this.props.pet.showerGif;
+    adopt(user, petId) {
         // debugger
+
+        if (this.user.points > 50) {
+           this.user.points -= 50
+           this.props.updateUser(this.user)
+           this.props.adoptPet(user, petId)
+            .then(this.props.ownProps.history.push(`/users/${this.props.user.id}`))
+        
+        }
+
+    }
+
+    pickaPet() {      
+        // debugger;
+        if (this.state && this.state.prevPath === '/pets') {
+            return <div className="pet-show-button-adopt">
+                {
+                    (this.props.user.pets.length < 4 && this.user.points > 50) ?
+                    <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
+                    <button className="max-pets" disabled>max pets or no  enough points</button>
+                }
+            </div>
+        } else {
+            return <div className="pet-show-button">
+                <button onClick={this.feed} className="pet-show-button">Feed</button>
+                <button onClick={this.play} className="pet-show-button">Play</button>
+                <button onClick={this.pat} className="pet-show-button">Pat</button>
+                <button onClick={this.shower} className="pet-show-button">Shower</button>
+            </div> 
+        }
     }
 
     render() {
-        const { pet, user } = this.props;
-        // console.log(this.props)
-        // console.log(this.state)
-        // if (!pet) return null;
-        if (Object.values(user).length === 0) return null;
-        if (Object.values(pet).length === 0) return null;
-        if (Object.values(user.pets) === 0) return null;
-        // if (Object.values(this.props.pet) === 0) return null;
-        // debugger
+        const { pet, user, prevPath } = this.props;
 
-        let pickaPet = (user.pets.length !== 0 && user.pets.includes(pet._id)) ? (
-            <div>
-
-
-                <div><button onClick={this.feed} className="pet-show-button">Feed</button></div>
-                <div><button onClick={this.play} className="pet-show-button">Play</button></div>
-                <div><button onClick={this.pat} className="pet-show-button">Pat</button></div>
-                <div><button onClick={this.shower} className="pet-show-button">Shower</button></div>
-            </div>
-        ) : (
-            <div><button>Pick this Pet</button></div>
-        );
-
+        if(!(pet && user.pets)) return null;
+        // debugger;
 
         return (
             <div className="pet-show-container">
-                <div className="pet-show-info-container-1">
-                    <div className="pet-show-information">
-                        <div className="pet-info">Name: {pet.name}</div>
-                        <div className="pet-info">Species: {pet.species}</div>
-                        <div className="pet-info">Breed: {pet.breed}</div>
-                        <div className="pet-info">Birthday: {formatDate(pet.birthday)}</div>
-                        <div className="pet-info">Gender: {pet.gender}</div>
-                    </div>
+                <div className="pet-show-information">
+                    <h2>about this pet</h2>
+                    <li>Name: {pet.name}</li>
+                    <li>Species: {pet.species}</li>
+                    <li>Breed: {pet.breed}</li>
+                    <li>Birthday: {formatDate(pet.birthday)}</li>
+                    <li>Gender: {pet.gender}</li>
+                    <li>Last Fed: {pet.last_fed}</li>
+                    <li>Last Play: {pet.last_play}</li>
+                    <li>Last Pat: {pet.last_pet}</li>
+                    <li>Last Shower: {pet.last_bathed}</li>
+
+                    <li>Owner Points: {user.points}</li>
+                </div>
+
+                <div className="pet-show-interact">
                     <div className="image-container">
                         <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
-                        {/* <img className="pet-show-image" id="feedPet" src={pet.feedGif} key={Math.random().toString(36)} />
-                        <img className="pet-show-image" id="playPet" src={pet.playGif} key={Math.random().toString(36)} />
-                        <img className="pet-show-image" id="showerPet" src={pet.showerGif} key={Math.random().toString(36)} />
-                        <img className="pet-show-image" id="patPet" src={pet.patGif} key={Math.random().toString(36)} /> */}
                     </div>
-                        {/* <img  src={pet.feedGif} key={Math.random().toString(36)} />
-                        <img  src={pet.playGif} key={Math.random().toString(36)} /> */}
-                        {/* <img   src={pet.showerGif} key={Math.random().toString(36)} /> */}
-                        {/* <img  src={pet.patGif} key={Math.random().toString(36)} /> */}
-                    <div className="pet-show-button">
-                        {pickaPet}
-                    </div>
+
+                    {this.pickaPet()}
                 </div>
-                <div className="pet-show-info-container-2">
-                    <div className="pet-show-description">
-                        <div className="pet-info-description"><span>Description:</span> {pet.description}</div>
+
+                <div className="pet-show-description">
+                    <div className="pet-info-description">
+                        <h2>description</h2>
+                        {pet.description}
                     </div>
                 </div>
 
