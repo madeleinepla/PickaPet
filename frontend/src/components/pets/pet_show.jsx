@@ -79,7 +79,7 @@ class PetShow extends React.Component {
     adopt(user, petId) {
         debugger
         this.props.adoptPet(user, petId)
-            
+            .then(this.props.ownProps.history.push(`/users/${this.props.user.id}`))
     }
 
     pickaPet() {      
