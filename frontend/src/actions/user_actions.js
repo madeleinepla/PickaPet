@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import { getUsers, getUser, patchUser, IncomingAddfriend, OutgoingAddfriend, acceptfriendrequest1, acceptfriendrequest2, acceptfriendrequest3, acceptfriendrequest4, unfriend1, unfriend2} from '../util/user_api_util';
+import { getUsers, getUser, patchUser, IncomingAddfriend, OutgoingAddfriend, acceptfriendrequest1, acceptfriendrequest2, acceptfriendrequest3, acceptfriendrequest4, unfriend1, unfriend2, addPetToUser} from '../util/user_api_util';
 
 
 
