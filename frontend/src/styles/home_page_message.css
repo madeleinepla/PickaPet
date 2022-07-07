@@ -361,7 +361,7 @@
 
 .paw1 {
   position: relative;
-  left: 300px;
+  left: 230px;
   top: -120px;
   z-index: 1;
   opacity: 0;
@@ -370,7 +370,7 @@
 
 .paw2 {
   position: relative;
-  left: 400px;
+  left: 330px;
   top: -160px;
   z-index: 1;
   transform: rotate(-80deg);
@@ -380,7 +380,7 @@
 
 .paw3 {
   position: relative;
-  left: 500px;
+  left: 430px;
   top: -120px;
   z-index: 1;
   transform: rotate(-80deg);
