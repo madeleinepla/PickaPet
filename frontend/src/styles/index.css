@@ -12,6 +12,13 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "BrownBagLunch";
+  src: local("BrownBagLunch"),
+    url("../fonts/BrownBagLunch/BrownBagLunch.ttf") format("truetype");
+  font-weight: normal;
+}
+
 :root {
   --dark-purple: #5f6390;
   --light-purple: #b1b4de;
