@@ -28,12 +28,23 @@ class PetShow extends React.Component {
 
 
     feed() {
-        document.getElementById("feedPet").style.display = "block";
+        const action = document.createElement("img");
+        action.src = this.props.pet.feedGif;
+        action.className = "pet-show-image"
+        document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+
         setInterval(() => {
-            document.getElementById("feedPet").style.display = "none";
+            document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        // document.getElementById("feedPet").style.display = "block";
+        // document.getElementById("showPet").style.display = "none";
+        // setInterval(() => {
+        //     document.getElementById("feedPet").style.display = "none";
+        //     document.getElementById("showPet").style.display = "block";
+        // }, 5000);
 
         // var petAction = document.getElementById("pet-actions")
         // document.getElementsByClassName("pet-show-image").src = this.props.pet.feedGif;
@@ -45,13 +56,26 @@ class PetShow extends React.Component {
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.feedGif;
         // debugger;
     }
+
     play() {
-        document.getElementById("playPet").style.display = "block";
+        const action = document.createElement("img");
+        action.src = this.props.pet.playGif;
+        action.className = "pet-show-image"
+        document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+
         setInterval(() => {
-            document.getElementById("playPet").style.display = "none";
+            document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 7000);
+
+        // document.getElementById("playPet").style.display = "block";
+        // document.getElementById("showPet").style.display = "none";
+        // setInterval(() => {
+        //     document.getElementById("playPet").style.display = "none";
+        //     document.getElementById("showPet").style.display = "block";
+        // }, 7000);
+
         // var petAction = document.getElementById("pet-actions")
         // document.getElementsByClassName("pet-show-image").src = this.props.pet.playGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.playGif;
@@ -59,12 +83,24 @@ class PetShow extends React.Component {
     }
 
     pat() {
-        document.getElementById("patPet").style.display = "block"
+        const action = document.createElement("img");
+        action.src = this.props.pet.patGif;
+        action.className = "pet-show-image"
+        document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+
         setInterval(() => {
-            document.getElementById("patPet").style.display = "none"
+            document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        // document.getElementById("patPet").style.display = "block"
+        // document.getElementById("showPet").style.display = "none";
+        // setInterval(() => {
+        //     document.getElementById("patPet").style.display = "none"
+        //     document.getElementById("showPet").style.display = "block";
+        // }, 5000);
+
         // var petAction = document.getElementById("pet-actions")
         // document.getElementsByClassName("pet-show-image").src = this.props.pet.patGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.patGif;
@@ -72,12 +108,24 @@ class PetShow extends React.Component {
 
     }
     shower() {
-        document.getElementById("showerPet").style.display = "block"
+        const action = document.createElement("img");
+        action.src = this.props.pet.showerGif;
+        action.className = "pet-show-image"
+        document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+
         setInterval(() => {
-            document.getElementById("showerPet").style.display = "none"
+            document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        // document.getElementById("showerPet").style.display = "block"
+        // document.getElementById("showPet").style.display = "none";
+        // setInterval(() => {
+        //     document.getElementById("showerPet").style.display = "none"
+        //     document.getElementById("showPet").style.display = "block";
+        // }, 5000);
+
         // var petAction = document.getElementById("pet-actions")
         // document.getElementsByClassName("pet-show-image").src = this.props.pet.showerGif;
         // document.getElementsByClassName("pet-show-image").key = this.props.pet.showerGif;
@@ -99,10 +147,10 @@ class PetShow extends React.Component {
             <div>
 
 
-                <div><button onClick={this.feed}>Feed</button></div>
-                <div><button onClick={this.play}>Play</button></div>
-                <div><button onClick={this.pat}>Pat</button></div>
-                <div><button onClick={this.shower}>Shower</button></div>
+                <div><button onClick={this.feed} className="pet-show-button">Feed</button></div>
+                <div><button onClick={this.play} className="pet-show-button">Play</button></div>
+                <div><button onClick={this.pat} className="pet-show-button">Pat</button></div>
+                <div><button onClick={this.shower} className="pet-show-button">Shower</button></div>
             </div>
         ) : (
             <div><button>Pick this Pet</button></div>
@@ -121,11 +169,15 @@ class PetShow extends React.Component {
                     </div>
                     <div className="image-container">
                         <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
-                        <img className="pet-show-image" id="feedPet" src={pet.feedGif} key={Math.random().toString(36)} />
+                        {/* <img className="pet-show-image" id="feedPet" src={pet.feedGif} key={Math.random().toString(36)} />
                         <img className="pet-show-image" id="playPet" src={pet.playGif} key={Math.random().toString(36)} />
                         <img className="pet-show-image" id="showerPet" src={pet.showerGif} key={Math.random().toString(36)} />
-                        <img className="pet-show-image" id="patPet" src={pet.patGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="patPet" src={pet.patGif} key={Math.random().toString(36)} /> */}
                     </div>
+                        {/* <img  src={pet.feedGif} key={Math.random().toString(36)} />
+                        <img  src={pet.playGif} key={Math.random().toString(36)} /> */}
+                        {/* <img   src={pet.showerGif} key={Math.random().toString(36)} /> */}
+                        {/* <img  src={pet.patGif} key={Math.random().toString(36)} /> */}
                     <div className="pet-show-button">
                         {pickaPet}
                     </div>
@@ -135,6 +187,7 @@ class PetShow extends React.Component {
                         <div className="pet-info-description"><span>Description:</span> {pet.description}</div>
                     </div>
                 </div>
+
             </div>
         );
     }
