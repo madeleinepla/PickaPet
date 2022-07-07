@@ -11,6 +11,7 @@ class PetShow extends React.Component {
         this.pat = this.pat.bind(this);
         this.shower = this.shower.bind(this);
         this.pickaPet = this.pickaPet.bind(this);
+        this.user = this.props.user
     }
 
     componentDidMount() {
@@ -31,11 +32,15 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
-
+        
         setInterval(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        this.user.points += 1
+        this.props.updateUser(this.user)
+        // debugger
     }
 
     play() {
@@ -49,6 +54,9 @@ class PetShow extends React.Component {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 7000);
+
+        this.user.points += 1
+        this.props.updateUser(this.user)
     }
 
     pat() {
@@ -62,6 +70,9 @@ class PetShow extends React.Component {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        this.user.points += 1
+        this.props.updateUser(this.user)
     }
     shower() {
         const action = document.createElement("img");
@@ -74,11 +85,18 @@ class PetShow extends React.Component {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
         }, 5000);
+
+        this.user.points += 1
+        this.props.updateUser(this.user)
     }
 
     adopt(user, petId) {
         debugger
-        this.props.adoptPet(user, petId);
+        if (this.user.points > 50) {
+            this.props.adoptPet(user, petId);
+            this.user.points -= 50
+            this.props.updateUser(this.user)
+        }
     }
 
     pickaPet() {      
@@ -86,9 +104,9 @@ class PetShow extends React.Component {
         if (this.state && this.state.prevPath === '/pets') {
             return <div className="pet-show-button-adopt">
                 {
-                    (this.props.user.pets.length < 4) ?
+                    (this.props.user.pets.length < 4 && this.user.points > 50) ?
                     <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
-                    <button className="max-pets" disabled>max pets</button>
+                    <button className="max-pets" disabled>max pets or no enough points</button>
                 }
             </div>
         } else {
@@ -105,7 +123,7 @@ class PetShow extends React.Component {
         const { pet, user, prevPath } = this.props;
 
         if(!(pet && user.pets)) return null;
-        // debugger;
+        debugger;
 
         return (
             <div className="pet-show-container">
@@ -115,6 +133,12 @@ class PetShow extends React.Component {
                     <li>Breed: {pet.breed}</li>
                     <li>Birthday: {formatDate(pet.birthday)}</li>
                     <li>Gender: {pet.gender}</li>
+                    <li>Last Fed: {pet.last_fed}</li>
+                    <li>Last Play: {pet.last_play}</li>
+                    <li>Last Pat: {pet.last_pet}</li>
+                    <li>Last Shower: {pet.last_bathed}</li>
+
+                    <li>Owner Points: {user.points}</li>
                 </div>
 
                 <div className="pet-show-interact">
