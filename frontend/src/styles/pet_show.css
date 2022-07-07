@@ -118,6 +118,7 @@
   padding: 35px;
   width: 20%;
   height: 600px;
+  overflow: auto;
 }
 
 .pet-info-description {

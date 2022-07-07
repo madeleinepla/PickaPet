@@ -7,12 +7,21 @@
   position: relative;
   z-index: 10;
   top: -150px;
+}
+
+.home-message-container {
+  position: relative;
   left: 400px;
+}
+
+.homepage-image-container {
+  position: relative;
+  left: 230px;
 }
 
 .home-title-message {
   font-family: ShakyRegular;
-  font-size: 50px;
+  font-size: 60px;
   margin-bottom: 20px;
 }
 
@@ -214,7 +223,6 @@
   font-size: 20px;
   border-radius: 10px;
   border: 3px double var(--dark-purple);
-  /* background-color: var(--light-blue); */
   background-color: rgba(254, 254, 254, 0.95);
   margin-right: 20px;
 }

@@ -15,6 +15,7 @@ class Profile extends React.Component {
   }
 
   pets() {
+    // debugger;
     const { pets } = this.props;
     if(!pets) return null;
     return (

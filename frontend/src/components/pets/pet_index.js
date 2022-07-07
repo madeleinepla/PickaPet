@@ -15,17 +15,6 @@ class PetIndex extends React.Component {
         this.props.fetchUser(this.props.currentUser.id);
     }
 
-    // sample(arr, req) {
-    //     let i = 0,
-    //         randArr = [],
-    //         randItem = arr[Math.floor(Math.random() * (arr.length))];
-    //     while (i < req && !(randArr.includes(randItem))) {
-    //         randArr.push(randItem);
-    //         ++i;
-    //     }
-    //     return randArr;
-    // }
-
     render() {
         const { pets, user } = this.props;
 
@@ -47,25 +36,8 @@ class PetIndex extends React.Component {
             return array;
         }
 
-        const randPets = shuffle(availPets);
+        const randPets = shuffle(availPets).slice(0, 6);
 
-        // const i = Math.floor(Math.random() * (pets.length/2)) // 0-3
-        // const j = Math.floor(Math.random() * (pets.length/2)+4) //4-7
-        
-        // const randPets = availPets.slice(i, i+6) //if want just random pets without fixed number replace i+4 to j.
-        // sample(pets, 4){
-        //     let i = 0,
-        //         randPets = [],
-        //         randItem = pets[Math.floor(Math.random() * (pets.length))];
-        //     while (i < req && !(randPets.includes(randItem))) {
-        //         randPets.push(randItem);
-        //         ++i;
-        //     }
-        //     return randPets;
-        // }
-
-        // const randPets = sample(pets, 4)
-        // debugger
         if (randPets.length === 0) {
             return null;
         } else {

@@ -92,11 +92,15 @@ class PetShow extends React.Component {
 
     adopt(user, petId) {
         debugger
+
         if (this.user.points > 50) {
-            this.props.adoptPet(user, petId);
-            this.user.points -= 50
-            this.props.updateUser(this.user)
+           this.user.points -= 50
+           this.props.updateUser(this.user)
+           this.props.adoptPet(user, petId)
+            .then(this.props.ownProps.history.push(`/users/${this.props.user.id}`))
+        
         }
+
     }
 
     pickaPet() {      
