@@ -9,7 +9,9 @@ const mSTP = (state, ownProps) => {
   let pets = Object.values(state.entities.pets.all);
   // debugger;
   pets = pets.filter((pet) => {
-    return user.pets.includes(pet._id)
+    if(user.pets){
+      return user.pets.includes(pet._id)
+    }
   });
   // debugger
   return {
