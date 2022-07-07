@@ -83,5 +83,5 @@
 
 .session-form-submit input:hover {
   transition: .5s;
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
