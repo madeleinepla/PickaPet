@@ -38,7 +38,7 @@ class PetIndex extends React.Component {
         const j = Math.floor(Math.random() * (pets.length/2)+4) //4-7
         // console.log(i)
         // console.log(j)
-        const randPets = pets.slice(i, i+4) //if want just random pets without fixed number replace i+4 to j.
+        const randPets = pets.slice(i, i+6) //if want just random pets without fixed number replace i+4 to j.
 
         // sample(pets, 4){
         //     let i = 0,

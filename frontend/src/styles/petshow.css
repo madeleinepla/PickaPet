@@ -1,4 +1,5 @@
-.image-container {
+
+/* .image-container {
   border-radius: 8px;
   margin: 10px;
   padding:30px;
@@ -6,29 +7,70 @@
   box-sizing: border-box;
   border: 3px solid rgb(243, 243, 235);
   opacity: 0.95;
-}
+} */
 
-.pet-show-image {
-  width: auto;
+/* .image-container:nth-child(-n+5) {
+  left:45%;
+  top: 15%;
+  position:absolute;
+  width: 500px;
   height: 500px;
   border-radius: 8px;
-}
+  object-fit: cover;
+  margin-top: 3px; 
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+} */
+
+.pet-show-image {
+  left:42%;
+  top: 16.6%;
+  position:absolute;
+  width: 480px;
+  height: 478px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 5px solid var(--dark-purple);
+} 
 
 .pet-show-image:hover {
   transition: .3s;
   transform: scale(1.08);
 }
 
+
+#feedPet {
+  display: none;
+}
+
+#playPet {
+  display: none;
+}
+#patPet {
+  display: none;
+}
+#showerPet {
+  display: none;
+}
+
+
 .pet-show-info-container-1 {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  margin: 50px;
+  margin: 30px;
+  padding: 30px;
 }
 
 .pet-show-info-container-2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .pet-show-information {
@@ -36,7 +78,7 @@
   border-radius: 8px;
   font-family: ShakyRegular;
   font-size: 30px;
-  padding: 50px 100px;
+  padding: 40px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +94,62 @@
   border-radius: 8px;
   font-family: ShakyRegular;
   font-size: 30px;
-  padding: 50px 100px;
+  padding: 40px 100px;
   margin: 0px 300px 50px;
+
 }
+
+.pet-info-description{
+  width: 800px;
+}
+
+
+
+
+.pet-show-button {
+  /* font-family: "CheriRegular"; */
+  font-family: "ShakyRegular";
+  text-align: center;
+  margin: 2px;
+  width: 110px;
+  
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: var(--dark-purple);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.pet-show-button:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.pet-show-button:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: darken(#0cf, 15%);
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.pet-show-button:hover {
+  color: #fff;
+}
+.pet-show-button:hover:before {
+  width: 100%;
+}
+
