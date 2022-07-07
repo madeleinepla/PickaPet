@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search_container from '../search/search_container'
+
 
 const NavBar = (props) => {
   const logoutUser = (e) => {
@@ -35,6 +37,8 @@ const NavBar = (props) => {
   return (
     <div className='navbar'>
       <div className='empty-on-purpose'></div>
+
+      <div className='navbar-search'><Search_container/></div>
 
       <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
       
