@@ -43,7 +43,7 @@ router.get('/search-users', (req, res)=>{
 
 
 router.get('/:id', (req, res) => {
-    debugger;
+    // debugger;
     User.findById(req.params.id)
         .then(user => res.json({
             username: user.username,
@@ -66,7 +66,7 @@ router.get('/:id', (req, res) => {
 });
 
     router.patch('/:id/outgoingaddfriend/', (req, res) => {
-        debugger
+        // debugger
     const currentUser = req.body.currentUser;
     const options = { new: true };
     User.findByIdAndUpdate(
@@ -77,7 +77,7 @@ router.get('/:id', (req, res) => {
         .catch(err => res.status(400).json({ error: err.message }));
 });
     router.patch('/:id/incomingaddfriend/', (req, res) => {
-        debugger
+        // debugger
     const currentUser = req.body.currentUser;
     const options = { new: true };
     User.findByIdAndUpdate(req.params.id, { $push: { friendRequests: currentUser } }, options)
