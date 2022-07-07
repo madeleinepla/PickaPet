@@ -100,6 +100,7 @@ class Profile extends React.Component {
             </div>
             {/* {
             this.props.user.id===this.props.currentUser.id?"":
+            !this.props.user.friends?"":
             this.props.user.friends.includes(this.props.currentUser.id)?
             <button className='friend' onClick={this.unfriend}>Unfriend</button>:
             this.props.user.friendRequests.includes(this.props.currentUser.id)?
