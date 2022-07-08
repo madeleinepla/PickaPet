@@ -14,7 +14,7 @@ const NavBar = (props) => {
     return props.loggedIn ? (
       <div className='dropdown'>
         <button className="nav-btn">
-          Welcome, {props.currentUser.username}
+          Welcome, {props.user.username}
         </button>
         <div className="dropdown-content">
           <ul >
