@@ -12,7 +12,7 @@
         padding-left: 20px;
         font-size: 20px;
         outline:none;
-        border:1px solid black;
+        border:1px solid var(--dark-purple);
         border-radius: 30px;
         margin:20px;
         font-family: "ShakyRegular";
@@ -32,7 +32,7 @@
         margin-top:10px;
         margin-bottom:10px;
         background-color: #fffca4;
-        border: 10px solid rgb(8, 29, 86);
+        border: 10px solid var(--dark-purple);
         border-radius: 10px;
     }
     .search-users-username {
