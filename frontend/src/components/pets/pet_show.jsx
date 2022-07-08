@@ -13,11 +13,13 @@ class PetShow extends React.Component {
         this.pickaPet = this.pickaPet.bind(this);
         this.user = this.props.user
         this.points = this.points.bind(this)
+        this.userPoints = this.userPoints.bind(this)
     }
 
     componentDidMount() {
         // debugger;
         this.props.fetchUser(this.props.currentUser.id);
+        this.props.fetchUser(this.props.user.id);
         this.props.requestPet(this.props.ownProps.match.params.petId);
         
     }
@@ -136,8 +138,21 @@ class PetShow extends React.Component {
         }
     }
 
+    userPoints () {
+        // debugger
+        if (this.props.user._id === this.props.currentUser.id) {
+            return "Points: " + this.props.user.points
+        }   else {
+            return null
+        }
+    }
+
     render() {
-        const { pet, user, prevPath } = this.props;
+        const { pet, user, prevPath, currentUser } = this.props;
+        console.log(user)
+        console.log(currentUser)
+
+
 
         if(!(pet && user.pets)) return null;
         // debugger;
@@ -156,7 +171,8 @@ class PetShow extends React.Component {
                     <li>Last Pat: {pet.last_pet}</li>
                     <li>Last Shower: {pet.last_bathed}</li> */}
 
-                    <li className="points">Owner Points: {user.points}</li>
+                    {/* <li className="points">Points: {user.points}</li> */}
+                    <li className="points">{this.userPoints()}</li>
                 </div>
 
                 <div className="pet-show-interact">
