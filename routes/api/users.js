@@ -243,8 +243,8 @@ router.post('/register', (req, res) => {
                             username: user.username,
                             email: user.email,
                             pets: user.pets,
-                            friendRequests: req.user.friendRequests,
-                            friendsRequested: req.user.friendsRequested,
+                            friendRequests: user.friendRequests,
+                            friendsRequested: user.friendsRequested,
                         };
                         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
                             res.json({
