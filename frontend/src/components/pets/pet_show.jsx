@@ -149,8 +149,8 @@ class PetShow extends React.Component {
 
     render() {
         const { pet, user, prevPath, currentUser } = this.props;
-        console.log(user)
-        console.log(currentUser)
+        // console.log(user)
+        // console.log(currentUser)
 
 
 
