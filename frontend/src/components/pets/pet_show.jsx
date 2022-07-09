@@ -13,11 +13,13 @@ class PetShow extends React.Component {
         this.pickaPet = this.pickaPet.bind(this);
         this.user = this.props.user
         this.points = this.points.bind(this)
+        this.userPoints = this.userPoints.bind(this)
     }
 
     componentDidMount() {
         // debugger;
         this.props.fetchUser(this.props.currentUser.id);
+        this.props.fetchUser(this.props.user.id);
         this.props.requestPet(this.props.ownProps.match.params.petId);
         
     }
@@ -40,6 +42,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
         
         setTimeout(() => {
             this.points()
@@ -48,6 +54,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
         // debugger
     }
@@ -58,6 +68,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -66,6 +80,11 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
+        
         }, 7000);
     }
 
@@ -75,6 +94,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -83,6 +106,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
     }
 
@@ -92,6 +119,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -100,6 +131,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
     }
 
@@ -128,16 +163,31 @@ class PetShow extends React.Component {
             </div>
         } else {
             return <div className="pet-show-button">
-                <button onClick={this.feed} className="pet-show-button">Feed</button>
-                <button onClick={this.play} className="pet-show-button">Play</button>
-                <button onClick={this.pat} className="pet-show-button">Pat</button>
-                <button onClick={this.shower} className="pet-show-button">Shower</button>
+
+
+                <button onClick={this.feed} id="feedButton" className="pet-show-button">Feed</button>
+                <button onClick={this.play} id="playButton" className="pet-show-button">Play</button>
+                <button onClick={this.pat} id="patButton" className="pet-show-button">Pat</button>
+                <button onClick={this.shower} id="showerButton" className="pet-show-button">Shower</button>
             </div> 
         }
     }
 
+    userPoints () {
+        // debugger
+        if (this.props.user._id === this.props.currentUser.id) {
+            return "Points: " + this.props.user.points
+        }   else {
+            return null
+        }
+    }
+
     render() {
-        const { pet, user, prevPath } = this.props;
+        const { pet, user, prevPath, currentUser } = this.props;
+        // console.log(user)
+        // console.log(currentUser)
+
+
 
         if(!(pet && user.pets)) return null;
         // debugger;
@@ -156,7 +206,8 @@ class PetShow extends React.Component {
                     <li>Last Pat: {pet.last_pet}</li>
                     <li>Last Shower: {pet.last_bathed}</li> */}
 
-                    <li className="points">Owner Points: {user.points}</li>
+                    {/* <li className="points">Points: {user.points}</li> */}
+                    <li className="points">{this.userPoints()}</li>
                 </div>
 
                 <div className="pet-show-interact">
