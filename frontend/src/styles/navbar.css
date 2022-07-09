@@ -10,7 +10,7 @@
   z-index: 15;
   top: 0;
   /* padding: 15px 30px 15px 30px; */
-  padding: 10px 40px 0px 0px;
+  padding: 5px 0px;
   font-family: CheriRegular;
   min-width: 800px;
   margin-bottom: 50px;
@@ -67,11 +67,22 @@
   border-radius: 5px;
 }
 
-.navbar-links ul *:hover {
+.navbar-links ul *:hover, .instruct-btn:hover {
   transition: .5s;
   transform: scale(1.05);
   border-color: var(--light-yellow);
   cursor: pointer;
+}
+
+.instruct-btn {
+  background-color: var(--dark-purple);
+  color: white;
+  font-family: CheriRegular;
+  font-size: 22px;
+  margin: 0px 20px;
+  padding: 8px 18px 8px 18px;
+  border: 5px solid var(--light-purple);
+  border-radius: 100%;
 }
 
 .dropdown {
