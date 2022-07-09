@@ -98,7 +98,7 @@ class Profile extends React.Component {
                 fetchUser={this.props.fetchUser}
               />
             </div>
-            {/* {
+            {
             this.props.user.id===this.props.currentUser.id?"":
             !this.props.user.friends?"":
             this.props.user.friends.includes(this.props.currentUser.id)?
@@ -107,7 +107,7 @@ class Profile extends React.Component {
             <p>Friend Requested</p>
             :<button className='friend' onClick={this.friend}>Friend</button>}
 
-            {this.props.user.id === this.props.currentUser.id? this.friendRequests():""} */}
+            {this.props.user.id === this.props.currentUser.id? this.friendRequests():""}
         </div>
 
         <div className='user-pets'>
