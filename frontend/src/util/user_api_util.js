@@ -47,3 +47,8 @@ export const addPetToUser = (user, petId) => {
   // debugger;
   return axios.patch(`/api/users/${ user.id }/addpet`, {petId: petId})
 }
+
+export const searchUsers = (query) => {
+  debugger
+  return axios.get(`/api/users/search-users/${query}`)
+}

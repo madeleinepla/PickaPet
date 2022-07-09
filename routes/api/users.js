@@ -33,8 +33,9 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     });
 });
 
-router.get('/search-users', (req, res)=>{
-    let userSearch = new RegExp(("^"+req.body.query),'i')
+router.get('/search-users/:query', (req, res)=>{
+    debugger
+    let userSearch = new RegExp(("^"+req.params.query),'i')
     User.find({username:{$regex:userSearch}})
         .then(user => {
             res.json({ user })

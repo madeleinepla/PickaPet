@@ -12,6 +12,7 @@ import EditProfileContainer from './User/edit_profile_container';
 import NavBarContainer from './nav/navbar_container';
 import pet_show_container from './pets/pet_show_container';
 import search_container from './search/search_container';
+import search_results_container from './search/search_results_container';
 
 
 const App = () => (
@@ -25,6 +26,8 @@ const App = () => (
       <ProtectedRoute exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
       <Route exact path='/search' component={search_container} />
+      <Route exact path='/search-results' component={search_results_container} />
+
 
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
