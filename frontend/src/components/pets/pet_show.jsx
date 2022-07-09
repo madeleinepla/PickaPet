@@ -42,6 +42,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
         
         setTimeout(() => {
             this.points()
@@ -50,6 +54,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
         // debugger
     }
@@ -60,6 +68,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -68,6 +80,11 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
+        
         }, 7000);
     }
 
@@ -77,6 +94,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -85,6 +106,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
     }
 
@@ -94,6 +119,10 @@ class PetShow extends React.Component {
         action.className = "pet-show-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
+        document.getElementById("feedButton").style.display = "none";
+        document.getElementById("playButton").style.display = "none";
+        document.getElementById("patButton").style.display = "none";
+        document.getElementById("showerButton").style.display = "none";
 
         setTimeout(() => {
             this.points()
@@ -102,6 +131,10 @@ class PetShow extends React.Component {
         setTimeout(() => {
             document.querySelector(".image-container").removeChild(action)
             document.getElementById("showPet").style.display = "block";
+            document.getElementById("feedButton").style.display = "block";
+            document.getElementById("playButton").style.display = "block";
+            document.getElementById("patButton").style.display = "block";
+            document.getElementById("showerButton").style.display = "block";
         }, 5000);
     }
 
@@ -130,10 +163,12 @@ class PetShow extends React.Component {
             </div>
         } else {
             return <div className="pet-show-button">
-                <button onClick={this.feed} className="pet-show-button">Feed</button>
-                <button onClick={this.play} className="pet-show-button">Play</button>
-                <button onClick={this.pat} className="pet-show-button">Pat</button>
-                <button onClick={this.shower} className="pet-show-button">Shower</button>
+
+
+                <button onClick={this.feed} id="feedButton" className="pet-show-button">Feed</button>
+                <button onClick={this.play} id="playButton" className="pet-show-button">Play</button>
+                <button onClick={this.pat} id="patButton" className="pet-show-button">Pat</button>
+                <button onClick={this.shower} id="showerButton" className="pet-show-button">Shower</button>
             </div> 
         }
     }
