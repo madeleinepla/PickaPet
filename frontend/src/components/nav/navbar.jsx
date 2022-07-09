@@ -23,12 +23,14 @@ const NavBar = (props) => {
             <li onClick={logoutUser}>Log Out</li>
           </ul>
         </div>
+        
       </div>
     ) : (
         <div className='navbar-links'>
         <ul>
           <li onClick={() => props.openModal('signup')}>Sign Up</li>
           <li onClick={() => props.openModal('login')}>Log In</li>
+          
         </ul>
       </div>
     )
@@ -43,6 +45,12 @@ const NavBar = (props) => {
       <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
       
       <div className='navbar-drop'>{navbarLinks()}</div>
+
+      {
+        props.loggedIn ?
+        <button className='instruct-btn' onClick={() => props.openModal('instructions')}>i</button> :
+        null
+      }
       
     </div>
   )

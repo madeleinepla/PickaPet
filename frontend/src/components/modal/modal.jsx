@@ -1,6 +1,7 @@
 import React from 'react';
 import SignupFormContainer from '../session/signup_form_container';
 import LoginFormContainer from '../session/login_form_container';
+import InstructionModal from './instruction_modal';
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -13,6 +14,9 @@ const Modal = ({modal, closeModal}) => {
       break;
     case 'login':
       component = <LoginFormContainer />
+      break;
+    case 'instructions':
+      component = <InstructionModal closeModal={closeModal}/>
       break;
     default:
       return null;
