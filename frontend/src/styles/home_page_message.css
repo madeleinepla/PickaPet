@@ -388,6 +388,10 @@
   animation: 8s linear paw3 infinite;
 }
 
+.block {
+  height: 450px;
+}
+
 @keyframes paw1 {
   0% {
     opacity: 0;
