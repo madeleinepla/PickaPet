@@ -16,6 +16,7 @@ const HomePage = (props) => {
         <HomeDog />
         <HomePageMessage />
       </div>
+      <div className="block"></div>
       <div className="footer">
         <Footer />
       </div>
