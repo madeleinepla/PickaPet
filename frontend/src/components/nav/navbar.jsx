@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Search_container from '../search/search_container'
+import ModalContainer from '../modal/modal_container';
 
 
 const NavBar = (props) => {
@@ -44,6 +45,7 @@ const NavBar = (props) => {
 
       <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
       
+      <ModalContainer />
       <div className='navbar-drop'>{navbarLinks()}</div>
 
       {

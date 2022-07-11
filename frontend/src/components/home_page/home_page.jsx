@@ -10,7 +10,7 @@ const HomePage = (props) => {
   return (
     <div>
       <div>
-        <ModalContainer />
+        {/* <ModalContainer /> */}
       </div>
       <div className='home-main'>
         <HomeDog />
