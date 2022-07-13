@@ -18,8 +18,8 @@ class searchResults extends React.Component {
         if (this.props.pets.length===0 || this.props.users.length===0) {
             return null
         }
-        if (!Array.isArray(this.props.users[0])) return null
-        let users = this.props.users[0]
+        if (!Array.isArray(this.props.users)) return null
+        let users = this.props.users
         debugger
         return (
             <div className="search">

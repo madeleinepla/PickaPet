@@ -21,19 +21,19 @@ class search extends React.Component {
         if (this.props.pets.length===0 || this.props.users.length===0) {
             return null
         }
-        // let users = this.props.users
-        // .filter(user=>user.username.toLowerCase().includes(this.state.search.toLowerCase()))
-        // if (this.state.search === "") {
-        //     users = []
-        // }  
+        let users = this.props.users
+        .filter(user=>user.username.toLowerCase().includes(this.state.search.toLowerCase()))
+        if (this.state.search === "") {
+            users = []
+        }  
         return (
             
             <div className="search">
                     <form className="search-bar-container">
                         <input className="search-bar-input"type="text" value={this.state.search} placeholder="search" onChange={this.update}></input>
-                        <Link className="search-bar-button"to={`search-results?${this.state.search}`}>Search</Link>
+                        <Link className="search-bar-button"to={`search-results?${this.state.search}`} onClick={()=>this.state.search=""}>Search</Link>
                     </form>
-                    {/* <div className="search-users-container">
+                    <div className="search-users-container">
                         <div className="search-users">
 
                         {users.map(user=>
@@ -61,7 +61,7 @@ class search extends React.Component {
                             </Link>
                             )}
                         </div>
-                    </div> */}
+                    </div>
             </div>
         )
     }

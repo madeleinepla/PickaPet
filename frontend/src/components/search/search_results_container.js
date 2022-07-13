@@ -5,13 +5,13 @@ import searchResults from "./search_results"
 
 const mSTP = (state, ownProps) => {
     const pets = Object.values(state.entities.pets.all)
-    const users = Object.values(state.entities.users.all)
+    const users = Object.values(state.entities.users.userssearch)
     return {
     users: users,
     pets:pets,
 }}
 const mDTP = dispatch => ({
     requestPets: ()=>dispatch(requestPets()),
-    searchusers: (query)=>dispatch(searchusers(query))
+    searchusers: (query)=>dispatch(searchusers(query)),
 })
 export default connect(mSTP, mDTP)(searchResults)
