@@ -6,6 +6,7 @@ import { getUsers, getUser, patchUser, IncomingAddfriend, OutgoingAddfriend, acc
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_USERS_SEARCH = "RECEIVE_USERS_SEARCH"
 
 export const receiveUsers = users => {
   return {
@@ -15,11 +16,19 @@ export const receiveUsers = users => {
 };
 
 export const receiveUser = user => {
+  debugger
   return {
     type: RECEIVE_USER,
     user
   }
 };
+export const receiveUserSearch = users => {
+  debugger
+  return {
+  type: RECEIVE_USERS_SEARCH,
+  users
+  }
+}
 
 export const fetchUsers = () => dispatch => (
   getUsers()
@@ -79,5 +88,5 @@ export const adoptPet = (user, petId) => dispatch => (
 
 export const searchusers = (query) => dispatch => (
   searchUsers(query)
-  .then(users => dispatch(receiveUsers(users)))
+  .then(users => dispatch(receiveUserSearch(users)))
 );
