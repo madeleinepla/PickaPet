@@ -3,7 +3,7 @@ import { RECEIVE_USERS, RECEIVE_USER, RECEIVE_USERS_SEARCH } from '../../actions
 const UsersReducer = (state = { all: {}, user: {}, userssearch: {} }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-  debugger;
+  // debugger;
   switch (action.type) {
     case RECEIVE_USER:
       newState.user = action.user.data;

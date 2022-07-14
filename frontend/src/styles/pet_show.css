@@ -41,10 +41,11 @@
 }
 
 .pet-show-button, .pet-show-button-adopt {
-  margin-top: 15px;
+  margin-top: 2%;
+  margin-left: 8%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .pet-show-button > * {
