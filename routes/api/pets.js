@@ -64,6 +64,31 @@ router.patch('/:id', (req, res)=>{
     .catch(err=>res.status(400).json({error:error.message}))
 })
 
-
+//pet edit
+// router.patch('/:id', (req, res) => {
+//   let updates = {};
+//   const updatedFedDate = req.body.last_fed;
+//   if (updatedFedDate) {
+//       updates["last_fed"] = updatedFedDate;
+//   }
+//   const updatedBathedDate = req.body.last_bathed;
+//   if (updatedBathedDate) {
+//       updates["last_bathed"] = updatedBathedDate;
+//   }
+//   const updatedPlayDate = req.body.last_play;
+//   if (updatedPlayDate) {
+//       updates["last_play"] = updatedPlayDate;
+//   }
+//   const updatedPetDate = req.body.last_pet;
+//   if (updatedPetDate) {
+//       updates["last_pet"] = updatedPetDate;
+//   }
+  
+//   const options = { new: true };
+//   Pet.findByIdAndUpdate(
+//       req.params._id, updates, options)
+//       .then(pet => res.send(pet))
+//       .catch(err => res.status(400).json({ error: err.message }));
+// });
 
 module.exports = router;

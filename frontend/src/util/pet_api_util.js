@@ -7,3 +7,7 @@ export const getPets = () => {
 export const getPet = (petId) => {
     return axios.get(`/api/pets/${petId}`)
 }
+
+export const patchPet = (pet) => {
+    return axios.patch(`/api/pets/${pet._id}`, pet)
+}

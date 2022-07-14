@@ -1,4 +1,4 @@
-import { getPets, getPet } from "../util/pet_api_util";
+import { getPets, getPet, patchPet } from "../util/pet_api_util";
 
 export const RECEIVE_PETS = "RECEIVE_PETS";
 export const RECEIVE_PET = "RECEIVE_PET";
@@ -26,3 +26,8 @@ export const requestPet = (petId) => dispatch => {
         .then((pet) => dispatch(receivePet(pet)))
         .catch(err => console.log(err))
 }
+
+export const updatePet = (pet) => dispatch => (
+    patchPet(pet)
+        .then(pet => dispatch(receivePet(pet)))
+);

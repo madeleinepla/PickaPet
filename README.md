@@ -11,14 +11,13 @@ MVPs
 Hosted on heroku
 User Auth
 User Profile
-Pets
+Pets Store
 Pet Interaction
   feed
   shower
   play
-  idle
-  (speak)
-Find Friends
+  Pat
+Search Users
 
 bonus
   pet comment and likes
