@@ -16,14 +16,14 @@ export const receiveUsers = users => {
 };
 
 export const receiveUser = user => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_USER,
     user
   }
 };
 export const receiveUserSearch = users => {
-  debugger
+  // debugger
   return {
   type: RECEIVE_USERS_SEARCH,
   users

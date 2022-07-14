@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { requestPet } from "../../actions/pet_actions";
+import { requestPet,updatePet } from "../../actions/pet_actions";
 import { fetchUser, adoptPet, updateUser } from '../../actions/user_actions';
 import PetShow from "./pet_show";
 
@@ -23,6 +23,7 @@ const mDTP = (dispatch) => {
         requestPet: (petId) => dispatch(requestPet(petId)),
         adoptPet: (user, petId) => dispatch(adoptPet(user, petId)),
         updateUser: (user) => dispatch(updateUser(user)),
+        updatePet:(pet) => dispatch(updatePet(pet)),
     }
 }
 
