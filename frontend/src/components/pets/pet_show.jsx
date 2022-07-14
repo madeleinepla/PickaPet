@@ -1,5 +1,5 @@
 import React from "react";
-import { formatDate } from '../../util/date_util';
+import { formatDate, formatDateTime } from '../../util/date_util';
 
 
 class PetShow extends React.Component {
@@ -12,7 +12,6 @@ class PetShow extends React.Component {
         this.shower = this.shower.bind(this);
         this.pickaPet = this.pickaPet.bind(this);
         this.user = this.props.user
-        this.pet = this.props.pet
         this.points = this.points.bind(this)
         this.userPoints = this.userPoints.bind(this)
     }
@@ -34,7 +33,7 @@ class PetShow extends React.Component {
     points() {
             this.user.points += 1
             this.props.updateUser(this.user)
-            // this.props.updatePet(this.pet)
+            this.props.updatePet(this.props.pet)
     }
 
 
@@ -49,7 +48,7 @@ class PetShow extends React.Component {
         document.getElementById("patButton").style.display = "none";
         document.getElementById("showerButton").style.display = "none";
         
-        this.props.pet.last_fed = formatDate(Date.now());
+        this.props.pet.last_fed = formatDateTime(Date.now());
         // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
@@ -78,7 +77,7 @@ class PetShow extends React.Component {
         document.getElementById("patButton").style.display = "none";
         document.getElementById("showerButton").style.display = "none";
 
-        this.props.pet.last_play = formatDate(Date.now());
+        this.props.pet.last_play = formatDateTime(Date.now());
         // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
@@ -107,7 +106,8 @@ class PetShow extends React.Component {
         document.getElementById("patButton").style.display = "none";
         document.getElementById("showerButton").style.display = "none";
 
-        this.props.pet.last_pet = formatDate(Date.now());
+        this.props.pet.last_pet = formatDateTime(Date.now());
+        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()
@@ -134,7 +134,8 @@ class PetShow extends React.Component {
         document.getElementById("patButton").style.display = "none";
         document.getElementById("showerButton").style.display = "none"; 
 
-        this.props.pet.last_bathed = formatDate(Date.now());
+        this.props.pet.last_bathed = formatDateTime(Date.now());
+        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()

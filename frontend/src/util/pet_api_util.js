@@ -9,5 +9,6 @@ export const getPet = (petId) => {
 }
 
 export const patchPet = (pet) => {
+    // debugger
     return axios.patch(`/api/pets/${pet._id}`, pet)
 }

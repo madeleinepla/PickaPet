@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 const PetSchema = new Schema({
   last_fed: {
-    type: Date,
+    type: String,
     // required:true
   },
   last_bathed: {
-    type: Date,
+    type: String,
     // required:true
   },
   last_play: {
-    type: Date,
+    type: String,
     // required:true
   },
   last_pet: {
-    type: Date,
+    type: String,
     // required:true
   },
   name: {
