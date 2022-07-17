@@ -1,4 +1,4 @@
-
+    
     .search-bar-container {
         
         display: flex;
@@ -81,3 +81,16 @@
         margin-right:30px;
         margin-bottom: 5px;
     }
+
+    /* i pad air, i pad mini, surface pro 7, surface duo */
+@media screen and (max-width: 1024px) {
+    .search-users-user {
+        width: 300px;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .search-users-user {
+        width: 300px;
+    }
+}

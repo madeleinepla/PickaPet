@@ -273,3 +273,45 @@
   margin-top: 50px;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .user-page-parent {
+    display: flex;
+    width: 700px;
+    height: 100%;
+  }
+  .user-page {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+  .user-info {
+    width: 100%;
+  }
+  .user-pets {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .user-page-parent {
+    display: flex;
+    width: 700px;
+    height: 100%;
+  }
+  .user-page {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+  .user-info {
+    width: 100%;
+  }
+  .user-pets {
+    width: 100%;
+  }
+}

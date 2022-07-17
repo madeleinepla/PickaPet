@@ -51,3 +51,12 @@
 .github-link a, .linkedin-link a, .personal-website a{
   fill: var(--dark-purple);
 }
+
+/* i pad air, i pad mini, surface pro 7, surface duo */
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 600px) {
+
+}

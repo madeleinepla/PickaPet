@@ -14,13 +14,13 @@ class searchResults extends React.Component {
     }
 
     render () {
-        debugger
+        // debugger
         if (this.props.pets.length===0 || this.props.users.length===0) {
             return null
         }
         if (!Array.isArray(this.props.users)) return null
         let users = this.props.users
-        debugger
+        // debugger
         return (
             <div className="search">
                 <div className="search-header">Search Results: {users.length}</div>
@@ -34,7 +34,7 @@ class searchResults extends React.Component {
                                     <br />
                                     {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
                                         <div className="search-pet">
-                                            <img className="search-pet-photo" src={pet.profileUrl} alt="pet photo" />
+                                            <img className="search-pet-photo" src={pet.profileUrl} alt="pet pic" />
                                             <div>
                                                 <p>{pet.name}</p>
                                                 <p>{pet.species}</p>
