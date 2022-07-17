@@ -445,3 +445,26 @@
     opacity: 0;
   }
 }
+
+/* i pad air, i pad mini, surface pro 7, surface duo */
+@media screen and (max-width: 1024px) {
+  .home-welcome-container {
+    top: 175px;
+    left: -320px;
+  }
+  .dogs,
+  .cats {
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-welcome-container {
+    top: 140px;
+    left: -100px;
+  }
+  .dogs,
+  .cats {
+    top: 80px;
+  }
+}

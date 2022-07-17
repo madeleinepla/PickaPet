@@ -49,6 +49,6 @@ export const addPetToUser = (user, petId) => {
 }
 
 export const searchUsers = (query) => {
-  debugger
+  // debugger
   return axios.get(`/api/users/search-users/${query}`)
 }

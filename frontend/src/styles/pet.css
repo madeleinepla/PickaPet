@@ -75,3 +75,9 @@
     font-size: 62px;
     color: rgba(0, 0, 0, 0.8);
 }
+
+@media screen and (max-width: 600px) {
+    .pet-boxes {
+        width: 900px;
+    }
+}
