@@ -15,7 +15,17 @@ class search extends React.Component {
     componentDidMount() {        
         this.props.requestPets()
         this.props.fetchUsers()
+        
+
     }
+
+    clickHandler(userId){
+        // debugger
+        this.state.search=""
+        // this.props.ownProps.history.push(`/users/${userId}`)
+        this.props.fetchUser(userId)
+    }
+
     render () {
         console.log(this.state)
         if (this.props.pets.length===0 || this.props.users.length===0) {
@@ -37,7 +47,7 @@ class search extends React.Component {
                         <div className="search-users">
 
                         {users.map(user=>
-                            <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id} onClick={()=>this.state.search=""}>
+                            <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id} onClick={()=>this.clickHandler(user._id)}>
                             <div className="search-users-user" key={user.id}>
 
                             <div className="search-pets">

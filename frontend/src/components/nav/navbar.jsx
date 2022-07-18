@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Search_container from '../search/search_container'
+import Search_container from '../search/search_container';
 import ModalContainer from '../modal/modal_container';
 
 
@@ -8,6 +8,11 @@ const NavBar = (props) => {
   const logoutUser = (e) => {
     e.preventDefault();
     props.logout();
+  };
+
+  const clickHandler = (userId) => {
+    // debugger
+    props.fetchUser(userId);
   }
 
   const navbarLinks = () => {
@@ -19,31 +24,31 @@ const NavBar = (props) => {
         </button>
         <div className="dropdown-content">
           <ul >
-            <li><Link to={`/users/${props.currentUser.id}`}>Profile Page</Link></li>
+            <li><Link to={`/users/${props.currentUser.id}`} onClick={() => clickHandler(props.currentUser.id)}>Profile Page</Link></li>
             <li><Link to='/pets'>Pet Store</Link></li>
             <li onClick={logoutUser}>Log Out</li>
           </ul>
         </div>
-        
+
       </div>
     ) : (
-        <div className='navbar-links'>
+      <div className='navbar-links'>
         <ul>
           <li onClick={() => props.openModal('signup')}>Sign Up</li>
           <li onClick={() => props.openModal('login')}>Log In</li>
-          
+
         </ul>
       </div>
-    )
-  }
+    );
+  };
 
   const navbarSearch = () => {
     return props.loggedIn ? (
-      <Search_container/>
+      <Search_container />
     ) : (
-        null
-    )
-  }
+      null
+    );
+  };
 
   return (
     <div className='navbar'>
@@ -52,19 +57,19 @@ const NavBar = (props) => {
       <div className='navbar-search'>{navbarSearch()}</div>
 
       <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
-      
+
       <ModalContainer />
       <div className='navbar-drop'>{navbarLinks()}</div>
 
       {
         props.loggedIn ?
-        <button className='instruct-btn' onClick={() => props.openModal('instructions')}>i</button> :
-        null
+          <button className='instruct-btn' onClick={() => props.openModal('instructions')}>i</button> :
+          null
       }
-      
+
     </div>
-  )
-}
+  );
+};
 
 // class NavBar extends React.Component {
 //   constructor(props) {
