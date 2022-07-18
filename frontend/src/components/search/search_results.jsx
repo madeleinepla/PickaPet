@@ -9,14 +9,17 @@ class searchResults extends React.Component {
         this.props.searchusers(this.props.location.search.split("?")[1])
 
     }
-    componentDidUpdate() {
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.search !== prevProps.location.search)
         this.props.searchusers(this.props.location.search.split("?")[1])
     }
 
     render () {
         // debugger
         if (this.props.pets.length===0 || this.props.users.length===0) {
-            return null
+            // return null
+            return <div className='no-search-result'> No user found. Please try another search.</div>
         }
         if (!Array.isArray(this.props.users)) return null
         let users = this.props.users

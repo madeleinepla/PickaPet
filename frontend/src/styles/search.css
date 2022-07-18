@@ -26,6 +26,14 @@
         margin:20px;
         font-family: "ShakyRegular";
     }
+
+    .no-search-result{
+        text-align: center;
+        font-family: "ShakyRegular";
+        color: var(--dark-purple);
+        font-size: 30px;
+    }
+
     .search-header {
         text-align: center;
         font-family: "ShakyRegular";
@@ -85,6 +93,7 @@
         margin-left:30px;
         margin-right:30px;
         margin-bottom: 5px;
+        margin-top: 2px;
     }
 
     /* i pad air, i pad mini, surface pro 7, surface duo */

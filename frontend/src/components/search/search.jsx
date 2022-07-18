@@ -31,13 +31,13 @@ class search extends React.Component {
             <div className="search">
                     <form className="search-bar-container">
                         <input className="search-bar-input"type="text" value={this.state.search} placeholder="search" onChange={this.update}></input>
-                        <Link className="search-bar-button"to={`search-results?${this.state.search}`} onClick={()=>this.state.search=""}>Search</Link>
+                        <Link className="search-bar-button"to={`/search-results?${this.state.search}`} onClick={()=>this.state.search=""} >Search</Link>
                     </form>
                     <div className="search-users-container">
                         <div className="search-users">
 
                         {users.map(user=>
-                            <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id}>
+                            <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id} onClick={()=>this.state.search=""}>
                             <div className="search-users-user" key={user.id}>
 
                             <div className="search-pets">
