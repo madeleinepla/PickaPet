@@ -46,10 +46,25 @@
   border-radius: 5px;
   padding: 15px 25px;
   background-color: var(--light-yellow);
-  height: 25%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-detail p:last-child {
+  background-color: var(--light-purple);
+  border-radius: 50px;
+  padding: 8px 8px 8px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user-edit-btn {

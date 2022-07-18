@@ -62,10 +62,22 @@ class Profile extends React.Component {
           </div>
 
           <div className='user-details'>
-            <div>Username: {username}</div>
-            <div>Date Joined: {formatDate(dateJoined)}</div>
-            <div>Points: {points}</div>
-            <div>Bio: {bio}</div>
+            <div className='user-detail'>
+              <p>Username:</p>
+              <p>{username}</p>
+            </div>
+            <div className='user-detail'>
+              <p>Date Joined:</p>
+              <p>{formatDate(dateJoined)}</p>
+            </div>
+            <div className='user-detail'>
+              <p>Points:</p>
+              <p>{points}</p>
+            </div>
+            <div className='user-detail'>
+              <p>Bio:</p>
+              <p>{bio}</p> 
+            </div>
             {
               this.props.user.id === this.props.currentUser.id ?
               <div className='user-edit-btn'>

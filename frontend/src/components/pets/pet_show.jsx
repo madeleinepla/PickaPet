@@ -171,7 +171,7 @@ class PetShow extends React.Component {
     pickaPet() {      
         debugger;
         if (this.props.adopted) {
-            return <div className="pet-show-button">
+            return <div className="pet-show-buttons">
                 <button onClick={this.feed} id="feedButton" className="pet-show-button">Feed</button>
                 <button onClick={this.play} id="playButton" className="pet-show-button">Play</button>
                 <button onClick={this.pat} id="patButton" className="pet-show-button">Pat</button>
