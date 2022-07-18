@@ -21,15 +21,11 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         id: req.user.id,
         email: req.user.email,
         dateJoined: req.user.dateJoined,
-        friends: req.user.friends,
         pets: req.user.pets,
         points: req.user.points,
         bio: req.user.bio,
         coins: req.user.coins,
         inventory: req.user.inventory,
-        friendRequests: req.user.friendRequests,
-        friendsRequested: req.user.friendsRequested,
-
     });
 });
 
@@ -51,95 +47,17 @@ router.get('/:id', (req, res) => {
             id: user.id,
             email: user.email,
             dateJoined: user.dateJoined,
-            friends: user.friends,
             pets: user.pets,
             points: user.points,
             bio: user.bio,
             coins: user.coins,
             inventory: user.inventory,
-            friendRequests: user.friendRequests,
-            friendsRequested: user.friendsRequested,
         }))
         .catch(err =>
             res.status(404).json({ nouserfound: 'No user found' }
             )
         );
 });
-
-    router.patch('/:id/outgoingaddfriend/', (req, res) => {
-        // debugger
-    const currentUser = req.body.currentUser;
-    const options = { new: true };
-    User.findByIdAndUpdate(
-        currentUser, { $push: { friendsRequested: req.params.id } }, options)
-        .then(user => {
-            res.send(user);
-        })
-        .catch(err => res.status(400).json({ error: err.message }));
-});
-    router.patch('/:id/incomingaddfriend/', (req, res) => {
-        // debugger
-    const currentUser = req.body.currentUser;
-    const options = { new: true };
-    User.findByIdAndUpdate(req.params.id, { $push: { friendRequests: currentUser } }, options)
-        .then(user => {
-            res.send(user);
-        })
-        .catch(err => res.status(400).json({ error: err.message }));
-})
-
-
-router.patch('/:id/acceptfriendrequest1/',(req, res) => {
-    const friendId = req.body.friendId;
-    const options = { new: true };
-    User.findByIdAndUpdate(
-        req.params.id, { $pull: { friendRequests: friendId } }, options)
-        .then(user => { res.send(user)})
-        .catch(err => {res.status(400).json({ error: err.message })});
-})
-router.patch('/:id/acceptfriendrequest2/',(req, res) => {
-    const friendId = req.body.friendId;
-    const options = { new: true };
-    User.findByIdAndUpdate(req.params.id, { $push: { friends: friendId } }, options)
-        .then(user => {res.send(user)})
-        .catch(err => {res.status(400).json({ error: err.message })});
-})
-router.patch('/:id/acceptfriendrequest3/',(req, res) => {
-    const friendId = req.body.friendId;
-    const options = { new: true };
-    User.findByIdAndUpdate(friendId, { $pull: { friendsRequested: req.params.id } }, options)
-        .then(user => {res.send(user)})
-        .catch(err => {res.status(400).json({ error: err.message })});
-})
-router.patch('/:id/acceptfriendrequest4/',(req, res) => {
-    const friendId = req.body.friendId;
-    const options = { new: true };
-    User.findByIdAndUpdate(friendId, { $push: { friends: req.params.id } }, options)
-        .then(user => {
-            res.send(user);
-        })
-        .catch(err => res.status(400).json({ error: err.message }));
-})
-
-
-
-router.patch('/:id/unfriend1/', (req, res) => {
-    const currentUser = req.body.currentUser;
-    const options = { new: true };
-    User.findByIdAndUpdate(
-        req.params.id, { $pull: { friends: currentUser.id } }, options)
-        .then(user => res.send(user))
-        .catch(err => res.status(400).json({ error: err.message }));
-});
-router.patch('/:id/unfriend2/', (req, res) => {
-    const currentUser = req.body.currentUser;
-    const options = { new: true };
-    User.findByIdAndUpdate(
-        currentUser.id, { $pull: { friends: req.params.id } }, options)
-        .then(user => res.send(user))
-        .catch(err => res.status(400).json({ error: err.message }));
-});
-
 
 router.patch('/:id/addpet/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const petId = req.body.petId;
@@ -189,13 +107,6 @@ router.patch('/:id', (req, res) => {
 });
 router.delete('/:id', (req, res) => {
     const options = { new: true };
-    User.findById(req.params.id)
-        .then(user => user["friends"].forEach(friendId => {
-            User.findByIdAndUpdate(friendId, { $pull: { friends: req.params.id } }, options)
-                .then(user2 => { })
-                .catch(err2 => err => { });
-        }))
-        .catch(err => { });
     User.deleteOne({ _id: req.params.id })
         .then(user => res.send("deleted"))
         .catch(err => res.status(400).json({ error: err.message }));
@@ -205,13 +116,7 @@ router.delete('/:id', (req, res) => {
 router.get("/test", (req, res) => {
     res.json({ msg: "This is the user route" });
 });
-// router.get('/current', passport.authenticate('jwt', {session:false}), (req,res)=>{
-//     res.json({
-//         username: req.user.username,
-//         id:req.user.id,
-//         email:req.user.email
-//     })
-// })
+
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
@@ -244,8 +149,6 @@ router.post('/register', (req, res) => {
                             username: user.username,
                             email: user.email,
                             pets: user.pets,
-                            friendRequests: user.friendRequests,
-                            friendsRequested: user.friendsRequested,
                         };
                         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600}, (err, token) => {
                             res.json({
@@ -284,8 +187,6 @@ router.post('/login', (req, res) => {
                             coins: user.coins,
                             bio: user.bio,
                             inventory: user.inventory,
-                            friendRequests: user.friendRequests,
-                            friendsRequested: user.friendsRequested,
                         };
                         jwt.sign(
                             payload,
@@ -305,8 +206,5 @@ router.post('/login', (req, res) => {
                 });
         });
 });
-
-
-
 
 module.exports = router;

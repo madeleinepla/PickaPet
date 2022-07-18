@@ -1,14 +1,10 @@
 import React from 'react';
 import { formatDate } from '../../util/date_util';
-import FriendIndex from '../friend/friend_index';
 import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.friend=this.friend.bind(this)
-    this.unfriend=this.unfriend.bind(this)
-    this.approvefriendrequest=this.approvefriendrequest.bind(this)
   }
 
   componentDidMount() {
@@ -16,29 +12,14 @@ class Profile extends React.Component {
     this.props.fetchUsers();
     this.props.requestPets();
   }
-  friend() {
-    this.props.incomingaddfriend(this.props.currentUser, this.props.user.id)
-    this.props.outgoingaddfriend(this.props.currentUser, this.props.user.id)
-  }
-  unfriend(){
-    this.props.Unfriend1(this.props.currentUser, this.props.user.id)
-    this.props.Unfriend2(this.props.currentUser, this.props.user.id)
-  }
-  approvefriendrequest(userid) {
-    this.props.Acceptfriendrequest1(this.props.currentUser, userid)
-    this.props.Acceptfriendrequest2(this.props.currentUser, userid)
-    this.props.Acceptfriendrequest3(this.props.currentUser, userid)
-    this.props.Acceptfriendrequest4(this.props.currentUser, userid)
-  }
 
   pets() {
-    // debugger;
     const { pets } = this.props;
     if(!pets) return null;
     return (
       
         (pets.length === 0) ? 
-          <div className='no-friend'>you have no pets ┏༼ ◉╭╮◉༽┓</div>  
+          <div className='no-pets'>you have no pets ┏༼ ◉╭╮◉༽┓</div>  
         : 
       <div className='pets-list'>
         {
@@ -93,25 +74,6 @@ class Profile extends React.Component {
               null
             }
           </div>
-
-            <div className='friends-index'>
-              <FriendIndex 
-                users={this.props.users} 
-                user={this.props.user} 
-                ownProps={this.props.ownProps} 
-                fetchUser={this.props.fetchUser}
-              />
-            </div>
-            {
-            this.props.user.id===this.props.currentUser.id?"":
-            !this.props.user.friends?"":
-            this.props.user.friends.includes(this.props.currentUser.id)?
-            <button className='friend' onClick={this.unfriend}>Unfriend</button>:
-            this.props.user.friendRequests.includes(this.props.currentUser.id)?
-            <p>Friend Requested</p>
-            :<button className='friend' onClick={this.friend}>Friend</button>}
-
-            {this.props.user.id === this.props.currentUser.id? this.friendRequests():""}
         </div>
 
         <div className='user-pets'>
@@ -124,14 +86,7 @@ class Profile extends React.Component {
       </div>
     )
   }
-  friendRequests() {
-    return (
-      <div className='friend-requests'>
-        <p>friend requests:</p>
-      {this.props.currentUser.friendRequests.map(userid=><button className='friend-requests-button' onClick={()=>this.approvefriendrequest(userid)}> Approve Friend Request: {`${this.props.users.filter(user=>user._id===userid)[0].username}`}</button>)}
-      </div>
-      )
-  }
+
   render() {
     if(!this.props.user) return null;
     if(!this.props.currentUser) return null;
