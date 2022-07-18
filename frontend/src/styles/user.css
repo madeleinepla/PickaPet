@@ -24,7 +24,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   /* overflow: scroll; */
 }
 
@@ -72,33 +72,6 @@
 .user-edit-btn:hover {
   transition: .5s;
     transform: scale(1.05);
-}
-
-.friends-index {
-  margin: 10px 25px 25px 25px;
-  border: 3px solid var(--dark-purple);
-  border-radius: 5px;
-  padding: 15px;
-  background-color: var(--light-yellow);
-  height: 50%;
-}
-
-.friend-item > li{
-  border: 2px solid var(--dark-purple);
-  margin: 10px 0;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: var(--light-purple);
-  color: white;
-}
-
-.friend-item > li:hover {
-  transition: .5s;
-    transform: scale(1.02);
-}
-
-.friend-item {
-  text-decoration: none;
 }
 
 .user-pets {
@@ -233,42 +206,8 @@
   transform: scale(1.05);
   border-color: var(--light-purple);
 }
-.friend-requests {
-  margin: 25px 25px 10px 25px;
-  border: 3px solid var(--dark-purple);
-  border-radius: 5px;
-  padding: 15px 25px;
-  background-color: var(--light-yellow);
-  height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.friend-requests-button {
-  display: flex;
-  justify-content: center;
-  margin: 0 20%;
-  margin-top: 10px;
-  border: 3px solid var(--dark-purple);
-  background-color: var(--light-purple);
-  border-radius: 5px;
-  padding: 5px;
-}
-.friend{
-  margin: 0px 25px 0px 25px;
-  border: 3px solid var(--dark-purple);
-  border-radius: 5px;
-  padding: 15px 100px;
-  background-color: var(--light-purple);
-  height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  color: white;
 
-}
-
-.no-friend {
+.no-pets {
   font-size: 30px;
   margin-top: 50px;
   text-align: center;

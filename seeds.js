@@ -200,7 +200,6 @@ const seedPets = [
   //   password:"example7",
   //   dateJoined: new Date(),
   //   pets: ["62c44a19a044df29db96c38c"],
-  //   friends: ["62c45a51fb0e50b80c1b28ec"],
   //   points:0,
   // },
 
@@ -210,7 +209,6 @@ const seedPets = [
   //   password:"nilshen",
   //   dateJoined: new Date(),
   //   pets: ["62c4ec3afd3744f543419678", "62c4ec3afd3744f543419679"],
-  //   friends: [],
   //   points:0,
   // },
 

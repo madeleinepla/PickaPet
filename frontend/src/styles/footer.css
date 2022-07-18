@@ -29,11 +29,6 @@
   margin-right: 20px;
 }
 
-.footer-image:hover {
-  transition: .5s;
-  transform: scale(1.05);
-}
-
 .links {
   margin: 12px 0px;
 }
@@ -50,6 +45,11 @@
 
 .github-link a, .linkedin-link a, .personal-website a{
   fill: var(--dark-purple);
+}
+
+.github-link:hover, .linkedin-link:hover, .personal-website:hover {
+  transition: .5s;
+  transform: scale(1.1);
 }
 
 /* i pad air, i pad mini, surface pro 7, surface duo */

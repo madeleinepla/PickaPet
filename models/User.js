@@ -18,15 +18,6 @@ const UserSchema = new Schema({
         type: Date,
         required:true
     },
-    friends: [
-        {type: mongoose.Schema.Types.ObjectId}
-    ],
-    friendRequests: [
-        {type: mongoose.Schema.Types.ObjectId}
-    ],
-    friendsRequested: [
-        {type: mongoose.Schema.Types.ObjectId}
-    ],
     pets: [
         {type: mongoose.Schema.Types.ObjectId}
     ],
