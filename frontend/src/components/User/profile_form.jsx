@@ -15,6 +15,7 @@ class ProfileForm extends React.Component {
     e.preventDefault();
     // debugger;
     this.props.updateUser(this.state)
+      .then(this.props.receiveCurrentUser(this.state))
       .then(this.props.ownProps.history.push(`/users/${this.props.profile.id}`))
   }
 
