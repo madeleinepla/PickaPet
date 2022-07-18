@@ -33,7 +33,7 @@ class Profile extends React.Component {
             }
 
             return <div  key={i}>
-              <Link className='pet-item' to={`/pets/${pet._id}`}>
+              <Link className='pet-item' to={`/users/${this.props.user.id}/${pet._id}`}>
                 <div className='pet-thumbnail'>
                   <img src={pet.profileUrl} alt='loading...' />
                 </div>
