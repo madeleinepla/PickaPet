@@ -178,6 +178,7 @@
   margin: 50px 30% 0 30%;
   font-family: ShakyRegular;
   color: var(--dark-purple);
+  width: 600px;
 }
 
 .edit-user-form h1{
@@ -279,6 +280,7 @@
     display: flex;
     width: 700px;
     height: 100%;
+    margin-left: 100px;
   }
   .user-page {
     flex-direction: column;
@@ -292,6 +294,9 @@
   }
   .user-pets {
     width: 100%;
+  }
+  .edit-user-form {
+    margin-left: 140px;
   }
 }
 
@@ -299,6 +304,7 @@
   .user-page-parent {
     display: flex;
     width: 700px;
+    margin-left: 70px;
     height: 100%;
   }
   .user-page {
@@ -313,5 +319,8 @@
   }
   .user-pets {
     width: 100%;
+  }
+  .edit-user-form {
+    margin-left: 140px;
   }
 }

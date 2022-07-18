@@ -61,10 +61,15 @@
     }
     .search-pets {
         display: flex;
+        flex-direction: row;
         overflow: scroll;
         width:100%;
         height:100%;
     }
+    /* .search-pet-container {
+        display: flex;
+        flex-direction: row;
+    } */
     .search-pet {
         width: 160px;
         display: flex;
