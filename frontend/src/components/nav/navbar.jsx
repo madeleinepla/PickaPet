@@ -37,11 +37,19 @@ const NavBar = (props) => {
     )
   }
 
+  const navbarSearch = () => {
+    return props.loggedIn ? (
+      <Search_container/>
+    ) : (
+        null
+    )
+  }
+
   return (
     <div className='navbar'>
       <div className='empty-on-purpose'></div>
 
-      <div className='navbar-search'><Search_container/></div>
+      <div className='navbar-search'>{navbarSearch()}</div>
 
       <div className='navbar-title'><Link to='/'>Picka Pet</Link></div>
       
