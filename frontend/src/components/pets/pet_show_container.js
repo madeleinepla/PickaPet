@@ -5,13 +5,15 @@ import PetShow from "./pet_show";
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    debugger
     return {
-        pets: state.entities.pets.all,
+        // pets: state.entities.pets.all,
         pet: state.entities.pets.pet,
+        petId: ownProps.match.params.petId,
         user: state.entities.users.user,
         currentUser: state.session.user,
-        ownProps,
+        adopted: !!ownProps.match.params.id,
+        ownProps: ownProps
         
     }
 }

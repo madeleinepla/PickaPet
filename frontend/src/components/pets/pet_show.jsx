@@ -5,7 +5,7 @@ import { formatDate, formatDateTime } from '../../util/date_util';
 class PetShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.ownProps.location.state;
+        // this.state = this.props.ownProps.location.state;
         this.feed = this.feed.bind(this);
         this.play = this.play.bind(this);
         this.pat = this.pat.bind(this);
@@ -20,7 +20,7 @@ class PetShow extends React.Component {
         // debugger;
         this.props.fetchUser(this.props.currentUser.id);
         this.props.fetchUser(this.props.user.id);
-        this.props.requestPet(this.props.ownProps.match.params.petId);
+        this.props.requestPet(this.props.petId);
         
     }
 
@@ -165,22 +165,22 @@ class PetShow extends React.Component {
     }
 
     pickaPet() {      
-        // debugger;
-        if (this.state && this.state.prevPath === '/pets') {
-            return <div className="pet-show-button-adopt">
-                {
-                    (this.props.user.pets.length < 4 && this.user.points > 50) ?
-                    <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
-                    <button className="max-pets" disabled>max pets or not enough points</button>
-                }
-            </div>
-        } else {
+        debugger;
+        if (this.props.adopted) {
             return <div className="pet-show-button">
                 <button onClick={this.feed} id="feedButton" className="pet-show-button">Feed</button>
                 <button onClick={this.play} id="playButton" className="pet-show-button">Play</button>
                 <button onClick={this.pat} id="patButton" className="pet-show-button">Pat</button>
                 <button onClick={this.shower} id="showerButton" className="pet-show-button">Shower</button>
             </div> 
+        } else {
+            return <div className="pet-show-button-adopt">
+                {
+                    (this.props.user.pets.length < 4 && this.props.user.points > 50) ?
+                    <button onClick={() => this.adopt(this.props.user, this.props.pet._id)}>Pick this Pet</button> :
+                    <button className="max-pets" disabled>max pets or not enough points</button>
+                }
+            </div>
         }
     }
 
@@ -194,14 +194,12 @@ class PetShow extends React.Component {
     }
 
     render() {
-        const { pet, user, prevPath, currentUser } = this.props;
+        const { pet, user, currentUser } = this.props;
         // console.log(currentUser)
         
         
         
         if(!(pet && user.pets)) return null;
-        // debugger;
-        console.log(pet.last_fed)
 
         return (
             <div className="pet-show-container">
