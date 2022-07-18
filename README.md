@@ -40,7 +40,7 @@ The main feature of this app is the Pet Store and Pet Interaction page. Users ca
 ### Code
 ```javascript
   router.get('/search-users/:query', (req, res)=>{
-      let userSearch = new RegExp(("^"+req.params.query),'i')
+      let userSearch = RegExp(("^.*"+req.params.query+".*$"),'i')
       User.find({username:{$regex:userSearch}})
           .then(user => {
               res.json({ user })
