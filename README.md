@@ -48,4 +48,4 @@ The main feature of this app is the Pet Store and Pet Interaction page. Users ca
   })
 ```
 
-As one of the key features of our website, the search function uses the regex expression to locate the different users available to us. The search input traverses both the backend and frontend and can be case insensitive which assists users in locating other users at a quicker rate. 
+As one of the key features of our website, the search function uses the regex expression to locate the different users available to us. The search input traverses both the backend and frontend and can be case insensitive which assists users in locating other users at a quicker rate.
