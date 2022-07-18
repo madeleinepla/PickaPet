@@ -222,11 +222,12 @@ class PetShow extends React.Component {
                 </div>
 
                 <div className="pet-show-interact">
+                    {this.pickaPet()}
+                    
                     <div className="image-container">
                         <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
                     </div>
 
-                    {this.pickaPet()}
                 </div>
 
                 <div className="pet-show-description">

@@ -1,8 +1,9 @@
 .pet-show-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: space-between;
-  margin: 30px;
+  /* margin: 30px; */
   /* width: 100vw; */
 }
 
@@ -15,7 +16,7 @@
   font-size: 30px;
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 400px;
   height: 600px;
   padding: 20px 35px;
   overflow: auto;
@@ -38,12 +39,12 @@
 }
 
 .pet-show-interact {
-  width: 40%;
+  width: 500px;
 }
 
 .pet-show-button, .pet-show-button-adopt {
-  margin-top: 2%;
-  margin-left: 15%;
+  margin-top: 10px;
+  margin-left: 140px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -58,7 +59,7 @@
   font-family: ShakyRegular;
   font-size: 32px;
   color: var(--dark-purple);
-  width: 18%;
+  width: 100px;
 }
 
 .pet-show-button-adopt > * {
@@ -70,7 +71,7 @@
   font-family: ShakyRegular;
   font-size: 32px;
   color: var(--dark-purple);
-  width: 30%;
+  width: 200px;
 }
 
 .pet-show-button>*:hover, .pet-show-button-adopt>*:hover {
@@ -78,8 +79,6 @@
     transform: scale(1.08);
     color: var(--light-purple)
 }
-
-
 
 .max-pets {
   width: 250px;
@@ -94,14 +93,14 @@
 }
 
 .pet-show-image {
-  top: 20%;
+  /* top: 100px;
   left: 33%;
-  position: absolute;
+  position: absolute; */
   width: 480px;
   height: 478px;
   border-radius: 8px;
   object-fit: cover;
-  margin: 5px;
+  margin: 70px 60px;
   margin-bottom: 10px;
   border-radius: 10px;
   border: 5px solid var(--dark-purple);
@@ -131,7 +130,7 @@
   font-family: ShakyRegular;
   font-size: 30px;
   padding: 20px 35px;
-  width: 20%;
+  width: 400px;
   height: 600px;
   overflow: auto;
   margin-left: 110px;
@@ -167,15 +166,16 @@
   }
   .image-container {
     position: relative;
-    top: -550px;
-    left: 100px;
+    width: 0;
+    top: -700px;
+    left: 300px;
   }
   .pet-show-image {
     width: 440px;
   }
   .pet-show-description {
     width: 100%;
-    margin-top: 20px;
+    margin-top: -550px;
     margin-left: 0;
   }
   .pet-show-information li {
@@ -191,22 +191,24 @@
   .pet-show-information {
     width: 90%;
     height: 700px;
+    margin-left: 75px;
   }
   .pet-show-interact {
     width: 100%;
   }
   .image-container {
     position: relative;
-    top: -600px;
-    left: 25px;
+    width: 0;
+    top: -750px;
+    left: 300px;
   }
   .pet-show-image {
     width: 440px;
   }
   .pet-show-description {
     width: 90%;
-    margin-top: 20px;
-    margin-left: 0;
+    margin-top: -550px;
+    margin-left: 75px;
   }
   .pet-show-information li {
     max-width: 210px;

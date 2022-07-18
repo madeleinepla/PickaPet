@@ -42,7 +42,7 @@ class searchResults extends React.Component {
 
                                             </div>
                                         </div>
-                                        )}
+                                    )}
                                 </div>
                             </div>
                             </Link>)}
