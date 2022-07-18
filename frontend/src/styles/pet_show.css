@@ -52,14 +52,14 @@
 
 .pet-show-button > * {
   background-color: var(--light-yellow);
-  margin: 0 10px 0 10px;
+  margin: 0 10px;
   padding: 20px;
   border: 2px solid var(--dark-purple);
   border-radius: 50%;
   font-family: ShakyRegular;
   font-size: 32px;
   color: var(--dark-purple);
-  width: 100px;
+  width: 120px;
 }
 
 .pet-show-button-adopt > * {
@@ -101,6 +101,20 @@
   border-radius: 8px;
   object-fit: cover;
   margin: 70px 60px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 5px solid var(--dark-purple);
+}
+
+#pet-feed-image,
+#pet-play-image,
+#pet-pat-image,
+#pet-shower-image {
+  width: 480px;
+  height: 478px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 146px 60px;
   margin-bottom: 10px;
   border-radius: 10px;
   border: 5px solid var(--dark-purple);
@@ -167,10 +181,14 @@
   .image-container {
     position: relative;
     width: 0;
-    top: -700px;
+    top: -680px;
     left: 300px;
   }
-  .pet-show-image {
+  .pet-show-image,
+  #pet-feed-image,
+  #pet-play-image,
+  #pet-pat-image,
+  #pet-shower-image {
     width: 440px;
   }
   .pet-show-description {
@@ -199,7 +217,7 @@
   .image-container {
     position: relative;
     width: 0;
-    top: -750px;
+    top: -700px;
     left: 300px;
   }
   .pet-show-image {

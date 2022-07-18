@@ -41,6 +41,7 @@ class PetShow extends React.Component {
         const action = document.createElement("img");
         action.src = this.props.pet.feedGif;
         action.className = "pet-show-image"
+        action.id = "pet-feed-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
         document.getElementById("feedButton").style.display = "none";
@@ -70,6 +71,7 @@ class PetShow extends React.Component {
         const action = document.createElement("img");
         action.src = this.props.pet.playGif;
         action.className = "pet-show-image"
+        action.id = "pet-play-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
         document.getElementById("feedButton").style.display = "none";
@@ -99,6 +101,7 @@ class PetShow extends React.Component {
         const action = document.createElement("img");
         action.src = this.props.pet.patGif;
         action.className = "pet-show-image"
+        action.id = "pet-pat-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
         document.getElementById("feedButton").style.display = "none";
@@ -127,6 +130,7 @@ class PetShow extends React.Component {
         const action = document.createElement("img");
         action.src = this.props.pet.showerGif;
         action.className = "pet-show-image"
+        action.id = "pet-shower-image"
         document.querySelector(".image-container").appendChild(action);
         document.getElementById("showPet").style.display = "none";
         document.getElementById("feedButton").style.display = "none";
