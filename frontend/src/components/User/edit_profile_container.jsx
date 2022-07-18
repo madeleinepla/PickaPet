@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { receiveCurrentUser } from '../../actions/session_actions';
 import { fetchUser, updateUser } from '../../actions/user_actions';
 import ProfileForm from './profile_form';
 
@@ -9,7 +10,7 @@ class EditProfileForm extends React.Component {
   }
 
   render() {
-    const { updateUser, user, ownProps } = this.props;
+    const { updateUser, receiveCurrentUser, user, ownProps } = this.props;
     // debugger;
 
     if (!user.username) return null;
@@ -18,6 +19,7 @@ class EditProfileForm extends React.Component {
         updateUser={updateUser}
         profile={user}
         ownProps={ownProps}
+        receiveCurrentUser={receiveCurrentUser}
       />
     );
   }
@@ -34,7 +36,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
-    updateUser: (user) => dispatch(updateUser(user))
+    updateUser: (user) => dispatch(updateUser(user)),
+    receiveCurrentUser: (currentUser) => dispatch(receiveCurrentUser(currentUser))
   }
 };
 

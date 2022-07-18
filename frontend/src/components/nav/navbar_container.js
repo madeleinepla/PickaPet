@@ -8,7 +8,6 @@ const mSTP = state => {
   // debugger
   return {
     loggedIn: state.session.isAuthenticated,
-    // currentUser: state.entities.users.user,
     currentUser: state.session.user,
     user: state.entities.users.user,
   }
