@@ -60,7 +60,7 @@
 .user-detail p:last-child {
   background-color: var(--light-purple);
   border-radius: 50px;
-  padding: 8px 8px 8px 20px;
+  padding: 8px 8px 8px 8px;
   color: white;
   display: flex;
   flex-direction: column;
