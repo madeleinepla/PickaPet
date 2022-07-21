@@ -76,7 +76,7 @@
     }
     .search-users-user {
         width:100%;
-        height: 200px;
+        height: 240px;
         margin-top:10px;
         margin-bottom:10px;
         background-color: #fffca4;
@@ -88,28 +88,30 @@
         font-family: "ShakyRegular";
         color: var(--dark-purple);
         margin: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
     }
     .search-pets {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         overflow: scroll;
         width:100%;
         height:100%;
     }
-    /* .search-pet-container {
+    .search-pet-container {
         display: flex;
         flex-direction: row;
-    } */
+    }
     .search-pet {
-        width: 160px;
+        width: 110px;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         /* margin: 5px; */
         justify-content: center;
         text-align: center;
         font-family: "ShakyRegular";
         color: var(--dark-purple);
+        margin-right: 30px;
     }
     .search-pet-photo {
         height: 110px;

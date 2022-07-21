@@ -34,7 +34,7 @@ class searchResults extends React.Component {
                             <div className="search-users-user" key={user.id}>
                                 <div className="search-pets">
                                     <p className="search-users-username">{user.username}</p>
-                                    <br />
+                                    <div className='search-pet-container'>
                                     {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
                                         <div className="search-pet">
                                             <img className="search-pet-photo" src={pet.profileUrl} alt="pet pic" />
@@ -46,6 +46,7 @@ class searchResults extends React.Component {
                                             </div>
                                         </div>
                                     )}
+                                    </div>
                                 </div>
                             </div>
                             </Link>)}
