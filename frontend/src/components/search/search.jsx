@@ -43,9 +43,9 @@ class search extends React.Component {
                         <input className="search-bar-input"type="text" value={this.state.search} placeholder="search" onChange={this.update}></input>
                         <Link className="search-bar-button"to={`/search-results?${this.state.search}`} onClick={()=>this.state.search=""} >Search</Link>
                     </form>
-                    <div className="search-users-container">
+                    <div className={this.state.search !== "" ? "pre-search-users-container" : "pre-search-users-container-hidden"}>
                         <div className="search-users">
-
+                        <h1 className={this.state.search !== "" ? "pre-search-results" : "pre-search-results-hidden"}>{users.length} Search Results</h1>
                         {users.map(user=>
                             <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={user._id} onClick={()=>this.clickHandler(user._id)}>
                             <div className="search-users-user" key={user.id}>

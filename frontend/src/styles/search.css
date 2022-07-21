@@ -45,12 +45,35 @@
     .search-users-container {
         display:flex;
         justify-content: center;
-   
     }
-     .search-users {
+    .pre-search-users-container {
+        display:flex;
+        justify-content: center;
+        position: fixed;
+        min-height: 720px;
+        width: 320px;
+        overflow-y: scroll;
+        background: var(--light-blue);
+        margin-left: 10px;
+        padding-right: 20px;
+        border-radius: 10px;
+    }
+    .pre-search-users-container-hidden {
+        display: hidden;
+    }
+    .pre-search-results {
+        font-family: "ShakyRegular";
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .pre-search-results-hidden {
+        display: none;
+    }
+    .search-users {
         width: 90%;
         height: 10px;
-     }
+    }
     .search-users-user {
         width:100%;
         height: 200px;
