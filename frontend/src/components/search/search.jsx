@@ -52,7 +52,7 @@ class search extends React.Component {
 
                             <div className="search-pets">
                                 <p className="search-users-username">{user.username}</p>
-                                <br />
+                                <div className='search-pet-container'>
                                 {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
         
                                     <div className="search-pet">
@@ -66,6 +66,7 @@ class search extends React.Component {
                                     </div>
                                      
                                     )}
+                                </div>
                             </div>
                             </div>
                             </Link>

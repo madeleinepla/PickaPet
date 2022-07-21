@@ -197,6 +197,20 @@ class PetShow extends React.Component {
         }
     }
 
+    lastPet(pet) {      
+        debugger;
+        if (this.props.adopted) {
+            return <div>
+                    <li>Last Fed: {pet.last_fed}</li>
+                    <li>Last Play: {pet.last_play}</li>
+                    <li>Last Pat: {pet.last_pet}</li>
+                    <li>Last Shower: {pet.last_bathed}</li>
+                    </div> 
+        } else {
+            return null
+        }
+    }
+
     render() {
         const { pet, user, currentUser } = this.props;
         // console.log(currentUser)
@@ -214,12 +228,7 @@ class PetShow extends React.Component {
                     <li>Breed: {pet.breed}</li>
                     <li>Birthday: {formatDate(pet.birthday)}</li>
                     <li>Gender: {pet.gender}</li>
-                    <li>Last Fed: {pet.last_fed}</li>
-                    <li>Last Play: {pet.last_play}</li>
-                    <li>Last Pat: {pet.last_pet}</li>
-                    <li>Last Shower: {pet.last_bathed}</li>
-
-                    {/* <li className="points">Points: {user.points}</li> */}
+                    <li>{this.lastPet(pet)}</li>
                     <li className="points">{this.userPoints()}</li>
                 </div>
 
