@@ -5,9 +5,7 @@ import PetShow from "./pet_show";
 
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
-        // pets: state.entities.pets.all,
         pet: state.entities.pets.pet,
         petId: ownProps.match.params.petId,
         user: state.entities.users.user,
@@ -19,7 +17,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         requestPet: (petId) => dispatch(requestPet(petId)),

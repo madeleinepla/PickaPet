@@ -1,135 +1,137 @@
-    
-    .search-bar-container {
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 350px;
-    }
-    .search-bar-button {
-        text-decoration: none;
-        color: var(--dark-purple);
-        background-color: var(--light-purple);
-        padding: 15px;
-        border-radius: 5px;
-    }
-    .search-bar-input {
-        border-radius: 20px;
-        width:90%;
-        height: 40px;
-        padding:5px;
-        padding-left: 20px;
-        font-size: 20px;
-        outline:none;
-        border:1px solid var(--dark-purple);
-        border-radius: 30px;
-        margin:20px;
-        font-family: "ShakyRegular";
-    }
-
-    .no-search-result{
-        text-align: center;
-        font-family: "ShakyRegular";
-        color: var(--dark-purple);
-        font-size: 30px;
-    }
-
-    .search-header {
-        text-align: center;
-        font-family: "ShakyRegular";
-        color: white;
-        font-size: 30px;
-
-
-    }
-    .search-users-container {
-        display:flex;
-        justify-content: center;
-    }
-    .pre-search-users-container {
-        display:flex;
-        justify-content: center;
-        position: fixed;
-        min-height: 720px;
-        width: 320px;
-        overflow-y: scroll;
-        background: var(--light-blue);
-        margin-left: 10px;
-        padding-right: 20px;
-        border-radius: 10px;
-    }
-    .pre-search-users-container-hidden {
-        display: hidden;
-    }
-    .pre-search-results {
-        font-family: "ShakyRegular";
-        font-size: 20px;
-        margin-top: 10px;
-        text-align: center;
-    }
-    .pre-search-results-hidden {
-        display: none;
-    }
-    .search-users {
-        width: 90%;
-        height: 10px;
-    }
-    .search-users-user {
-        width:100%;
-        height: 240px;
-        margin-top:10px;
-        margin-bottom:10px;
-        background-color: #fffca4;
-        border: 10px solid var(--dark-purple);
-        border-radius: 10px;
-    }
-    .search-users-username {
-        font-size: 30px;
-        font-family: "ShakyRegular";
-        color: var(--dark-purple);
-        margin: 10px;
-        margin-bottom: 5px;
-    }
-    .search-pets {
-        display: flex;
-        flex-direction: column;
-        overflow: scroll;
-        width:100%;
-        height:100%;
-    }
-    .search-pet-container {
-        display: flex;
-        flex-direction: row;
-    }
-    .search-pet {
-        width: 110px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        /* margin: 5px; */
-        justify-content: center;
-        text-align: center;
-        font-family: "ShakyRegular";
-        color: var(--dark-purple);
-        margin-right: 30px;
-    }
-    .search-pet-photo {
-        height: 110px;
-        margin-left:30px;
-        margin-right:30px;
-        margin-bottom: 5px;
-        margin-top: 2px;
-    }
-
-    /* i pad air, i pad mini, surface pro 7, surface duo */
-@media screen and (max-width: 1024px) {
-    .search-users-user {
-        width: 300px;
-    }
+.search-bar-container,
+.search-bar-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
 }
-  
-@media screen and (max-width: 600px) {
-    .search-users-user {
-        width: 300px;
-    }
+
+.search-bar-text-container {
+    position: relative;
+    top: -5px;
+}
+
+.search-bar-button {
+    text-decoration: none;
+    color: var(--dark-purple);
+    background-color: var(--light-purple);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.search-bar-input {
+    border-radius: 20px;
+    width:90%;
+    height: 40px;
+    padding:5px;
+    padding-left: 20px;
+    font-size: 20px;
+    outline:none;
+    border:1px solid var(--dark-purple);
+    border-radius: 30px;
+    margin:20px;
+    font-family: "ShakyRegular";
+}
+
+.no-search-result{
+    text-align: center;
+    font-family: "ShakyRegular";
+    color: var(--dark-purple);
+    font-size: 30px;
+}
+
+.search-header {
+    text-align: center;
+    font-family: "ShakyRegular";
+    color: white;
+    font-size: 30px;
+}
+
+.search-users-container {
+    display:flex;
+    justify-content: center;
+}
+
+.pre-search-users-container {
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    min-height: 720px;
+    width: 320px;
+    overflow-y: scroll;
+    background: var(--light-blue);
+    margin-left: 10px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.pre-search-users-container-hidden {
+    display: hidden;
+}
+
+.pre-search-results {
+    font-family: "ShakyRegular";
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pre-search-results-hidden {
+    display: none;
+}
+
+.search-users {
+    width: 90%;
+    height: 10px;
+}
+
+.search-users-user {
+    width:100%;
+    height: 240px;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color: #fffca4;
+    border: 10px solid var(--dark-purple);
+    border-radius: 10px;
+}
+
+.search-users-username {
+    font-size: 30px;
+    font-family: "ShakyRegular";
+    color: var(--dark-purple);
+    margin: 10px;
+    margin-bottom: 5px;
+}
+
+.search-pets {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width:100%;
+    height:100%;
+}
+
+.search-pet-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-pet {
+    width: 110px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-family: "ShakyRegular";
+    color: var(--dark-purple);
+    margin-right: 30px;
+}
+
+.search-pet-photo {
+    height: 110px;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom: 5px;
+    margin-top: 2px;
 }

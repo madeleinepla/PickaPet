@@ -3,9 +3,6 @@ import { formatDate } from '../../util/date_util';
 import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.fetchUser(this.props.ownProps.match.params.id);
@@ -21,7 +18,7 @@ class Profile extends React.Component {
         (pets.length === 0) ? 
           <div className='no-pets'>you have no pets ┏༼ ◉╭╮◉༽┓</div>  
         : 
-      <div className='pets-list'>
+          <div className='pets-list'>
         {
           pets.map((pet, i) => {
             const today = new Date();

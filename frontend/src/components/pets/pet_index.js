@@ -3,12 +3,7 @@ import PetIndexItem from "./pet_index_item";
 import { withRouter } from 'react-router-dom';
 import '../../styles/pet.css';
 
-// import {sample} from '../../util/random_util'
-
 class PetIndex extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.requestPets();
@@ -26,7 +21,7 @@ class PetIndex extends React.Component {
 
         function shuffle(array) {
             let currentIndex = array.length, randomIndex;
-            while (currentIndex != 0) {
+            while (currentIndex !== 0) {
                 randomIndex = Math.floor(Math.random() * currentIndex);
                 currentIndex--;
 

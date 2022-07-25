@@ -5,7 +5,6 @@ import { formatDate, formatDateTime } from '../../util/date_util';
 class PetShow extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = this.props.ownProps.location.state;
         this.feed = this.feed.bind(this);
         this.play = this.play.bind(this);
         this.pat = this.pat.bind(this);
@@ -17,7 +16,6 @@ class PetShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         this.props.fetchUser(this.props.currentUser.id);
         this.props.fetchUser(this.props.user.id);
         this.props.requestPet(this.props.petId);
@@ -50,7 +48,6 @@ class PetShow extends React.Component {
         document.getElementById("showerButton").style.display = "none";
         
         this.props.pet.last_fed = formatDateTime(Date.now());
-        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()
@@ -64,7 +61,6 @@ class PetShow extends React.Component {
             document.getElementById("patButton").style.display = "block";
             document.getElementById("showerButton").style.display = "block";
         }, 5000);
-        // debugger
     }
 
     async play() {
@@ -80,7 +76,6 @@ class PetShow extends React.Component {
         document.getElementById("showerButton").style.display = "none";
 
         this.props.pet.last_play = formatDateTime(Date.now());
-        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()
@@ -110,7 +105,6 @@ class PetShow extends React.Component {
         document.getElementById("showerButton").style.display = "none";
 
         this.props.pet.last_pet = formatDateTime(Date.now());
-        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()
@@ -139,7 +133,6 @@ class PetShow extends React.Component {
         document.getElementById("showerButton").style.display = "none"; 
 
         this.props.pet.last_bathed = formatDateTime(Date.now());
-        // this.props.updatePet(this.props.pet)
 
         setTimeout(() => {
             this.points()
@@ -156,7 +149,6 @@ class PetShow extends React.Component {
     }
 
     adopt(user, petId) {
-        // debugger
 
         if (this.user.points > 50) {
            this.user.points -= 50
@@ -189,7 +181,6 @@ class PetShow extends React.Component {
     }
 
     userPoints () {
-        // debugger
         if (this.props.user._id === this.props.currentUser.id) {
             return "Points: " + this.props.user.points
         }   else {
@@ -212,10 +203,7 @@ class PetShow extends React.Component {
     }
 
     render() {
-        const { pet, user, currentUser } = this.props;
-        // console.log(currentUser)
-        
-        
+        const { pet, user } = this.props;
         
         if(!(pet && user.pets)) return null;
 
@@ -236,7 +224,7 @@ class PetShow extends React.Component {
                     {this.pickaPet()}
                     
                     <div className="image-container">
-                        <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} />
+                        <img className="pet-show-image" id="showPet" src={pet.showGif} key={Math.random().toString(36)} alt="pets" />
                     </div>
 
                 </div>

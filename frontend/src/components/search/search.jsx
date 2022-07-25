@@ -9,25 +9,19 @@ class search extends React.Component {
     }
     update(e) {
         e.preventDefault()
-        this.setState({["search"]:e.currentTarget.value})
-        
+        this.setState({search: e.currentTarget.value})
     }
     componentDidMount() {        
         this.props.requestPets()
         this.props.fetchUsers()
-        
-
     }
 
     clickHandler(userId){
-        // debugger
-        this.state.search=""
-        // this.props.ownProps.history.push(`/users/${userId}`)
+        this.setState({search: ""})
         this.props.fetchUser(userId)
     }
 
     render () {
-        console.log(this.state)
         if (this.props.pets.length===0 || this.props.users.length===0) {
             return null
         }
@@ -39,9 +33,9 @@ class search extends React.Component {
         return (
             
             <div className="search">
-                    <form className="search-bar-container">
+                    <form className={ this.state.search === "" ? "search-bar-container" : "search-bar-text-container" }>
                         <input className="search-bar-input"type="text" value={this.state.search} placeholder="search" onChange={this.update}></input>
-                        <Link className="search-bar-button"to={`/search-results?${this.state.search}`} onClick={()=>this.state.search=""} >Search</Link>
+                        <Link className="search-bar-button"to={`/search-results?${this.state.search}`} onClick={()=>this.setState({search: ""})} >Search</Link>
                     </form>
                     <div className={this.state.search !== "" ? "pre-search-users-container" : "pre-search-users-container-hidden"}>
                         <div className="search-users">
@@ -53,10 +47,10 @@ class search extends React.Component {
                             <div className="search-pets">
                                 <p className="search-users-username">{user.username}</p>
                                 <div className='search-pet-container'>
-                                {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
+                                {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map((pet, i)=>
         
-                                    <div className="search-pet">
-                                        <img className="search-pet-photo" src={pet.profileUrl} alt="pet photo" />
+                                    <div key={i} className="search-pet">
+                                        <img className="search-pet-photo" src={pet.profileUrl} alt="pet pic" />
                                         <div>
                                             <p>{pet.name}</p>
                                             <p>{pet.species}</p>
