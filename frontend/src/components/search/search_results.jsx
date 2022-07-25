@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 class searchResults extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     componentDidMount() {        
         this.props.requestPets()
         this.props.searchusers(this.props.location.search.split("?")[1])
@@ -16,27 +14,24 @@ class searchResults extends React.Component {
     }
 
     render () {
-        // debugger
         if (this.props.pets.length===0 || this.props.users.length===0) {
-            // return null
             return <div className='no-search-result'> No user found. Please try another search.</div>
         }
         if (!Array.isArray(this.props.users)) return null
         let users = this.props.users
-        // debugger
         return (
             <div className="search">
                 <div className="search-header">Search Results: {users.length}</div>
                     <div className="search-users-container">
                         <div className="search-users">
-                        {users.map(user=>
-                        <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }}>
+                        {users.map((user, i)=>
+                        <Link to={`/users/${user._id}`} style={{ textDecoration: 'none' }} key={i}>
                             <div className="search-users-user" key={user.id}>
                                 <div className="search-pets">
                                     <p className="search-users-username">{user.username}</p>
                                     <div className='search-pet-container'>
-                                    {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map(pet=>
-                                        <div className="search-pet">
+                                    {this.props.pets.filter(pet=>user.pets.includes(pet._id)).map((pet, i)=>
+                                        <div className="search-pet" key={i}>
                                             <img className="search-pet-photo" src={pet.profileUrl} alt="pet pic" />
                                             <div>
                                                 <p>{pet.name}</p>

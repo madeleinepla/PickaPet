@@ -4,7 +4,6 @@ import {requestPets} from '../../actions/pet_actions'
 import { fetchUser } from '../../actions/user_actions';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         pets: Object.values(state.entities.pets.all),
         user: state.entities.users.user,

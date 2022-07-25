@@ -95,7 +95,6 @@
   border: 5px solid var(--dark-purple);
   border-radius: 15px;
   width: 60%;
-  /* overflow: scroll; */
 }
 
 .pets-list-title {

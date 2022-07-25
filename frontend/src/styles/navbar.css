@@ -149,3 +149,9 @@
 .dropdown-content * {
   cursor: pointer;
 }
+
+.errors {
+  color: rgba(255, 0, 0, 0.8);
+  text-align: center;
+  margin-bottom: 5px;
+}

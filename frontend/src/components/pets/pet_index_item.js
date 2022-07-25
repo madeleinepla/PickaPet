@@ -4,12 +4,7 @@ import '../../styles/pet.css'
 import pin from '../../assets/images/pushpin.png';
 
 class PetIndexItem extends React.Component {
-    constructor (props) {
-        super(props)
-    }
-    
     render() { 
-        // debugger
         const { pet, ownProps} = this.props;
 
         return (

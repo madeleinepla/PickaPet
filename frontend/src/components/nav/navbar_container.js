@@ -5,7 +5,6 @@ import NavBar from './navbar';
 import { fetchUser } from '../../actions/user_actions';
 
 const mSTP = state => {
-  // debugger
   return {
     loggedIn: state.session.isAuthenticated,
     currentUser: state.session.user,
