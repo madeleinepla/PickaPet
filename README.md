@@ -1,5 +1,5 @@
 # Picka Pet
-### [Live](https://picka-pet.herokuapp.com)
+### [Live](https://picka-pet.herokuapp.com/#/)
 
 
 ## Team Members
