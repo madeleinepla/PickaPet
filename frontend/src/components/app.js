@@ -20,11 +20,11 @@ const App = () => (
   <div className='full-page'>
     <NavBarContainer/>
     <Switch>
-      <ProtectedRoute exact path='/pets/:petId' component={pet_show_container} />
-      <ProtectedRoute exact path='/pets' component={pet_index_container} />
       <Route exact path='/' component={HomePage} />
       <Route exact path='/search' component={search_container} />
       <Route exact path='/search-results' component={search_results_container} />
+      <ProtectedRoute exact path='/pets/:petId' component={pet_show_container} />
+      <ProtectedRoute exact path='/pets' component={pet_index_container} />
 
 
       {/* <AuthRoute exact path='/login' component={LoginFormContainer} /> */}
